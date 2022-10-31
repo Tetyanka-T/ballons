@@ -1,0 +1,17 @@
+.header {
+    display: flex;
+    // background-color: black;
+    // color: #fff;
+    padding: 20px;
+}
+.header_user__list {
+    display: flex;
+    margin-left: auto;
+    & .header_user__item:last-child {
+        margin-right: 0;
+    }
+}
+
+.header_user__item {
+    margin-right: 20px;
+}
