@@ -1,19 +1,19 @@
 import Head from 'next/head'
-import Header from '../../../../components/Header/Header'
-import Footer from '../../../../components/Footer/Footer'
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
 
-const FirstBirthDay = () => {
+const BasketPage = () => {
     return (
         <div>
         <Head>
           <title>Весела витівка</title>
           <meta name="description" content="Інтернет магазин виробів із повітряних кульок, оформлення свят" />
-          <link rel="icon" href="" />
+          <link rel="icon" href="/basket.svg" />
         </Head>
   
         <main>
           <Header />
-          <h1>Перший день народження</h1>
+          <h1>Basket</h1>
         </main>
   
         <footer>
@@ -23,6 +23,4 @@ const FirstBirthDay = () => {
     )
 }
 
-
-
-export default FirstBirthDay;
+export default BasketPage;

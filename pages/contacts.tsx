@@ -4,7 +4,7 @@ import Footer from '../components/Footer/Footer'
 import style from '../styles/common.module.scss'
 import s from '../styles/Contacts.module.scss'
 
-export default function Contacts() {
+export default function ContactsPage() {
   return (
     <div>
       <Head>

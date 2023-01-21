@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Basket, Favorite, FavoriteContour, Search, User } from "../svg";
 import s from "./Header.module.scss";
 
@@ -14,14 +15,14 @@ const Header = () => {
           </a>
         </li>
         <li className={s.header_user__item}>
-          <a>
+          <Link href="/favorite">
             <FavoriteContour />
-          </a>
+          </Link>
         </li>
         <li className={s.header_user__item}>
-          <a>
+          <Link href="/basket">
             <Basket />
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
