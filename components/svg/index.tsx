@@ -1,0 +1,14 @@
+export {default as User} from './user.svg';
+export {default as Basket} from './basket.svg';
+export {default as Home} from './home.svg';
+export {default as Instagram} from './instagram.svg';
+export {default as Location} from './location.svg';
+export {default as Menu} from './menu.svg';
+export {default as Search} from './search.svg';
+export {default as Select} from './select.svg';
+export {default as Favorite} from './favorite.svg';
+export {default as FavoriteContour} from './fav-contour.svg';
+export {default as Cansel} from './cansel.svg';
+export {default as Cross} from './cross.svg';
+export {default as SortDown} from './sort-down.svg';
+export {default as SortUp} from './sort-up.svg';

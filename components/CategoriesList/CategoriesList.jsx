@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
+import { Cansel, Menu } from "../svg";
 import s from "./CategoriesList.module.scss";
 
 const CategoriesList = () => {
@@ -18,7 +19,10 @@ const CategoriesList = () => {
 
   return (
     <div>
-      <button onClick={() => onShowMenu()}>тиц</button>
+      <button onClick={() => onShowMenu()}>
+        {showMenu === false && <Menu />}
+        {showMenu === true && <Cansel />}
+      </button>
       {showMenu && (
         <ul className={s.categories_list}>
           <li>
