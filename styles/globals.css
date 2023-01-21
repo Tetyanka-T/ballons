@@ -25,5 +25,9 @@ li, ul {
   margin: 0;
   padding: 0;
 }
-
+button {
+  text-decoration: none;
+  border: none;
+  padding: 0;
+}
 
