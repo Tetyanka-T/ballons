@@ -1,49 +1,56 @@
  import { Navbar, Dropdown } from 'flowbite-react';
+ import Link from 'next/link';
 
 const NavBar = () => {
   return (
     <Navbar>
           <Navbar.Toggle />
             <Navbar.Collapse>
-                <Navbar.Link href="/categories/gender-party">Визначення статті малюка
+                <Navbar.Link href="/categories">Всі композиції з кульок
                 </Navbar.Link>
-                <Navbar.Link active={true}>Виписка з пологового будинку
+                <Navbar.Link href="/categories/gender-party">Gender party
+                </Navbar.Link>
+                <Navbar.Link href=''>Виписка з пологового будинку
                   <Dropdown label={undefined} inline>
                     <Dropdown.Item>Всі
-                      <Navbar.Link href="/categories/baby" active={true}>
-                      </Navbar.Link>
+                      <Link href="/categories/baby">
+                      </Link>
                       </Dropdown.Item>
-                    <Dropdown.Item>Хлопчик
-                      <Navbar.Link href="/categories/baby/boy" active={true}>
-                      </Navbar.Link>
+                      <Dropdown.Item>Для дівчинки
+                      <Link href="/categories/baby/girl">
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item>Дівчинка
-                      <Navbar.Link href="/categories/baby/girl" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item> Для хлопчика
+                      <Link href="/categories/baby/boy">
+                      </Link>
                     </Dropdown.Item>
                   </Dropdown>
                </Navbar.Link>
-               <Navbar.Link href="/categories/birthday">День народження
+               <Navbar.Link href="">День народження
                   <Dropdown label={undefined} inline>
-                    <Dropdown.Item>перший день народження
-                      <Navbar.Link href="/categories/birthday/first" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item>Всі
+                      <Link href="/categories/birthday">
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item>для дівчинки
-                      <Navbar.Link href="/categories/birthday/girls" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item>Перший день народження
+                      <Link href="/categories/birthday/first">
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item>для хлопчика
-                      <Navbar.Link href="/categories/birthday/boys" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item>Для дівчинки
+                      <Link href="/categories/birthday/girls">
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item>для неї
-                      <Navbar.Link href="/categories/birthday/she" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item>Для хлопчика
+                      <Link href="/categories/birthday/boys">
+                      </Link>
                     </Dropdown.Item>
-                    <Dropdown.Item>для нього
-                      <Navbar.Link href="/categories/baby/he" active={true}>
-                      </Navbar.Link>
+                    <Dropdown.Item>Для неї
+                      <Link href="/categories/birthday/she">
+                      </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>Для нього
+                      <Link href="/categories/baby/he">
+                      </Link>
                     </Dropdown.Item>
                     </Dropdown>
                </Navbar.Link>

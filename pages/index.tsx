@@ -2,8 +2,12 @@ import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesList from '../components/CategoriesList/CategoriesList'
-import s from '../styles/Home.module.css'
-// import NavBar from '../components/NavBar/NavBar'
+import s from '../styles/Home.module.scss'
+import common from '../styles/common.module.scss'
+import Container from '../components/Container/Container'
+import BalloonCard from '../components/BalloonCard/BalloonCard'
+
+import NavBar from '../components/NavBar/NavBar'
 
 export default function Home() {
   return (
@@ -14,13 +18,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      
+      <main className={common.container}>
+     
         <Header />
         <CategoriesList />
         {/* <NavBar/> */}
+        <BalloonCard/>
       </main>
 
-      <footer>
+    
+       
+        <footer>
         <Footer/>
       </footer>
     </div>

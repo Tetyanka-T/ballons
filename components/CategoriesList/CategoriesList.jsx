@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Cansel, Menu, Select } from "../svg";
+// import Container from "../Container/Container";
 import s from "./CategoriesList.module.scss";
+import common from "../../styles/common.module.scss";
 
 const CategoriesList = () => {
   const [showMenu, SetShowMenu] = useState(false);
