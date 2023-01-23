@@ -11,49 +11,52 @@ const NavBar = () => {
                 <Navbar.Link href="/categories/gender-party">Gender party
                 </Navbar.Link>
                 <Navbar.Link href=''>Виписка з пологового будинку
-                  <Dropdown label={undefined} inline>
+                  <Dropdown label={undefined} inline={true}>
                     <Dropdown.Item>Всі
-                      <Link href="/categories/baby">
-                      </Link>
+                      <Navbar.Link href="/categories/baby">
+                      </Navbar.Link>
                       </Dropdown.Item>
                       <Dropdown.Item>Для дівчинки
-                      <Link href="/categories/baby/girl">
-                      </Link>
+                      <Navbar.Link href="/categories/baby/girl">
+                      </Navbar.Link>
                     </Dropdown.Item>
                     <Dropdown.Item> Для хлопчика
-                      <Link href="/categories/baby/boy">
-                      </Link>
+                      <Navbar.Link href="/categories/baby/boy">
+                      </Navbar.Link>
                     </Dropdown.Item>
                   </Dropdown>
                </Navbar.Link>
                <Navbar.Link href="">День народження
-                  <Dropdown label={undefined} inline>
+               <div className="flex md:order-2">
+                  <Dropdown label={undefined} inline={true}>
                     <Dropdown.Item>Всі
                       <Link href="/categories/birthday">
                       </Link>
                     </Dropdown.Item>
                     <Dropdown.Item>Перший день народження
-                      <Link href="/categories/birthday/first">
-                      </Link>
+                      <Navbar.Link href="/categories/birthday/first">
+                      </Navbar.Link>
                     </Dropdown.Item>
                     <Dropdown.Item>Для дівчинки
-                      <Link href="/categories/birthday/girls">
-                      </Link>
+                      <Navbar.Link href="/categories/birthday/girls">
+                      </Navbar.Link>
                     </Dropdown.Item>
                     <Dropdown.Item>Для хлопчика
                       <Link href="/categories/birthday/boys">
                       </Link>
                     </Dropdown.Item>
                     <Dropdown.Item>Для неї
-                      <Link href="/categories/birthday/she">
-                      </Link>
+                      <Navbar.Link href="/categories/birthday/she">
+                      </Navbar.Link>
                     </Dropdown.Item>
                     <Dropdown.Item>Для нього
-                      <Link href="/categories/baby/he">
-                      </Link>
+                      <Navbar.Link href="/categories/baby/he">
+                      </Navbar.Link>
                     </Dropdown.Item>
-                    </Dropdown>
+                  </Dropdown>
+                </div>
                </Navbar.Link>
+
                <Navbar.Link href="/categories/photo-zone">Фотозони
                </Navbar.Link>
               <Navbar.Link href="/categories/design">Оформлення фасадів

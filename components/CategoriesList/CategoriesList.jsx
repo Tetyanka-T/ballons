@@ -9,6 +9,7 @@ const CategoriesList = () => {
   const [showMenu, SetShowMenu] = useState(false);
   const [baby, SetBaby] = useState(false);
   const [birthDay, SetBirthDay] = useState(false);
+  const [thematics, SetThematics] = useState(false);
 
   const onShowMenu = () => {
     SetShowMenu(true);
@@ -32,6 +33,14 @@ const CategoriesList = () => {
   };
   const toggleBirthDays = () => {
     birthDay ? SetBirthDay(false) : SetBirthDay(true);
+  };
+
+  const onShowThematics = () => {
+    SetThematics(true);
+    toggleThematics();
+  };
+  const toggleThematics = () => {
+    thematics ? SetThematics(false) : SetThematics(true);
   };
 
   return (
@@ -104,7 +113,39 @@ const CategoriesList = () => {
             <Link href="/categories/photo-zone">Фотозони</Link>
           </li>
           <li className={s.categories_list__item}>
-            <Link href="/categories/thematics">Тематичні свята</Link>
+            <button
+              onClick={() => onShowThematics()}
+              className={s.button_select}
+            >
+              Тематичні свята
+              <Select className={s.button_thematics__icon} />
+            </button>
+            {thematics && (
+              <ul className={s.categories_listBirtDay}>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics">Всі</Link>
+                </li>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics/hen-party">
+                    Девіч вечір
+                  </Link>
+                </li>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics/wedding">Весілля</Link>
+                </li>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics/valentine's-day">
+                    День Закоханих
+                  </Link>
+                </li>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics/halloween">Хелловін</Link>
+                </li>
+                <li className={s.categories_listBirtDay__item}>
+                  <Link href="/categories/thematics/new-year">Новий Рік</Link>
+                </li>
+              </ul>
+            )}
           </li>
           <li className={s.categories_list__item}>
             <Link href="/categories/design">Оформлення фасадів</Link>

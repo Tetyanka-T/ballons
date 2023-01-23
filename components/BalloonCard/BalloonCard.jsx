@@ -1,3 +1,4 @@
+import { Card } from "flowbite-react";
 import Image from "next/image";
 import photo1 from "../../public/photo_1.jpg";
 import photo2 from "../../public/photo_2.jpg";

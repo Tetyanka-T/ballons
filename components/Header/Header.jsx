@@ -16,7 +16,7 @@ const Header = () => {
         </li>
         <li className={s.header_user__item}>
           <Link href="/favorite">
-            <FavoriteContour />
+            <FavoriteContour className={s.header_icon}/>
           </Link>
         </li>
         <li className={s.header_user__item}>

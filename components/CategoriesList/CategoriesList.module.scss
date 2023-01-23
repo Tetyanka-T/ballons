@@ -1,79 +1,88 @@
 
-// .showMenu {
-//     display: block;
-//     // margin-left: 280px;
-// }
+.showMenu {
+    display: block;
+    // margin-left: 280px;
+}
 // .categories_list {
-//   margin: 20px;
-//   width: 280px;
+// //   margin: 20px;
 // }
-// .categories_list__item {
-//     border-bottom: 1px solid #000;
-//     margin-top: 20px;
-// }
-// .button_select {
-//     display: flex;  
-// }
-// .button_baby__icon {
-//     margin-top: 7px;
-//     margin-left: 30px;
-// }
-// .button_birthDay__icon {
-//     margin-top: 7px;
-//     // margin-left: 125px;
-// }
-// .categories_listBaby__item, .categories_listBirtDay__item {
-//     margin-left: 15px;
-//     margin-top: 5px;
-// }
+.categories_list__item {
+    border-bottom: 1px solid #000;
+    margin-top: 20px;
+}
+.button_select {
+    display: flex;  
+}
+.button_baby__icon {
+    margin-top: 7px;
+    margin-left: 30px;
+    width: 15px;
+    height: 15px;
+}
+.button_birthDay__icon {
+    margin-top: 7px;
+    margin-left: 125px;
+    width: 15px;
+    height: 15px;
+}
+.button_thematics__icon {
+    margin-top: 7px;
+    margin-left: 140px;
+    width: 15px;
+    height: 15px;
+}
+.categories_listBaby__item, .categories_listBirtDay__item {
+    margin-left: 15px;
+    margin-top: 5px;
+}
 
-// @media screen and (min-width: 768px){
-//     .showMenu {
-//         margin-left: 700px;
-//     }
-//     .categories_list {
-//       margin: 30px;
-//     }
+@media screen and (min-width: 768px){
+    .showMenu {
+        margin-left: 700px;
+    }
+    .categories_list {
+      margin: 30px;
+    }
   
-//     .button_baby__icon {
-//         margin-left: 400px;
-//     }
-//     .button_birthDay__icon {
-//         margin-left: 493px;
-//     }
-//     .categories_listBaby__item, .categories_listBirtDay__item {
-//         margin-left: 20px;
-//         margin-top: 10px;
-//     }
-// }
-// @media screen and (min-width: 1200px){
-//     .showMenu {
-//        display: none;
-//     }
-//     .categories_list {
-//      display: flex;
-//      margin-left: 0px;
-//      margin-right: 0;
-//     }
-//     .categories_list__item {
-//         border-bottom: none;
-//         margin-right: 30px;
-//     }
-//     .categories_list .categories_list__item:last-child {
-//         margin-right: 0;
-//     }
-//     .button_baby__icon {
-//         margin-left: 0px;
-//         width: 8px;
-//         height: 5px;
-//     }
-//     .button_birthDay__icon {
-//         margin-left: 0px;
-//         width: 8px;
-//         height: 5px;
-//     }
-//     .categories_listBaby__item, .categories_listBirtDay__item {
-//         margin-left: 20px;
-//         margin-top: 10px;
-//     }
-// }
+    .button_baby__icon {
+        margin-left: 400px;
+    }
+    .button_birthDay__icon {
+        margin-left: 493px;
+    }
+    .categories_listBaby__item, .categories_listBirtDay__item {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .showMenu {
+       display: none;
+    }
+    .categories_list {
+     display: flex;
+     margin-left: 0px;
+     margin-right: 0;
+    }
+    .categories_list__item {
+        border-bottom: none;
+        margin-right: 30px;
+    }
+    .categories_list .categories_list__item:last-child {
+        margin-right: 0;
+    }
+    .button_baby__icon {
+        margin-left: 0px;
+        width: 8px;
+        height: 5px;
+    }
+    .button_birthDay__icon {
+        margin-left: 0px;
+        width: 8px;
+        height: 5px;
+    }
+    .categories_listBaby__item, .categories_listBirtDay__item {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+}

@@ -6,6 +6,7 @@ import s from '../styles/Home.module.scss'
 import common from '../styles/common.module.scss'
 import Container from '../components/Container/Container'
 import BalloonCard from '../components/BalloonCard/BalloonCard'
+import CardDescription from '../components/CardDescription/CardDescription'
 
 import NavBar from '../components/NavBar/NavBar'
 
@@ -25,6 +26,7 @@ export default function Home() {
         <CategoriesList />
         {/* <NavBar/> */}
         <BalloonCard/>
+        {/* <CardDescription/> */}
       </main>
 
     
