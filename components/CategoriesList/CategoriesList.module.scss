@@ -1,33 +1,28 @@
 
-.showMenu {
-    display: block;
-    // margin-left: 280px;
+.categories_list {
+  margin-top: 40px;
 }
-// .categories_list {
-// //   margin: 20px;
-// }
 .categories_list__item {
     border-bottom: 1px solid #000;
     margin-top: 20px;
 }
 .button_select {
-    display: flex;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .button_baby__icon {
-    margin-top: 7px;
-    margin-left: 30px;
+    margin-left: 20px;
     width: 15px;
     height: 15px;
 }
 .button_birthDay__icon {
-    margin-top: 7px;
-    margin-left: 125px;
+    margin-left: 115px;
     width: 15px;
     height: 15px;
 }
 .button_thematics__icon {
-    margin-top: 7px;
-    margin-left: 140px;
+    margin-left: 130px;
     width: 15px;
     height: 15px;
 }
@@ -37,18 +32,18 @@
 }
 
 @media screen and (min-width: 768px){
-    .showMenu {
-        margin-left: 700px;
-    }
     .categories_list {
-      margin: 30px;
+      width: 500px;
     }
   
     .button_baby__icon {
-        margin-left: 400px;
+        margin-left: 248px;
     }
     .button_birthDay__icon {
-        margin-left: 493px;
+        margin-left: 340px;
+    }
+    .button_thematics__icon {
+        margin-left: 360px;
     }
     .categories_listBaby__item, .categories_listBirtDay__item {
         margin-left: 20px;
@@ -56,9 +51,6 @@
     }
 }
 @media screen and (min-width: 1200px){
-    .showMenu {
-       display: none;
-    }
     .categories_list {
      display: flex;
      margin-left: 0px;
