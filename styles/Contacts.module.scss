@@ -3,5 +3,8 @@
 // }
 .contacts_map {
    width: 280px;
-    
+   & iframe {
+      width: 100%;
+   } 
+   margin-top: 20px;
 }

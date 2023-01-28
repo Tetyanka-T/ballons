@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import {
@@ -29,27 +30,31 @@ const Header = () => {
         {showMenu === true && <Cansel className={s.showMenu_cansel} />}
       </button>
       {showMenu === true && <CategoriesList />}
+
       {showMenu === false && (
-        <ul className={s.header_user__list}>
-          <li className={s.header_user__item}>
-            <Search className={s.header_icon} />
-          </li>
-          <li className={s.header_user__item}>
-            <a>
-              <User className={s.header_icon} />
-            </a>
-          </li>
-          <li className={s.header_user__item}>
-            <Link href="/favorite">
-              <FavoriteContour className={s.header_icon} />
-            </Link>
-          </li>
-          <li className={s.header_user__item}>
-            <Link href="/basket">
-              <Basket className={s.header_icon} />
-            </Link>
-          </li>
-        </ul>
+        <div className={s.header_logo}>
+          <Image src="/logo.png" alt="logo" width={100} height={60} />
+          <ul className={s.header_user__list}>
+            <li className={s.header_user__item}>
+              <Search className={s.header_icon} />
+            </li>
+            <li className={s.header_user__item}>
+              <a>
+                <User className={s.header_icon} />
+              </a>
+            </li>
+            <li className={s.header_user__item}>
+              <Link href="/favorite">
+                <FavoriteContour className={s.header_icon} />
+              </Link>
+            </li>
+            <li className={s.header_user__item}>
+              <Link href="/basket">
+                <Basket className={s.header_icon} />
+              </Link>
+            </li>
+          </ul>
+        </div>
       )}
     </div>
   );

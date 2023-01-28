@@ -15,9 +15,15 @@ position: absolute;
 top: 20px;
 left: 250px;
 }
+.header_logo {
+    display: flex;
+    margin-left: 15px;
+}
 .header_user__list {
     display: flex;
-    margin-left: auto;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
     & .header_user__item:last-child {
         margin-right: 0;
     }
@@ -29,6 +35,7 @@ left: 250px;
 .header_icon {
     width: 20px;
     height: 20px;
+    fill: #FF8C00;
 }
 
 @media screen  and (min-width: 768px) {

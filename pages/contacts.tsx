@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import style from '../styles/common.module.scss'
@@ -33,9 +34,11 @@ export default function ContactsPage() {
                     <p>Вс: 9.00 - 15.00</p>
                 </li>
             </ul>
+            <Image src='/shop.jpg' alt='' width={280} height={150}/>
         <div className={s.contacts_map}>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.010287963228!2d33.394911155599495!3d47.897486177353585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40db2127583a03a1%3A0x8e2ada953ee178c!2z0JLQtdGB0LXQu9CwINCS0LjRgtGW0LLQutCw!5e0!3m2!1suk!2sua!4v1667226435133!5m2!1suk!2sua" width="600" height="450" style={{border:0}} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2675.010287963228!2d33.394911155599495!3d47.897486177353585!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40db2127583a03a1%3A0x8e2ada953ee178c!2z0JLQtdGB0LXQu9CwINCS0LjRgtGW0LLQutCw!5e0!3m2!1suk!2sua!4v1667226435133!5m2!1suk!2sua" style={{border:0}} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
+        
         </div>
       
         </div>

@@ -23,10 +23,8 @@ export default function Home() {
       <main className={common.container}>
      
         <Header />
-        {/* <CategoriesList /> */}
-        {/* <NavBar/> */}
-        <BalloonCard/>
-        {/* <CardDescription/> */}
+        {/* <BalloonCard/> */}
+        <CardDescription/>
       </main>
 
     

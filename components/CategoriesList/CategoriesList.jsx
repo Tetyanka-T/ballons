@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { Cansel, Menu, Select } from "../svg";
 import s from "./CategoriesList.module.scss";
@@ -35,6 +36,7 @@ const CategoriesList = () => {
 
   return (
     <div>
+      <Image src="/logo.png" alt="logo" width={150} height={80} className={s.logo}/>
       <ul className={s.categories_list}>
         <li className={s.categories_list__item}>
           <Link href="/categories">Дивитись всі композиції</Link>
