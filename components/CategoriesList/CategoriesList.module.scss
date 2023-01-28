@@ -1,8 +1,12 @@
+// .categoriesList__container {
+//     height: 100hw;
+// }
 .logo {
    margin-top: 10px;
 }
 .categories_list {
   margin-top: 20px;
+  
 }
 .categories_list__item {
     border-bottom: 1px solid #000;
@@ -28,7 +32,7 @@
     width: 15px;
     height: 15px;
 }
-.categories_listBaby__item, .categories_listBirtDay__item {
+.categories_listBaby__item, .categories_listBirthDay__item, .categories_listThematics__item {
     margin-left: 15px;
     margin-top: 5px;
 }
@@ -47,36 +51,60 @@
     .button_thematics__icon {
         margin-left: 360px;
     }
-    .categories_listBaby__item, .categories_listBirtDay__item {
+    .categories_listBaby__item, .categories_listBirthDay__item, .categories_listThematics__item {
         margin-left: 20px;
         margin-top: 10px;
     }
 }
 @media screen and (min-width: 1200px){
+    .logo {
+        display: none;
+    }
     .categories_list {
      display: flex;
-     margin-left: 0px;
-     margin-right: 0;
+     margin: 0 auto;
+     width: 100%;
     }
     .categories_list__item {
         border-bottom: none;
-        margin-right: 30px;
+        margin-right: 10px;
+        margin-top: 0;
+        text-align: center;
+        position: relative;
+        & svg {
+            margin-left: -3px;
+        }
     }
     .categories_list .categories_list__item:last-child {
         margin-right: 0;
     }
-    .button_baby__icon {
-        margin-left: 0px;
-        width: 8px;
-        height: 5px;
+
+    .categories_listBaby, .categories_listBirthDay, .categories_listThematics  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+       
+        width: 100vw;
+        height: 80px;
+        background-color: #FF8C00;
+        z-index: 200;
+        margin: 0 auto;
+
+        & li {
+            margin-right: 20px;
+        }
     }
-    .button_birthDay__icon {
-        margin-left: 0px;
-        width: 8px;
-        height: 5px;
+    .categories_listBaby {
+        left: -350px;
     }
-    .categories_listBaby__item, .categories_listBirtDay__item {
-        margin-left: 20px;
-        margin-top: 10px;
-    }
+    // .categories_listBirthDay {
+    //     left: -100px;
+    // }
+
+    // .categories_listThematics {
+    //     left: -300px;
+    // }
+
 }

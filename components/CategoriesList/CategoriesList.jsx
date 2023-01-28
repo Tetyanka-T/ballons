@@ -19,7 +19,7 @@ const CategoriesList = () => {
   };
 
   const onShowBirthDays = () => {
-    SetBaby(true);
+    SetBirthDay(true);
     toggleBirthDays();
   };
   const toggleBirthDays = () => {
@@ -35,8 +35,14 @@ const CategoriesList = () => {
   };
 
   return (
-    <div>
-      <Image src="/logo.png" alt="logo" width={150} height={80} className={s.logo}/>
+    <div className={s.categoriesList__container}>
+      <Image
+        src="/logo.png"
+        alt="logo"
+        width={150}
+        height={80}
+        className={s.logo}
+      />
       <ul className={s.categories_list}>
         <li className={s.categories_list__item}>
           <Link href="/categories">Дивитись всі композиції</Link>
@@ -69,25 +75,25 @@ const CategoriesList = () => {
             <Select className={s.button_birthDay__icon} />
           </button>
           {birthDay && (
-            <ul className={s.categories_listBirtDay}>
-              <li className={s.categories_listBirtDay__item}>
+            <ul className={s.categories_listBirthDay}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/birthday">Дивитись все</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/birthday/first">
                   Перший День народження
                 </Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/birthday/girls">Для дівчинки</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/birthday/boys">Для хлопчика</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/birthday/she">Для неї</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listBirthDay__item}>
                 <Link href="/categories/baby/he">Для нього</Link>
               </li>
             </ul>
@@ -102,25 +108,25 @@ const CategoriesList = () => {
             <Select className={s.button_thematics__icon} />
           </button>
           {thematics && (
-            <ul className={s.categories_listBirtDay}>
-              <li className={s.categories_listBirtDay__item}>
+            <ul className={s.categories_listThematics}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics">Дивитись все</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/valentine's-day">
                   День Закоханих
                 </Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/hen-party">Девіч-вечір</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/wedding">Весілля</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/halloween">Хелловін</Link>
               </li>
-              <li className={s.categories_listBirtDay__item}>
+              <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/new-year">Новий Рік</Link>
               </li>
             </ul>

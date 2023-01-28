@@ -4,11 +4,10 @@ import Footer from '../components/Footer/Footer'
 import CategoriesList from '../components/CategoriesList/CategoriesList'
 import s from '../styles/Home.module.scss'
 import common from '../styles/common.module.scss'
-import Container from '../components/Container/Container'
-import BalloonCard from '../components/BalloonCard/BalloonCard'
+// import BalloonCard from '../components/BalloonCard/BalloonCard'
 import CardDescription from '../components/CardDescription/CardDescription'
 
-import NavBar from '../components/NavBar/NavBar'
+// import NavBar from '../components/NavBar/NavBar'
 
 export default function Home() {
   return (
@@ -23,6 +22,7 @@ export default function Home() {
       <main className={common.container}>
      
         <Header />
+        {/* <CategoriesList /> */}
         {/* <BalloonCard/> */}
         <CardDescription/>
       </main>

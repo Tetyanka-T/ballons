@@ -33,7 +33,11 @@ const Header = () => {
 
       {showMenu === false && (
         <div className={s.header_logo}>
-          <Image src="/logo.png" alt="logo" width={100} height={60} />
+          <div className={s.logo}>
+            {/* <Image src="/logo2.jpg" alt="logo" width={100} height={100} /> */}
+            <Image src="/logo.png" alt="logo" width={100} height={100} />
+          </div>
+
           <ul className={s.header_user__list}>
             <li className={s.header_user__item}>
               <Search className={s.header_icon} />
