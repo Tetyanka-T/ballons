@@ -12,3 +12,4 @@ export {default as Cansel} from './cansel.svg';
 export {default as Cross} from './cross.svg';
 export {default as SortDown} from './sort-down.svg';
 export {default as SortUp} from './sort-up.svg';
+export {default as NextPage} from './next.svg';

@@ -1,0 +1,19 @@
+.categories_list {
+    display: flex;
+
+    & li {
+        margin-right: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+            // fill: #696969;
+            fill: #FF8C00;
+        }
+    }
+
+    & li:last-child {
+        margin-right: 0;
+    }
+}
