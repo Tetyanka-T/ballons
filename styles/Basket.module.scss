@@ -1,11 +1,11 @@
+@use './variables' as *;
 .basketPage {
     display: flex;
-    margin-bottom: 1px solid #696969;
+    margin-bottom: 1px solid $main-color;
 }
 .basketPage__cont {
     margin-left: 10px;
     margin-bottom: 10px;
-    
 }
 .basket_couter {
     display: flex;
@@ -16,7 +16,6 @@
 }
 .basket_couter__list__item {
     margin-right: 10px;
- 
 }
 .basket_couter__list__item_button {
     display: flex;
@@ -24,11 +23,11 @@
     align-items: center;
     width: 25px;
     height: 25px;
-    border: 1px solid #FF8C00;
+    border: 1px solid $accent-color;
 }
 .basket_couter__list__item_button_icon {
     display: block;
-   padding: 5px;
+    padding: 5px;
     
 }
 .basket__price {
@@ -38,7 +37,7 @@
     display: flex;
     justify-content: space-between;
     margin-top: 15px;
-    border-top: 1px solid #696969;
+    border-top: 1px solid $main-color;
 }
 .basket_order_container {
     display: flex;
@@ -51,7 +50,7 @@
 .basket_order_button {
     // margin-left: 20px;
     width: 260px;
-    background-color: #FF8C00;
+    background-color: $accent-color;
     padding: 3px;
     border-radius: 40px;
 }

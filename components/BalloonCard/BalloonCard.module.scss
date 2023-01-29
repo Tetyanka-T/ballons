@@ -1,4 +1,4 @@
-/* autoprefixer grid: autoplace */
+@use '../../styles/variables' as *;
 .list {
     // margin: 0 auto;
     margin: 10px;
@@ -7,12 +7,34 @@
     grid-gap: 15px;
 }
 
-// .card_container {
-//     background: #ffffff;
-//     box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
-//     border-radius: 0px 0px 4px 4px;
-//     padding: 15px;
-// }
+.card_container {
+ 
+    &:hover,
+    &:focus {
+        background: #ffffff;
+        box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+        border-radius: 0px 0px 4px 4px;
+        padding: 15px;
+        .card_basket__button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $accent-color;
+            border-radius: 20px;
+            width: 120px;
+            margin-top: 20px;
+            &:hover,
+            &:focus {
+                background-color: $accent-color;
+
+                & svg {
+                    fill: #ffffff;
+                }
+            }
+
+        }
+    }
+}
 // .card_decr {
 //     display: flex;
 // }
@@ -20,34 +42,45 @@
     // display: flex;
     // margin-top: 10px;
     margin-bottom: 20px;
- 
-    // justify-content: center;
-    // align-items: center;
-    // margin-left: auto;
 }
 // .img_container {
 //     width: 100%;
 // }
+.card_button__favorite {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin-left: 100px;
+    margin-top: 10px;
+
+   
+    &:hover,
+    &:focus {
+        background-color: $accent-color;
+
+        & .card_icon__fav {
+           fill:#ffffff;
+        }
+    }
+}
 .card_icon__fav {
     width: 20px;
     height: 20px;
-    margin-left: 100px;
-    margin-top: 10px;
+    
+    fill: $accent-color;
     // position: absolute;
     // top: 80px;
     // left: 50px;
 }
-.card_basket {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid;
-    border-radius: 20px;
-    width: 120px;
-    margin-top: 20px;
+.card_basket__button {
+    display: none;
 }
-.card_basket__icon {
+.card_basket__button__icon {
     width: 15px;
     height: 15px;
     margin-left: 5px;
+    fill: $accent-color;
 }

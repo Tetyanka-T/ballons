@@ -18,7 +18,7 @@ const ExtractFromMaternityHospital = () => {
         <main className={common.container}>
           <Header />
           <div className={common.section}>
-            {/* <h1 className={common.section_title}>Виписка з пологового будинку</h1> */}
+           
 
             <ul className={s.categories_list}>
               <li>
@@ -31,7 +31,12 @@ const ExtractFromMaternityHospital = () => {
               Виписка з пологового будинку
               </li>
             </ul>
-
+            <h1 className={common.section_title}>Виписка з пологового будинку</h1>
+            <div className={s.categories_filters__button}>
+              <button className={s.categories_filters__button__parameters}>Фільтр</button>
+              <button className={s.categories_filters__button__sort}>Впорядкувати</button>
+            </div>
+           
             <BalloonCard/>
           </div>
 

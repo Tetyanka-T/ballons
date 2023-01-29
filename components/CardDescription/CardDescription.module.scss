@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .cardDescription_container {
     position: relative;
 }
@@ -5,14 +7,14 @@
     position: absolute;
     top: 15px;
     left: 235px;
-    box-shadow: 0px 1px 3px #FF8C00, 0px 1px 1px #FF8C00, 0px 2px 1px #FF8C00;
+    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
     border-radius: 50px;
     padding: 6px;
     background-color: #ffffff;
     
     &:hover,
     &:focus {
-        background-color: #FF8C00;
+        background-color: $accent-color;
 
         & svg {
             fill: #ffffff;
@@ -22,7 +24,7 @@
 .cardDescription_button__icon {
     width: 20px;
     height: 20px;
-    fill: #FF8C00;
+    fill: $accent-color;
 }
 .cardDescription_descriptionComposition {
     margin-top: 15px;
@@ -39,7 +41,7 @@
     margin-left: auto;
     width: 90px;
     border-radius: 20px;
-    box-shadow: 0px 1px 3px #FF8C00, 0px 1px 1px #FF8C00, 0px 2px 1px #FF8C00;
+    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
     padding: 5px;
 
     & svg {
@@ -48,7 +50,7 @@
 
     &:hover,
     &:focus {
-        background-color: #FF8C00;
+        background-color: $accent-color;
 
         & svg {
             fill: #ffffff;

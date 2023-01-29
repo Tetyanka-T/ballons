@@ -1,3 +1,5 @@
+@use '../../styles/variables' as *;
+
 .header {
     display: flex;
     padding: 20px 0 20px 0;
@@ -6,6 +8,7 @@
 .logo {
     border-radius: 50px;
     overflow: hidden;
+   
 }
 .showMenu {
     display: block;
@@ -38,7 +41,7 @@
 .header_icon {
     width: 20px;
     height: 20px;
-    fill: #696969;
+    fill: $main-color;
 }
 
 @media screen  and (min-width: 768px) {

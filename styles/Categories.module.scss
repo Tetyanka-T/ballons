@@ -1,5 +1,7 @@
+@use './variables' as *;
 .categories_list {
     display: flex;
+    margin-bottom: 20px;
 
     & li {
         margin-right: 10px;
@@ -9,7 +11,7 @@
 
         & svg {
             // fill: #696969;
-            fill: #FF8C00;
+            fill: $accent-color;
         }
     }
 
@@ -17,3 +19,33 @@
         margin-right: 0;
     }
 }
+
+.categories_filters__button {
+    font-size: 0;
+    white-space: nowrap;
+    border-top: 1px solid $accent-color;
+    border-bottom: 1px solid $accent-color;
+    color: $main-color;
+    cursor: pointer;
+
+    & button {
+        width: 50%;
+        font-size: 2.8125vw;
+        line-height: 9.53125vw;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:first-child {
+            border-right: 1px solid $accent-color;
+        }
+
+    }
+}
+
+
+// .categories_filters__button__sort {
+//     border-left: 1px solid $accent-color;
+//     padding: 10px;
+//     text-align: center;
+// }
