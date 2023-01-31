@@ -2,6 +2,8 @@
 
 .cardDescription_container {
     position: relative;
+    color: $text-color;
+    padding-bottom: 15px;
 }
 .cardDescription_button__favorite {
     position: absolute;
@@ -34,23 +36,52 @@
     height: 20px;
     fill: $main-color;
 }
+.cardDescription_title {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.cardDescription_article {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.02;
+}
 .cardDescription_descriptionComposition {
     margin-top: 15px;
     margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
 }
 .cardDescription_price_container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.cardDescription_price {
+    font-weight: 600;
+}
+.cardDescription_inform {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.02;
 }
 .cardDescription_button__basket {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    width: 90px;
+    width: 100px;
     border-radius: 20px;
     box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
-    padding: 5px;
+    padding: 6px;
 
     & svg {
         margin-left: 5px;
@@ -84,6 +115,9 @@
     .cardDescription_button__favorite {
         left: 165px;
         top: 25px;
+    }
+    .cardDescription_inform {
+        margin-top: 30px;
     }
 }
 @media screen and (min-width: 1200px) {

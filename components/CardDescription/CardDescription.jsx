@@ -30,6 +30,10 @@ const CardDescription = () => {
             <Basket className={s.cardDescription_button__icon} />
           </button>
         </div>
+        <p className={s.cardDescription_inform}>
+          *Просимо звернути увагу: колір товару може відрізнятися в залежності
+          від освітлення та налаштувань Вашого екрану.
+        </p>
       </div>
     </div>
   );

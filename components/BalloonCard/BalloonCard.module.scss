@@ -7,10 +7,12 @@
 }
 
 .card_container {
+    color: $text-color;
+    padding-bottom: 10px;
     &:hover,
     &:focus {
         background: #ffffff;
-        box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+        box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
         border-radius: 0px 0px 4px 4px;
         padding: 8px;
 
@@ -26,6 +28,10 @@
             border-radius: 20px;
             width: 100px;
             margin-top: 20px;
+            padding: 5px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.02;
             &:hover,
             &:focus {
                 background-color: $accent-color;
@@ -42,9 +48,18 @@
 }
 
 .card_title {
-    margin-bottom: 20px;
+    max-width: 150px;
+    margin: 10px 0 20px 5px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
 }
-
+.card_price {
+    margin-left: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.02;
+}
 .cardDescription_button__favorite {
     position: absolute;
     top: 5px;
@@ -60,7 +75,6 @@
     &:hover,
     &:focus {
         background-color: $accent-color;
-      
 
         & .cardDescription_button__icon__select {
             display: flex;
@@ -92,12 +106,15 @@
 
 @media screen and (min-width: 768px) {
     .list {
-       
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 15px;
     }
     .img {
         width: 200px;
+    }
+    .card_title {
+        max-width: 200px;
+        font-size: 20px;
     }
     .card_basket__button {
         width: 150px;
@@ -129,6 +146,10 @@
     }
     .img {
         width: 350px;
+    }
+    .card_title {
+        max-width: 350px;
+        font-size: 22px;
     }
     .card_basket__button {
         width: 190px;

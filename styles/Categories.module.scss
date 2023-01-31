@@ -1,7 +1,14 @@
 @use './variables' as *;
 .categories_list {
     display: flex;
-    margin-bottom: 20px;
+    justify-content: start;
+    align-items: center;
+    // margin-bottom: 20px;
+    color: $text-color;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.02;
+
 
     & li {
         margin-right: 10px;
@@ -10,7 +17,6 @@
         align-items: center;
 
         & svg {
-            // fill: #696969;
             fill: $accent-color;
         }
     }
@@ -21,23 +27,26 @@
 }
 
 .categories_filters__button {
-    font-size: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
     white-space: nowrap;
-    border-top: 1px solid $accent-color;
-    border-bottom: 1px solid $accent-color;
+    border-top: 2px solid $accent-color;
+    border-bottom: 2px solid $accent-color;
     color: $main-color;
     cursor: pointer;
 
     & button {
         width: 50%;
-        font-size: 2.8125vw;
-        line-height: 9.53125vw;
+        padding: 10px;
+        // font-size: 2.8125vw;
+        // line-height: 9.53125vw;
         text-align: center;
         display: inline-block;
         vertical-align: middle;
 
         &:first-child {
-            border-right: 1px solid $accent-color;
+            border-right: 2px solid $accent-color;
         }
 
     }

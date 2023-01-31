@@ -7,16 +7,21 @@
 }
 .categories_list {
   margin-top: 20px;
-  
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: $text-color;
 }
 .categories_list__item {
     border-bottom: 1px solid $main-color;
-    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .button_select {
     display: flex;
     justify-content: center;
     align-items: center;
+ 
 }
 .button_baby__icon {
     margin-left: 20px;
@@ -35,7 +40,8 @@
 }
 .categories_listBaby__item, .categories_listBirthDay__item, .categories_listThematics__item {
     margin-left: 15px;
-    margin-top: 5px;
+    margin-top: 15px;
+  
 }
 
 @media screen and (min-width: 768px){
@@ -44,13 +50,13 @@
     }
   
     .button_baby__icon {
-        margin-left: 248px;
+        margin-left: 240px;
     }
     .button_birthDay__icon {
         margin-left: 340px;
     }
     .button_thematics__icon {
-        margin-left: 360px;
+        margin-left: 355px;
     }
     .categories_listBaby__item, .categories_listBirthDay__item, .categories_listThematics__item {
         margin-left: 20px;

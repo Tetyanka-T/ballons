@@ -23,8 +23,8 @@ export default function Home() {
      
         <Header />
         {/* <CategoriesList /> */}
-        <BalloonCard/>
-        {/* <CardDescription/> */}
+        {/* <BalloonCard/> */}
+        <CardDescription/>
       </main>
 
     
