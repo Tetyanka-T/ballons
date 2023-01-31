@@ -1,79 +1,84 @@
 @use '../../styles/variables' as *;
 .list {
-    // margin: 0 auto;
     margin: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
+    gap: 10px;
 }
 
 .card_container {
- 
     &:hover,
     &:focus {
         background: #ffffff;
         box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
         border-radius: 0px 0px 4px 4px;
-        padding: 15px;
+        padding: 8px;
+
+        .cardDescription_button__favorite {
+            left: 75px;
+        }
+
         .card_basket__button {
             display: flex;
             justify-content: center;
             align-items: center;
             border: 1px solid $accent-color;
             border-radius: 20px;
-            width: 120px;
+            width: 100px;
             margin-top: 20px;
             &:hover,
             &:focus {
                 background-color: $accent-color;
 
                 & svg {
-                    fill: #ffffff;
+                    fill: $main-color;
                 }
             }
-
         }
     }
 }
-// .card_decr {
-//     display: flex;
-// }
+.img_container {
+    position: relative;
+}
+
 .card_title {
-    // display: flex;
-    // margin-top: 10px;
     margin-bottom: 20px;
 }
-// .img_container {
-//     width: 100%;
-// }
-.card_button__favorite {
+
+.cardDescription_button__favorite {
+    position: absolute;
+    top: 5px;
+    left: 90px;
+    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: $accent-color;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50px;
-    margin-left: 100px;
-    margin-top: 10px;
-
-   
+    
     &:hover,
     &:focus {
         background-color: $accent-color;
+      
 
-        & .card_icon__fav {
-           fill:#ffffff;
+        & .cardDescription_button__icon__select {
+            display: flex;
+            fill: $main-color;
+            
+        }
+        & .cardDescription_button__icon {
+            display: none;
         }
     }
 }
-.card_icon__fav {
+.cardDescription_button__icon__select {
+    display: none;
+}
+.cardDescription_button__icon {
     width: 20px;
     height: 20px;
-    
-    fill: $accent-color;
-    // position: absolute;
-    // top: 80px;
-    // left: 50px;
+    fill: $main-color;
 }
 .card_basket__button {
     display: none;
@@ -83,4 +88,62 @@
     height: 15px;
     margin-left: 5px;
     fill: $accent-color;
+}
+
+@media screen and (min-width: 768px) {
+    .list {
+       
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 15px;
+    }
+    .img {
+        width: 200px;
+    }
+    .card_basket__button {
+        width: 150px;
+        margin: 0 auto;
+    }
+    .cardDescription_button__favorite {
+        left: 150px;
+    }
+
+    .card_container {
+                
+        &:hover,
+        &:focus {
+            padding: 10px;
+            .cardDescription_button__favorite {
+                left: 137px;
+            }
+            .card_basket__button {
+                width: 130px;
+                padding: 8px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .img {
+        width: 350px;
+    }
+    .card_basket__button {
+        width: 190px;
+    }
+    .cardDescription_button__favorite {
+        left: 205px;
+    }
+
+    .card_container {
+        &:hover,
+        &:focus {
+    
+            .cardDescription_button__favorite {
+                left: 190px;
+            }
+        }
+    }
 }

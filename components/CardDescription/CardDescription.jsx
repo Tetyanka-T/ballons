@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Basket, FavoriteContour } from "../svg";
+import { Basket, FavoriteContour, FavoriteSelect } from "../svg";
 import photo1 from "../../public/photo_1.jpg";
 import s from "./CardDescription.module.scss";
 
@@ -15,6 +15,7 @@ const CardDescription = () => {
       />
       <button className={s.cardDescription_button__favorite}>
         <FavoriteContour className={s.cardDescription_button__icon} />
+        <FavoriteSelect className={s.cardDescription_button__icon__select} />
       </button>
       <div>
         <h3 className={s.cardDescription_title}>Супер-пупер композиція</h3>
@@ -23,9 +24,9 @@ const CardDescription = () => {
           Композиція для дівчинки на День народження складається з ...
         </p>
         <div className={s.cardDescription_price_container}>
-          <p className={s.cardDescription_price}>2000 UAH</p>
+          <p className={s.cardDescription_price}>2000 грн.</p>
           <button className={s.cardDescription_button__basket}>
-            Хочу
+            Купити
             <Basket className={s.cardDescription_button__icon} />
           </button>
         </div>

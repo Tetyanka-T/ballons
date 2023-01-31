@@ -43,7 +43,7 @@ const CategoriesList = () => {
         height={80}
         className={s.logo}
       /> */}
-      <Image src="/logo2.jpg" alt="logo" width={100} height={100} />
+      {/* <Image src="/logo2.jpg" alt="logo" width={100} height={100} /> */}
       <ul className={s.categories_list}>
         <li className={s.categories_list__item}>
           <Link href="/categories">Дивитись всі композиції</Link>
@@ -119,7 +119,7 @@ const CategoriesList = () => {
                 </Link>
               </li>
               <li className={s.categories_listThematics__item}>
-                <Link href="/categories/thematics/hen-party">Девіч-вечір</Link>
+                <Link href="/categories/thematics/hen-party">Дівич-вечір</Link>
               </li>
               <li className={s.categories_listThematics__item}>
                 <Link href="/categories/thematics/wedding">Весілля</Link>

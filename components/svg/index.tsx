@@ -8,6 +8,7 @@ export {default as Search} from './search.svg';
 export {default as Select} from './select.svg';
 export {default as Favorite} from './favorite.svg';
 export {default as FavoriteContour} from './fav-contour.svg';
+export {default as FavoriteSelect} from './favorite-select.svg';
 export {default as Cansel} from './cansel.svg';
 export {default as Cross} from './cross.svg';
 export {default as SortDown} from './sort-down.svg';

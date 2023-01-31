@@ -42,11 +42,11 @@ const Header = () => {
             <li className={s.header_user__item}>
               <Search className={s.header_icon} />
             </li>
-            <li className={s.header_user__item}>
+            {/* <li className={s.header_user__item}>
               <a>
                 <User className={s.header_icon} />
               </a>
-            </li>
+            </li> */}
             <li className={s.header_user__item}>
               <Link href="/favorite">
                 <FavoriteContour className={s.header_icon} />
