@@ -1,0 +1,75 @@
+@use './variables' as *;
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: $text-color;
+}
+.counter_close {
+    position: relative;
+}
+.basket_close {
+    position: absolute;
+    top: 2px;
+    left: 250px;
+}
+.basket_sum {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0 15px 0;
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.basket_order_container {
+    display: flex;
+    align-items: center;
+    color: $text-color;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.basket_order_continu {
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid $main-color;
+}
+.basket_order_button {
+    margin-left: 20px;
+    width: 290px;
+    background-color: $accent-color;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+@media screen and (min-width: 768px) {
+.basket_close {
+
+ 
+    left: 600px;
+}
+.basket_sum {
+ margin: 20px;
+}
+.basket_order_container {
+    font-size: 18px;
+    justify-content: center;
+}
+
+.basket_order_continu {
+    font-size: 16px;
+   
+}
+.basket_order_button {
+    margin-left: 60px;
+    width: 300px;
+    
+}
+}

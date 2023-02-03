@@ -15,6 +15,7 @@ import s from "./Header.module.scss";
 
 const Header = () => {
   const [showMenu, SetShowMenu] = useState(false);
+  // const [showInfo, SetShowInfo] = useState(false);
   const onShowMenu = () => {
     SetShowMenu(true);
     toggleMenu();
@@ -23,43 +24,95 @@ const Header = () => {
     showMenu ? SetShowMenu(false) : SetShowMenu(true);
   };
 
+  // const onShowInfo = () => {
+  //   SetShowInfo(true);
+  //   toggleInfo();
+  // };
+  // const toggleInfo = () => {
+  //   showInfo ? SetShowInfo(false) : SetShowInfo(true);
+  // };
+
   return (
     <div className={s.header}>
-      <button onClick={() => onShowMenu()} className={s.showMenu}>
-        {showMenu === false && <Menu />}
-        {showMenu === true && <Cansel className={s.showMenu_cansel} />}
-      </button>
-      {showMenu === true && <CategoriesList />}
+      {!showMenu && (
+        <div className={s.header_menu}>
+          <ul className={s.header_info__list}>
+            <li className={s.header_info__list__item}>Оплата і доставка</li>
+            <li className={s.header_info__list__item}>Контакти</li>
+            <li className={s.header_info__list__item}>Про нас</li>
+          </ul>
+        </div>
+      )}
 
-      {showMenu === false && (
-        <div className={s.header_logo}>
-          {/* <div className={s.logo}>
+      <div className={s.header_nav}>
+        <button onClick={() => onShowMenu()} className={s.showMenu}>
+          {showMenu === false && <Menu />}
+          {showMenu === true && <Cansel className={s.showMenu_cansel} />}
+        </button>
+        {showMenu === true && <CategoriesList />}
+
+        {showMenu === false && (
+          <div className={s.header_logo}>
+            <div className={s.logo}>
+              <Image src="/logo.png" alt="logo" width={80} height={80} />
+            </div>
+
+            <ul className={s.header_user__list}>
+              <li className={s.header_user__item}>
+                <Search className={s.header_icon} />
+              </li>
+              <li className={s.header_user__item}>
+                <Link href="/favorite">
+                  <FavoriteContour className={s.header_icon} />
+                </Link>
+              </li>
+              <li className={s.header_user__item}>
+                <Link href="/basket">
+                  <Basket className={s.header_icon} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
+
+      <div className={s.header_nav}>
+        {/* <button onClick={() => onShowMenu()} className={s.showMenu}>
+          {showMenu === false && <Menu />}
+          {showMenu === true && <Cansel className={s.showMenu_cansel} />}
+        </button>
+        {showMenu === true && <CategoriesList />} */}
+
+        {/* {showMenu === false && (
+          <div className={s.header_logo}> */}
+        {/* <div className={s.logo}>
             <Image src="/logo2.jpg" alt="logo" width={100} height={100} />
             <Image src="/logo.png" alt="logo" width={100} height={100} />
           </div> */}
 
-          <ul className={s.header_user__list}>
-            <li className={s.header_user__item}>
-              <Search className={s.header_icon} />
-            </li>
-            {/* <li className={s.header_user__item}>
+        {/* <ul className={s.header_user__list}>
+              <li className={s.header_user__item}>
+                <Search className={s.header_icon} />
+              </li> */}
+        {/* <li className={s.header_user__item}>
               <a>
                 <User className={s.header_icon} />
               </a>
             </li> */}
-            <li className={s.header_user__item}>
-              <Link href="/favorite">
-                <FavoriteContour className={s.header_icon} />
-              </Link>
-            </li>
-            <li className={s.header_user__item}>
-              <Link href="/basket">
-                <Basket className={s.header_icon} />
-              </Link>
-            </li>
-          </ul>
-        </div>
-      )}
+        {/* <li className={s.header_user__item}>
+                <Link href="/favorite">
+                  <FavoriteContour className={s.header_icon} />
+                </Link>
+              </li>
+              <li className={s.header_user__item}>
+                <Link href="/basket">
+                  <Basket className={s.header_icon} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )} */}
+      </div>
     </div>
   );
 };

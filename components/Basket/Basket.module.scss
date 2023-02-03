@@ -1,0 +1,114 @@
+@use '../../styles/variables' as *;
+.basket_list {
+    & .basket_list__item:last-child {
+        margin-bottom: 0;
+    }
+}
+.basket_list__item {
+    display: flex;
+    margin-bottom: 10px;
+    border-bottom: 1px solid $main-color;
+    padding: 6px 0 6px 0;
+}
+.basket_list__item__product {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: $text-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.02;
+}
+.basket_list__item__product__title {
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 15px;
+}
+.basket_list__item__product__art {
+    font-size: 12px;
+}
+.basket_couter {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+.basket_couter__list {
+    display: flex;
+    align-items: center;
+
+    & .basket_couter__list__item:last-child {
+        margin-right: 0;
+        margin-left: 10px;
+    }
+}
+.basket_couter__list__item {
+    margin-right: 10px;
+}
+.basket_couter__list__item_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid $accent-color;
+}
+
+.basket__price {
+    margin-left: 15px;
+}
+
+@media screen and (min-width: 768px) {
+    .basket_list__item {
+        margin-bottom: 15px;
+        padding: 35px 0 35px 0;
+    }
+    .basket_photo {
+        width: 100px;
+        height: 80px;
+        & img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .basket_list__item__product {
+        margin-left: 30px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 1.2;
+    }
+    .basket_list__item__product__title {
+        margin-bottom: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+        font-size: 16px;
+    }
+   
+    .basket_couter {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .basket_couter__list {
+        display: flex;
+        align-items: center;
+    
+        & .basket_couter__list__item:last-child {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+    }
+    .basket_couter__list__item {
+        margin-right: 20px;
+    }
+    .basket_couter__list__item_button {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .basket__price {
+        margin-left: 30px;
+    }
+    
+    
+}
