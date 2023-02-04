@@ -15,7 +15,6 @@ import s from "./Header.module.scss";
 
 const Header = () => {
   const [showMenu, SetShowMenu] = useState(false);
-  // const [showInfo, SetShowInfo] = useState(false);
   const onShowMenu = () => {
     SetShowMenu(true);
     toggleMenu();
@@ -24,22 +23,20 @@ const Header = () => {
     showMenu ? SetShowMenu(false) : SetShowMenu(true);
   };
 
-  // const onShowInfo = () => {
-  //   SetShowInfo(true);
-  //   toggleInfo();
-  // };
-  // const toggleInfo = () => {
-  //   showInfo ? SetShowInfo(false) : SetShowInfo(true);
-  // };
-
   return (
     <div className={s.header}>
       {!showMenu && (
         <div className={s.header_menu}>
           <ul className={s.header_info__list}>
-            <li className={s.header_info__list__item}>Оплата і доставка</li>
-            <li className={s.header_info__list__item}>Контакти</li>
-            <li className={s.header_info__list__item}>Про нас</li>
+            <li className={s.header_info__list__item}>
+              <Link href="/payment-delivery">Оплата і доставка</Link>
+            </li>
+            <li className={s.header_info__list__item}>
+              <Link href="/contacts">Контакти</Link>
+            </li>
+            <li className={s.header_info__list__item}>
+              <Link href="/about-us">Про нас</Link>
+            </li>
           </ul>
         </div>
       )}

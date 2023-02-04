@@ -3,6 +3,8 @@ export {default as Basket} from './basket.svg';
 export {default as Home} from './home.svg';
 export {default as Instagram} from './instagram.svg';
 export {default as Location} from './location.svg';
+export {default as Call} from './call.svg';
+export {default as Leter} from './leter.svg';
 export {default as Menu} from './menu.svg';
 export {default as Search} from './search.svg';
 export {default as Select} from './select.svg';

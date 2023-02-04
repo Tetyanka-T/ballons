@@ -1,9 +1,11 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-import common from '../styles/common.module.scss'
+import style from '../styles/common.module.scss'
 
-export default function PaymentPage() {
+
+export default function AboutUs() {
   return (
     <div>
       <Head>
@@ -12,9 +14,12 @@ export default function PaymentPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={common.container}>
+      <main className={style.container}>
         <Header />
-        <h2>Оплата і доставка</h2>
+        <div className={style.section}>
+        <h2 className={style.section_title}>About us</h2>
+      
+        </div>
         </main>
 
       <footer>
