@@ -36,14 +36,13 @@ const CategoriesList = () => {
 
   return (
     <div className={s.categoriesList__container}>
-      {/* <Image
+      <Image
         src="/logo.png"
         alt="logo"
-        width={150}
+        width={100}
         height={80}
         className={s.logo}
-      /> */}
-      {/* <Image src="/logo2.jpg" alt="logo" width={100} height={100} /> */}
+      />
       <ul className={s.categories_list}>
         <li className={s.categories_list__item}>
           <Link href="/categories">Дивитись всі композиції</Link>

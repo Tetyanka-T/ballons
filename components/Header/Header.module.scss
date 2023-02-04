@@ -1,6 +1,10 @@
 @use '../../styles/variables' as *;
 .header {
-    // position: relative;
+    position: fixed;
+    z-index: 200;
+    width: 100vw;
+    top: 0;
+    left: 0px;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.2;
@@ -14,7 +18,7 @@
     left: 0;
     right: 0;
     top: 0;
-    padding: 5px 10px 5px 10px;
+    padding: 5px 10px 10px 10px;
     height: auto;
 }
 .header_info__list {
@@ -27,86 +31,4 @@
         margin-right: 0;
     }
 }
-.header_nav {
-    display: flex;
-    position: relative;
-    margin-top: 30px;
-}
-.logo {
-    // border-radius: 50px;
-    overflow: hidden;
-    margin-left: 10px;
-    width: 80px;
-    height: 60px;
- 
-    & img {
-        width: auto;
-        height: 100%;
-        margin: 0 auto;
-    }
-}
-.showMenu {
-    display: block;
-}
-.showMenu_cansel {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: 20px;
-    left: 250px;
-}
-.header_logo {
-    display: flex;
-}
-.header_user__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 80px;
 
-    & .header_user__item:last-child {
-        margin-right: 0;
-    }
-}
-
-.header_user__item {
-    margin-right: 10px;
-}
-.header_icon {
-    width: 20px;
-    height: 20px;
-    fill: $accent-color;
-}
-
-@media screen  and (min-width: 768px) {
-    .showMenu_cansel {
-        left: 550px;
-        }
-    .header_logo {  
-        margin-left: 50px;
-        & img {
-            width: 200px;
-        }
-    }
-    .header_user__list {
-        margin-left: 300px;
-    }
-    .header_user__item {
-        margin-right: 20px;
-    }
-}
-@media screen  and (min-width: 1200px) {
-    .showMenu {
-        display: none;
-        }
-    .header_logo {  
-        margin-left: 0;
-        & img {
-            width: 200px;  
-        }
-    }
-    .header_user__list {
-        margin-left: 700px;
-     
-    }
-}

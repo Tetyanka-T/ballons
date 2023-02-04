@@ -24,38 +24,36 @@ const NavigatorBar = () => {
   };
 
   return (
-    <div className={s.header}>
-      <div className={s.header_nav}>
+    <div className={s.header_nav}>
+      <div className={s.header_logo}>
         <button onClick={() => onShowMenu()} className={s.showMenu}>
           {showMenu === false && <Menu />}
           {showMenu === true && <Cansel className={s.showMenu_cansel} />}
         </button>
-        {showMenu === true && <CategoriesList />}
-
-        {showMenu === false && (
-          <div className={s.header_logo}>
-            <div className={s.logo}>
-              <Image src="/logo2.jpg" alt="logo" width={100} height={100} />
-            </div>
-
-            <ul className={s.header_user__list}>
-              <li className={s.header_user__item}>
-                <Search className={s.header_icon} />
-              </li>
-              <li className={s.header_user__item}>
-                <Link href="/favorite">
-                  <FavoriteContour className={s.header_icon} />
-                </Link>
-              </li>
-              <li className={s.header_user__item}>
-                <Link href="/basket">
-                  <Basket className={s.header_icon} />
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+        <div className={s.logo}>
+          <Image src="/logo.png" alt="logo" width={80} height={80} />
+        </div>
       </div>
+
+      {showMenu === true && <CategoriesList />}
+
+      {showMenu === false && (
+        <ul className={s.header_user__list}>
+          <li className={s.header_user__item}>
+            <Search className={s.header_icon} />
+          </li>
+          <li className={s.header_user__item}>
+            <Link href="/favorite">
+              <FavoriteContour className={s.header_icon} />
+            </Link>
+          </li>
+          <li className={s.header_user__item}>
+            <Link href="/basket">
+              <Basket className={s.header_icon} />
+            </Link>
+          </li>
+        </ul>
+      )}
     </div>
   );
 };
