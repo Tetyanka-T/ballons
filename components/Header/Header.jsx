@@ -1,29 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
-import { useState } from "react";
-import CategoriesList from "../CategoriesList/CategoriesList";
-import {
-  Basket,
-  Favorite,
-  FavoriteContour,
-  Search,
-  User,
-  Cansel,
-  Menu,
-} from "../svg";
-import s from "./Header.module.scss";
 import NavBar from "../NavBar/NavBar";
+import s from "./Header.module.scss";
 
 const Header = () => {
-  const [showMenu, SetShowMenu] = useState(false);
-  const onShowMenu = () => {
-    SetShowMenu(true);
-    toggleMenu();
-  };
-  const toggleMenu = () => {
-    showMenu ? SetShowMenu(false) : SetShowMenu(true);
-  };
-
   return (
     <div className={s.header}>
       <div className={s.header_menu}>

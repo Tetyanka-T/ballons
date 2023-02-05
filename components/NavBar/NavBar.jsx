@@ -2,15 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import CategoriesList from "../CategoriesList/CategoriesList";
-import {
-  Basket,
-  Favorite,
-  FavoriteContour,
-  Search,
-  User,
-  Cansel,
-  Menu,
-} from "../svg";
+import { Basket, FavoriteContour, Search, Menu } from "../svg";
 import s from "./NavBar.module.scss";
 
 const NavigatorBar = () => {
