@@ -28,11 +28,15 @@ const NavigatorBar = () => {
       <div className={s.header_logo}>
         <button onClick={() => onShowMenu()} className={s.showMenu}>
           {showMenu === false && <Menu />}
-          {showMenu === true && <Cansel className={s.showMenu_cansel} />}
+          {showMenu === true && (
+            <span className={s.showMenu_cansel}>Закрити</span>
+          )}
         </button>
-        <div className={s.logo}>
-          <Image src="/logo.png" alt="logo" width={80} height={80} />
-        </div>
+        {showMenu === false && (
+          <div className={s.logo}>
+            <Image src="/logo.png" alt="logo" width={80} height={80} />
+          </div>
+        )}
       </div>
 
       {showMenu === true && <CategoriesList />}

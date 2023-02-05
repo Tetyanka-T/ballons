@@ -5,6 +5,7 @@ import common from '../../../styles/common.module.scss'
 import BalloonCard from '../../../components/BalloonCard/BalloonCard'
 import s from '../../../styles/Categories.module.scss'
 import { Home, NextPage } from '../../../components/svg'
+import CategoriesListDesktop from '../../../components/CategoriesListDesktop/CategoriesListDesktop'
 
 const ExtractFromMaternityHospital = () => {
     return (
@@ -19,7 +20,7 @@ const ExtractFromMaternityHospital = () => {
           <Header />
           <div className={common.section}>
            
-
+          <CategoriesListDesktop/>
             <ul className={s.categories_list}>
               <li>
                 <Home/>
@@ -36,6 +37,7 @@ const ExtractFromMaternityHospital = () => {
               <button className={s.categories_filters__button__parameters}>Фільтр</button>
               <button className={s.categories_filters__button__sort}>Впорядкувати</button>
             </div>
+            
            
             <BalloonCard/>
           </div>

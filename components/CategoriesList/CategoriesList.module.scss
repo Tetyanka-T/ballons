@@ -1,39 +1,44 @@
 @use '../../styles/variables' as *;
 .categoriesList__container {
     height: 100vh;
+    width: 100vw;
+    position: absolute;
+    padding: 35px 0 0px 0px;
+    top: -30px;
+    left: 0;
+    background-color: $background-color-second;
 }
 .logo {
-   margin-top: 10px;
+   margin: 10px;
 }
 .categories_list {
-  margin-top: 20px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2;
   color: $text-color;
+  width: 320px;
 }
 .categories_list__item {
     border-bottom: 1px solid $main-color;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 0 20px 20px;
+  
 }
 .button_select {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 .button_baby__icon {
-    margin-left: 20px;
+    margin-left: 50px;
     width: 15px;
     height: 15px;
 }
 .button_birthDay__icon {
-    margin-left: 115px;
+    margin-left: 140px;
     width: 15px;
     height: 15px;
 }
 .button_thematics__icon {
-    margin-left: 130px;
+    margin-left: 155px;
     width: 15px;
     height: 15px;
 }
@@ -45,17 +50,17 @@
 
 @media screen and (min-width: 768px){
     .categories_list {
-      width: 500px;
+      width: 600px;
     }
   
     .button_baby__icon {
-        margin-left: 240px;
+        margin-left: 320px;
     }
     .button_birthDay__icon {
-        margin-left: 340px;
+        margin-left: 410px;
     }
     .button_thematics__icon {
-        margin-left: 355px;
+        margin-left: 420px;
     }
     .categories_listBaby__item, .categories_listBirthDay__item, .categories_listThematics__item {
         margin-left: 20px;

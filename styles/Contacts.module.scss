@@ -37,6 +37,7 @@
 }
 .contacts_list__item__info {
    font-size: 12px;
+   margin-bottom: 10px;
 }
 .contacts_photo {
    width: 280px;
@@ -73,7 +74,9 @@
    .contacts_list__item__home {
       margin-right: 10px;
    }
-  
+   .contacts_list__item__info {
+      margin-bottom: 0;
+   }
    .contacts_photo {
       width: 350px;
       height: 250px;

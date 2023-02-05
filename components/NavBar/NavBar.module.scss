@@ -30,8 +30,18 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: 10px;
-    left: 300px;
+    top: -30px;
+    left: 0px;
+    z-index: 200;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: $accent-color;
+    padding: 5px;
+    width: 320px;
+    height: 30px;
+    background-color: $text-color;
+    
 }
 .header_logo {
     display: flex;
@@ -59,14 +69,9 @@
 
 @media screen  and (min-width: 768px) {
     .showMenu_cansel {
-        left: 550px;
+        width: 600px;
         }
-    .header_logo {  
-        margin-left: 50px;
-        & img {
-            width: 200px;
-        }
-    }
+
     .header_user__list {
         margin-left: 300px;
     }
@@ -75,6 +80,9 @@
     }
 }
 @media screen  and (min-width: 1200px) {
+    .header_nav {
+        padding: 0 70px 0 70px;
+    }
     .showMenu {
         display: none;
         }
@@ -84,8 +92,8 @@
             width: 200px;  
         }
     }
-    .header_user__list {
-        margin-left: 700px;
-     
+    .logo {
+        margin-left: 0;
     }
+   
 }

@@ -18,6 +18,8 @@ export default function ContactsPage() {
 
       <main className={common.container}>
         <Header />
+     
+        <div className={common.section}>
         <ul className={style.categories_list}>
               <li>
                 <Home/>
@@ -29,7 +31,6 @@ export default function ContactsPage() {
               Контакти
               </li>
             </ul>
-        <div className={common.section}>
         <h2 className={common.section_title}>Контакти</h2>
         <div className={s.contacts_container}>
             <ul className={s.contacts_list}>
