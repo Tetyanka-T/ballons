@@ -34,7 +34,6 @@
             width: 15px;
             height: 15px;
         }
-
     }
     .categories_list .categories_list__item:last-child {
         margin-right: 0;
@@ -45,8 +44,7 @@
         position: absolute;
         top: 45px;
         padding: 15px;
-        
-        background-color: #fff;
+        background-color: $background-color-second;
         border-radius: 0 0 15px 15px;
         opacity: 1;
         z-index: 200;
@@ -62,11 +60,11 @@
         width: 230px;
     }
     .categories_listBirthDay {
-        width: 165px;
-        left: -10px;
+        width: 180px;
+        left: -25px;
     }
     .categories_listThematics {
-        width: 175px;
-        left: -10px;
+        width: 190px;
+        left: -20px;
     }
 }

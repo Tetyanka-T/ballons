@@ -2,7 +2,7 @@
 .header {
     position: fixed;
     z-index: 200;
-    width: 100vw;
+    width: 330px;
     top: 0;
     left: 0px;
     font-size: 14px;
@@ -32,3 +32,8 @@
     }
 }
 
+@media screen and (min-width: 330px) {
+    .header {
+        width: 100vw;
+    }
+}

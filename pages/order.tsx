@@ -1,11 +1,11 @@
 import Head from 'next/head'
-import Basket from '../components/Basket/Basket'
+
 import common from '../styles/common.module.scss'
 import s from '../styles/BasketPage.module.scss'
 import {Cross} from '../components/svg'
 
 
-const BasketPage = () => {
+const OrderPage = () => {
     return (
         <div>
         <Head>
@@ -15,10 +15,10 @@ const BasketPage = () => {
         </Head>
   
         <main className={common.container}>
-          <Basket/>
+         
         </main>
       </div>
     )
 }
 
-export default BasketPage;
+export default OrderPage;

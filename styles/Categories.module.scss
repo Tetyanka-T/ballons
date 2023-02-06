@@ -1,7 +1,7 @@
 @use './variables' as *;
 .categories_list {
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 35px;
     color: $text-color;

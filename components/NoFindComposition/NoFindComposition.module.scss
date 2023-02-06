@@ -11,6 +11,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: 20px;
+    width: 330px;
 }
 .find_text {
     font-size: 16px;
@@ -25,17 +26,26 @@
 }
 .find_list {
     margin: 0 auto;
-    text-align: center;
+    width: 145px;
+    text-align: left;
 }
 .find_list__item {
     display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 10px;
-    & svg {
+    
+    & .find_list__item__call {
         margin-right: 10px;
     }
 } 
 
+@media screen and (min-width: 330px) {
+    .find {
+        width: 100vw;
+    } 
+    
+}
 @media screen and (min-width: 768px) {
     .find {
         padding: 160px 80px;
@@ -45,11 +55,12 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    & li {
-        margin-right: 20px;
+    width: 750px;
+    & .find_list__item {
+        margin-right: 15px;
         margin-top: 0;
     }
-    & li:last-child {
+    & .find_list__item:last-child {
         margin-right: 0;
     }
   
@@ -65,13 +76,22 @@
     }
 }
 
-// @media screen and (min-width: 1200px) {
-//     .find {
-//         background-size: contain;
-//     }
-//     .find_text {
-//         width: 400px;
-//         font-size: 18px;
-//     }
+@media screen and (min-width: 1200px) {
+    .find {
+      padding: 200px 190px;
+      background-size: 1500px 750px;
+
+    }
+    .find_text {
+        width: 400px;
+        font-size: 18px;
+    }
+    .find_list {
+      
+        & .find_list__item {
+            margin-right: 25px;
+         
+        }
+    }
  
-// }
+}

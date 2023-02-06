@@ -6,6 +6,7 @@
     font-size: 14px;
     font-weight: 400;
     line-height: 1.2;
+    width: 330px;
 }
 .footer_list {
     & .footer_list__item:last-child {
@@ -34,10 +35,15 @@
     margin-left: 5px;
     font-size: 12px;
 }
-
+@media screen and (min-width: 330px) { 
+    .footer {
+        width: 100vw;
+    }
+    
+}
 @media screen and (min-width: 1200px) {
     .footer {
-        padding: 40px 70px 20px 70px;
+        padding: 40px 0px 20px 70px;
         font-size: 16px;
     }
 }
