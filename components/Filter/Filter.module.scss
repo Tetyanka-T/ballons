@@ -1,0 +1,26 @@
+@use '../../styles/variables' as *;
+
+.categories_filters__button {
+    white-space: nowrap;
+    border-top: 2px solid $accent-color;
+    border-bottom: 2px solid $accent-color;
+   
+    cursor: pointer;
+
+    & button {
+        width: 50%;
+        padding: 10px;
+        color: $main-color;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        text-align: center;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:first-child {
+            border-right: 2px solid $accent-color;
+        }
+
+    }
+}

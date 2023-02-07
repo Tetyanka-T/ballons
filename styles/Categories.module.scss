@@ -26,31 +26,7 @@
     }
 }
 
-.categories_filters__button {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 1.2;
-    white-space: nowrap;
-    border-top: 2px solid $accent-color;
-    border-bottom: 2px solid $accent-color;
-    color: $main-color;
-    cursor: pointer;
 
-    & button {
-        width: 50%;
-        padding: 10px;
-        // font-size: 2.8125vw;
-        // line-height: 9.53125vw;
-        text-align: center;
-        display: inline-block;
-        vertical-align: middle;
-
-        &:first-child {
-            border-right: 2px solid $accent-color;
-        }
-
-    }
-}
 
 
 // .categories_filters__button__sort {

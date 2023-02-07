@@ -6,13 +6,16 @@ import s from "./CardDescription.module.scss";
 const CardDescription = () => {
   return (
     <div className={s.cardDescription_container}>
-      <Image
-        src={photo1}
-        alt=""
-        width={300}
-        height={200}
-        className={s.cardDescription_image}
-      />
+      <div className={s.cardDescription_photo_container}>
+        <Image
+          src={photo1}
+          alt=""
+          width={200}
+          height={100}
+          className={s.cardDescription_image}
+        />
+      </div>
+
       <button className={s.cardDescription_button__favorite}>
         <FavoriteContour className={s.cardDescription_button__icon} />
         <FavoriteSelect className={s.cardDescription_button__icon__select} />

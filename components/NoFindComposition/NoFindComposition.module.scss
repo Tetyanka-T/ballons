@@ -22,6 +22,9 @@
 .find_button {
     margin-top: 15px;
     font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff;
     border-bottom: 1px solid #fff;
 }
 .find_list {
@@ -78,8 +81,8 @@
 
 @media screen and (min-width: 1200px) {
     .find {
-      padding: 200px 190px;
-      background-size: 1500px 750px;
+      padding: 250px 190px;
+      background-size: 1400px 750px;
 
     }
     .find_text {

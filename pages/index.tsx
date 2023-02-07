@@ -3,6 +3,7 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
 import common from '../styles/common.module.scss'
+import s from '../styles/Home.module.scss'
 import BalloonCard from '../components/BalloonCard/BalloonCard'
 import CardDescription from '../components/CardDescription/CardDescription'
 
@@ -20,8 +21,15 @@ export default function Home() {
       <main className={common.container}>
      
         <Header />
+        <div className={common.section}>
         <CategoriesListDesktop />
-        <BalloonCard/>
+        {/* <div className={s.logo_container}>
+        <p className={s.logo_vutivaku}>Vutivaku</p>
+        <p className={s.logo_city}>Кривий Ріг</p>
+        </div> */}
+        
+        {/* <BalloonCard/> */}
+        </div>
         {/* <CardDescription/> */}
       </main>
 

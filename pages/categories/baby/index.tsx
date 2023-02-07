@@ -6,6 +6,7 @@ import BalloonCard from '../../../components/BalloonCard/BalloonCard'
 import s from '../../../styles/Categories.module.scss'
 import { Home, NextPage } from '../../../components/svg'
 import CategoriesListDesktop from '../../../components/CategoriesListDesktop/CategoriesListDesktop'
+import Filter from '../../../components/Filter/Filter'
 import NoFindComposition from '../../../components/NoFindComposition/NoFindComposition'
 
 const ExtractFromMaternityHospital = () => {
@@ -34,10 +35,7 @@ const ExtractFromMaternityHospital = () => {
               </li>
             </ul>
             <h1 className={common.section_title}>Виписка з пологового будинку</h1>
-            <div className={s.categories_filters__button}>
-              <button className={s.categories_filters__button__parameters}>Фільтр</button>
-              <button className={s.categories_filters__button__sort}>Впорядкувати</button>
-            </div>
+            <Filter/>
             <BalloonCard/>
           </div>
 
