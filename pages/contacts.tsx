@@ -36,7 +36,7 @@ export default function ContactsPage() {
             <ul className={s.contacts_list}>
                 <li className={s.contacts_list__item}>
                     <Location className={s.contacts_list__item__location}/>
-                    <p>м.Кривий Ріг, просп. Металургів, б.20 </p>
+                    <p>м.Кривий Ріг, просп. Металургів, б.20</p>
                 </li>
                 <li className={s.contacts_list__item}>
                   <Call className={s.contacts_list__item__call}/>
