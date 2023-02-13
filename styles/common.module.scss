@@ -1,6 +1,7 @@
 @use './variables' as *;
 .container {
   margin: 0 auto;
+  
   @media screen and (min-width: 320px) {
     max-width: 320px;
     padding-right: 20px;

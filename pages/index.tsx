@@ -6,6 +6,7 @@ import common from '../styles/common.module.scss'
 import s from '../styles/Home.module.scss'
 import BalloonCard from '../components/BalloonCard/BalloonCard'
 import CardDescription from '../components/CardDescription/CardDescription'
+import OrderForm from '../components/OrderForm/OrderForm'
 
 
 export default function Home() {
@@ -27,7 +28,6 @@ export default function Home() {
         <p className={s.logo_vutivaku}>Vutivaku</p>
         <p className={s.logo_city}>Кривий Ріг</p>
         </div> */}
-        
         {/* <BalloonCard/> */}
         </div>
         {/* <CardDescription/> */}
