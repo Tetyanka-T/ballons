@@ -1,16 +1,13 @@
 @use '../../styles/variables' as *;
 
-
 .orderForm {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.02;
   color: $text-color;
-
+  margin-right: 0;
 }
+
 .textField {
   margin-bottom: 10px;
   width: 280px;
@@ -24,13 +21,17 @@
 }
 .orderForm_comment {
   width: 280px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: $text-color;
 }
 .orderForm_button {
   background: #ffffff;
   box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
   border-radius: 4px 4px 4px 4px;
-  padding: 8px;
-  margin: 0 auto;
+  padding: 10px;
+  margin: 15px 0 0 40px;
   color: $text-color;
   
     &:hover,
@@ -54,21 +55,18 @@
 }
 .date {
   font-weight: 600 !important;
-  width: 100px;
-  padding: 10px;
+  // width: 90px;
+  padding: 8px;
   margin-bottom: 10px;
   color: $accent-color !important;
 }
-.calendarColor {
-  display: flex;
-  align-items: center;
-}
+
 .orderForm_select_date {
-  margin-right: 25px;
+  margin-bottom: 15px;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.02;
-  color: rgb(133, 133, 133);
+  color: $text-color;
 }
   
 .calendarColor :global .react-datepicker__day--selected {
@@ -80,7 +78,7 @@
 
 .calendarColor :global .react-datepicker-popper {
   z-index: 200;  
-  transform: translate3d(55px, 476px, 0px);
+ 
 }
 .calendarColor :global .react-datepicker-wrapper {
   width: 0;
@@ -95,8 +93,7 @@
   color: $text-color;
   border-bottom: 1px solid $text-color;
   margin-bottom: 20px;
-  margin-top: 20px;
-  width: 190px;
+  width: 180px;
 
   &:focus,
   &:hover {
@@ -114,9 +111,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .orderForm {
-    align-items: center;
-  }
+  // .orderForm {
+  //   width: 500px;
+  // }
+  // .calendarColor {
+  //   margin-left: 250px;
+  // }
   .textField {
     margin-bottom: 20px;
     width: 500px;

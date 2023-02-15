@@ -3,11 +3,10 @@ import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
 import common from '../../../styles/common.module.scss'
 import BalloonCard from '../../../components/BalloonCard/BalloonCard'
-import s from '../../../styles/Categories.module.scss'
-import { Home, NextPage } from '../../../components/svg'
 import CategoriesListDesktop from '../../../components/CategoriesListDesktop/CategoriesListDesktop'
 import Filter from '../../../components/Filter/Filter'
 import NoFindComposition from '../../../components/NoFindComposition/NoFindComposition'
+import Novigation from '../../../components/Navigation/Novigation'
 
 const ExtractFromMaternityHospital = () => {
     return (
@@ -15,31 +14,18 @@ const ExtractFromMaternityHospital = () => {
         <Head>
           <title>Весела витівка</title>
           <meta name="description" content="Інтернет магазин виробів із повітряних кульок, оформлення свят" />
-          <link rel="icon" href="/balloon.svg" />
+          <link rel="icon" href="../balloon.svg" />
         </Head>
   
         <main className={common.container}>
           <Header />
           <div className={common.section}>
-           
           <CategoriesListDesktop/>
-            <ul className={s.categories_list}>
-              <li>
-                <Home/>
-              </li>
-              <li>
-                <NextPage/>
-              </li>
-              <li>
-              Виписка з пологового будинку
-              </li>
-            </ul>
+            <Novigation section='Виписка з пологового будинку'/>
             <h1 className={common.section_title}>Виписка з пологового будинку</h1>
             <Filter/>
             <BalloonCard/>
           </div>
-
-          
         </main>
         <NoFindComposition/>
         <footer>

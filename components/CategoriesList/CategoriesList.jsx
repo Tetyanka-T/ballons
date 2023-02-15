@@ -94,7 +94,7 @@ const CategoriesList = () => {
                 <Link href="/categories/birthday/she">Для неї</Link>
               </li>
               <li className={s.categories_listBirthDay__item}>
-                <Link href="/categories/baby/he">Для нього</Link>
+                <Link href="/categories/birthday/he">Для нього</Link>
               </li>
             </ul>
           )}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import "yup-phone";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
@@ -23,17 +24,13 @@ import { ThemeProvider } from "@emotion/react";
 
 const validationSchema = yup.object().shape({
   name: yup.string().required("Введіть своє ім'я"),
-  number: yup
-    .number()
-    .required("Введіть свій номер телефону")
-    .positive()
-    .integer(),
+  // number: yup.string().phone().required("Введіть свій номер телефону"),
   email: yup.string().required("Введіть свій email").email(),
   time: yup.string().required("Оберіть бажаний час"),
   payment: yup.string().required("Оберіть спосіб оплати"),
   delivery: yup.string().required("Оберіть спосіб доставки"),
   street: yup.string().required(),
-  hause: yup.number().required(),
+  hause: yup.string().required(),
   apartment: yup.number().required(),
   comment: yup.string(),
 });
@@ -81,7 +78,7 @@ const OrderForm = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      alert(JSON.stringify(values));
+      alert(JSON.stringify(values, null, 2));
     },
   });
 
@@ -119,6 +116,7 @@ const OrderForm = () => {
           value={formik.values.number}
           className={s.textField}
           onChange={formik.handleChange}
+          patern="((\+38)?\(?\d{3}\)?[\s\.-]?(\d{7}|\d{3}[\s\.-]\d{2}[\s\.-]\d{2}|\d{3}-\d{4}))"
           error={formik.touched.number && Boolean(formik.errors.number)}
           helperText={formik.touched.number && formik.errors.number}
         />
@@ -134,15 +132,17 @@ const OrderForm = () => {
         />
 
         <div className={s.calendarColor}>
-          <p className={s.orderForm_select_date}>Виберіть дату свята</p>
+          {/* <p className={s.orderForm_select_date}>Виберіть дату свята:</p> */}
           <DatePicker
             dateFormat="dd.MM.yyyy"
             minDate={new Date()}
             selected={startDate}
             onChange={(date) => setStartDate(date)}
             name="date"
+            disabledKeyboardNavigation
             // value={formatDate}
             className={s.date}
+            placeholderText="Виберіть дату свята:"
 
             // maxDate={new Date()}
           />
@@ -162,7 +162,7 @@ const OrderForm = () => {
                 fill: "#FFA500 !important",
               },
             }}
-            error={formik.touched.payment && Boolean(formik.errors.payment)}
+            // error={formik.touched.payment && Boolean(formik.errors.payment)}
           >
             <MenuItem value="100%">100% на карту МоноБанку</MenuItem>
           </Select>
@@ -184,7 +184,7 @@ const OrderForm = () => {
                 fill: "#FFA500 !important",
               },
             }}
-            error={formik.touched.delivery && Boolean(formik.errors.delivery)}
+            // error={formik.touched.delivery && Boolean(formik.errors.delivery)}
           >
             <MenuItem value="Самовивіз з магазину">
               <span>
@@ -210,7 +210,7 @@ const OrderForm = () => {
               label="Виберіть час, коли бажаєте забрати композицію"
               onChange={selectTime}
               className={s.orderForm_select}
-              error={formik.touched.time && Boolean(formik.errors.time)}
+              // error={formik.touched.time && Boolean(formik.errors.time)}
               sx={{
                 ".MuiSvgIcon-root ": {
                   fill: "#FFA500 !important",
@@ -236,7 +236,7 @@ const OrderForm = () => {
               options={streets}
               getOptionLabel={(option) => option.name}
               filterOptions={filterOptions}
-              sx={{ width: 280 }}
+              className={s.orderForm_select}
               renderInput={(params) => (
                 <TextField
                   {...params}
@@ -316,7 +316,7 @@ const OrderForm = () => {
                     fill: "#FFA500 !important",
                   },
                 }}
-                error={formik.touched.time && Boolean(formik.errors.time)}
+                // error={formik.touched.time && Boolean(formik.errors.time)}
               >
                 <MenuItem value="6-7">6.00-7.00</MenuItem>
                 <MenuItem value="7-8">7.00-8.00</MenuItem>

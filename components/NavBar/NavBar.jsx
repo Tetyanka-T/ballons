@@ -26,7 +26,9 @@ const NavigatorBar = () => {
         </button>
         {showMenu === false && (
           <div className={s.logo}>
-            <Image src="/logo.png" alt="logo" width={80} height={80} />
+            <Link href="/">
+              <Image src="/logo.png" alt="logo" width={80} height={80} />
+            </Link>
           </div>
         )}
       </div>

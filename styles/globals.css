@@ -27,6 +27,11 @@ button {
   padding: 0;
   background-color: transparent;
 }
-.MuiFormLable-root .MuiInputLable-root.Mui-focused {
-  color: #696969;
+input {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
 }

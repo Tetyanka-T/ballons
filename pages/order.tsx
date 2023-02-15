@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Header from "../components/Header/Header";
+import Novigation from "../components/Navigation/Novigation";
 import OrderForm from "../components/OrderForm/OrderForm";
 import Footer from "../components/Footer/Footer";
 import common from "../styles/common.module.scss";
-import s from "../styles/Categories.module.scss";
 import ss from "../styles/OrderPage.module.scss";
-import { Home, NextPage, Cross } from "../components/svg";
+
 
 
 const OrderPage = () => {
@@ -24,15 +24,8 @@ const OrderPage = () => {
       <main className={common.container}>
         <Header />
         <div className={common.section}>
-          <ul className={s.categories_list}>
-            <li>
-              <Home />
-            </li>
-            <li>
-              <NextPage />
-            </li>
-            <li>Оформлення замовлення</li>
-          </ul>
+          <Novigation section="Оформлення замовлення"/>
+       
           <h1 className={common.section_title}>Оформлення замовлення</h1>
           <OrderForm/>
           <h2 className={ss.order}>Ваше замовлення</h2>

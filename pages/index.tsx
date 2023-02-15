@@ -15,7 +15,7 @@ export default function Home() {
       <Head>
         <title>Весела витівка</title>
         <meta name="description" content="Інтернет магазин виробів із повітряних кульок, оформлення свят" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/balloon.svg" />
       </Head>
 
       
@@ -24,13 +24,8 @@ export default function Home() {
         <Header />
         <div className={common.section}>
         <CategoriesListDesktop />
-        {/* <div className={s.logo_container}>
-        <p className={s.logo_vutivaku}>Vutivaku</p>
-        <p className={s.logo_city}>Кривий Ріг</p>
-        </div> */}
-        {/* <BalloonCard/> */}
+        <h1>Ви довіряєте нам Ваші свята</h1>
         </div>
-        {/* <CardDescription/> */}
       </main>
 
     
