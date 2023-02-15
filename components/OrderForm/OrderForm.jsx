@@ -252,25 +252,25 @@ const OrderForm = () => {
             <ul className={s.orderForm_delivery_price_list}>
               Орієнтовна ціна доставки
               <li className={s.orderForm_delivery_price_item}>
-                Металургійний район
+                Металургійний район: 70-150 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Саксаганський район
+                Саксаганський район: 150-300 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Довгинцівський район
+                Довгинцівський район: 100-250 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Інгулецький район
+                Інгулецький район: 200-1000 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Центрально-Міський район
+                Центрально-Міський район: 150-300 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Покровський район
+                Покровський район: 250-400 грн
               </li>
               <li className={s.orderForm_delivery_price_item}>
-                Тернівський район
+                Тернівський район: 500-1000 грн
               </li>
             </ul>
             <div className={s.orderForm_container_address}>
