@@ -1,33 +1,52 @@
 @use '../../styles/variables' as *;
 .list {
-    margin: 10px;
+    padding-top: 10px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 15px;
 }
 
-.card_container {
+.card_item {
     color: $text-color;
-    padding-bottom: 10px;
+    position: relative;
+    transform: translate3d(0,0,0);
+ 
+    & .card_item__hover{
+        content: '';
+        left: -15px;
+        right: -15px;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        background-color: #ffffff;
+        box-shadow: 3px 3px 4px 4px $accent-color;
+        border-radius: 4px;
+        padding: 10px;
+        transform: translate3d(0,0,0) scale(.5);
+        transition: all .4s;
+    }
     &:hover,
     &:focus {
-        background: #ffffff;
-        box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
-        border-radius: 0px 0px 4px 4px;
-        padding: 8px;
-
-        .cardDescription_button__favorite {
-            left: 75px;
+        z-index: 200;
+        
+        &  .card_item__hover {
+            visibility: visible;
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+            margin-top: -15px;
+            margin-bottom: -50px;
         }
-
-        .card_basket__button {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+       .card_basket__button {
+           visibility: visible;
+           opacity: 1;
+           position: absolute;
             border: 1px solid $accent-color;
+            transform: translate3d(0, 0, 0);
             border-radius: 20px;
             width: 100px;
-            margin-top: 20px;
+            margin: 110px 0 0 12px;
             padding: 5px;
             font-size: 16px;
             font-weight: 400;
@@ -36,22 +55,23 @@
             &:hover,
             &:focus {
                 background-color: $accent-color;
-
                 & svg {
                     fill: $main-color;
                 }
             }
         }
+
+        .cart_description {
+            position: absolute;
+        }
     }
 }
 .img_container {
     position: relative;
-    
     & img {
         width: 100%;
         height: auto;
     }
-    
 }
 
 .card_title {
@@ -70,8 +90,8 @@
 .cardDescription_button__favorite {
     position: absolute;
     top: 5px;
-    left: 90px;
-    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
+    left: 95px;
+    box-shadow: 1px 2px 3px $accent-color;
     border-radius: 50px;
     padding: 6px;
     background-color: $accent-color;
@@ -86,7 +106,6 @@
         & .cardDescription_button__icon__select {
             display: flex;
             fill: $main-color;
-            
         }
         & .cardDescription_button__icon {
             display: none;
@@ -102,7 +121,10 @@
     fill: $main-color;
 }
 .card_basket__button {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(0,0,0) scale(.5);
+  
 }
 .card_basket__button__icon {
     width: 15px;
@@ -114,45 +136,36 @@
 @media screen and (min-width: 768px) {
     .list {
         grid-template-columns: 1fr 1fr 1fr;
-        grid-gap: 15px;
     }
-    // .img_container {
-    //     width: 200px;
-    // }
+    .card_item {
+        &:hover,
+        &:focus {
+        
+            &  .card_item__hover {
+                margin-top: -25px;
+                margin-bottom: -80px;
+                
+            }
+           .card_basket__button {
+                width: 150px;
+                margin: 110px 0 0 45px;
+                padding: 6px;
+            }
+        }
+    }
     .card_title {
         max-width: 200px;
         font-size: 16px;
     }
-    .card_basket__button {
-        width: 150px;
-        margin: 0 auto;
-    }
     .cardDescription_button__favorite {
-        left: 150px;
-    }
-
-    .card_container {
-                
-        &:hover,
-        &:focus {
-            padding: 10px;
-            .cardDescription_button__favorite {
-                left: 137px;
-            }
-            .card_basket__button {
-                width: 130px;
-                padding: 8px;
-            }
-        }
+        left: 195px;
+        top: 10px
     }
 }
 
 @media screen and (min-width: 1200px) {
     .list {
         grid-template-columns: 1fr 1fr 1fr 1fr;
-    }
-    .img {
-        width: 350px;
     }
     .card_title {
         max-width: 350px;
@@ -163,16 +176,7 @@
         padding: 10px;
     }
     .cardDescription_button__favorite {
-        left: 205px;
+        left: 210px;
     }
 
-    .card_container {
-        &:hover,
-        &:focus {
-    
-            .cardDescription_button__favorite {
-                left: 190px;
-            }
-        }
-    }
 }
