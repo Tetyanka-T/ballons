@@ -25,23 +25,27 @@ const NavigatorBar = () => {
     <div className={s.header_nav}>
       <div className={s.header_logo}>
         <button onClick={() => onShowMenu()} className={s.showMenu}>
-          {showMenu === false && <Menu />}
-          {showMenu === true && (
-            <span className={s.showMenu_cansel}>Закрити</span>
-          )}
+          {!showMenu && <Menu />}
         </button>
-        {showMenu === false && (
+        {!showMenu && (
           <div className={s.logo}>
             <Link href="/">
-              <Image src="/logo.png" alt="logo" width={80} height={80} />
+              <Image src="/logo.png" alt="logo" width={100} height={70} />
             </Link>
           </div>
         )}
       </div>
 
-      {showMenu === true && <CategoriesList />}
+      <div className={showMenu ? "active" : "mobile_background"}>
+        <div className={showMenu ? "activeContent" : "mobilemenu_content"}>
+          <span className={s.showMenu_cansel} onClick={() => onShowMenu()}>
+            Закрити
+          </span>
+          <CategoriesList />
+        </div>
+      </div>
 
-      {showMenu === false && (
+      {!showMenu && (
         <>
           <ul className={s.header_user__list}>
             <li className={s.header_user__item}>
@@ -63,8 +67,8 @@ const NavigatorBar = () => {
           <Modal
             open={open}
             onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
+            aria-labelledby="modal-search-balloon"
+            aria-describedby="search balloon composition by world"
           >
             <Box className={s.header_nav__modal}>
               <SearchInput />

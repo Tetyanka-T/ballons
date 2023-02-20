@@ -4,7 +4,7 @@ import s from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <div className={s.header}>
+    <header className={s.header}>
       <div className={s.header_menu}>
         <ul className={s.header_info__list}>
           <li className={s.header_info__list__item}>
@@ -19,7 +19,7 @@ const Header = () => {
         </ul>
       </div>
       <NavBar />
-    </div>
+    </header>
   );
 };
 

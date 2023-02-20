@@ -14,8 +14,8 @@
 .logo {
     overflow: hidden;
     margin-left: 10px;
-    width: 80px;
-    height: 60px;
+    width: 90px;
+    height: 70px;
  
     & img {
         width: 100%;
@@ -30,7 +30,7 @@
     width: 20px;
     height: 20px;
     position: absolute;
-    top: -30px;
+    top: 0px;
     left: 0px;
     z-index: 200;
     font-size: 16px;
@@ -41,7 +41,7 @@
     width: 330px;
     height: 30px;
     background-color: $text-color;
-    
+    text-align: center;
 }
 .header_logo {
     display: flex;
@@ -75,7 +75,7 @@
     background-color: #fff;
     border: 2px solid $accent-color;
     box-shadow: 24;
-    padding: 50px;
+    padding: 50px 30px 50px 30px;
 }
 
 @media screen and (min-width: 330px) {
@@ -96,7 +96,7 @@
     }
     .header_nav__modal {
         width: 500px;
-        padding: 70px;
+        padding: 70px 120px;
     }
 }
 @media screen  and (min-width: 1200px) {

@@ -35,3 +35,48 @@ input {
 p {
   margin: 0;
 }
+select{
+  padding: 0;
+  margin: 0;
+}
+
+.mobilemenu_content {
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 320px;
+  visibility: hidden;
+  transition: transform .5s ease .1s;
+  transform: translateX(-110%);
+}
+.activeContent {
+  transform: translateX(0);
+  transition: transform .5s ease 0s;
+
+}
+
+.active {
+  visibility: visible;
+  transition: visibility 0s ease 0s;
+  position: fixed;
+  z-index: 1009;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+.mobile_background {
+  position: fixed;
+  z-index: 1009;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  transition: visibility 0s ease .6s;
+}

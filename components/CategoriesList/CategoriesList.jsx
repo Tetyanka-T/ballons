@@ -40,7 +40,7 @@ const CategoriesList = () => {
         src="/logo.png"
         alt="logo"
         width={100}
-        height={80}
+        height={70}
         className={s.logo}
       />
       <ul className={s.categories_list}>

@@ -9,7 +9,6 @@
 .card_item {
     color: $text-color;
     position: relative;
-    transform: translate3d(0,0,0);
  
     & .card_item__hover{
         content: '';
@@ -24,7 +23,7 @@
         box-shadow: 3px 3px 4px 4px $accent-color;
         border-radius: 4px;
         padding: 10px;
-        transform: translate3d(0,0,0) scale(.5);
+        transform: translate3d(0,0,0) scale(.4);
         transition: all .4s;
     }
     &:hover,

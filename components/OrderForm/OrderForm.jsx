@@ -132,7 +132,7 @@ const OrderForm = () => {
         />
 
         <div className={s.calendarColor}>
-          {/* <p className={s.orderForm_select_date}>Виберіть дату свята:</p> */}
+          <p className={s.orderForm_select_date}>Виберіть дату свята:</p>
           <DatePicker
             dateFormat="dd.MM.yyyy"
             minDate={new Date()}
