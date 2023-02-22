@@ -15,6 +15,7 @@ import {
   Checkbox,
   FormGroup,
   FormControlLabel,
+  InputAdornment,
 } from "@mui/material";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -38,6 +39,13 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#FFA500",
+    },
+  },
+  overrides: {
+    MuiSelect: {
+      select: {
+        padding: "4px 0px 10px 130px !important",
+      },
     },
   },
 });
@@ -113,6 +121,7 @@ const OrderForm = () => {
           name="number"
           label="Номер телефону"
           type="number"
+          placeholder="+380"
           value={formik.values.number}
           className={s.textField}
           onChange={formik.handleChange}
@@ -158,6 +167,10 @@ const OrderForm = () => {
             onChange={selectPayment}
             className={s.orderForm_select}
             sx={{
+              ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                {
+                  padding: "16px 0px",
+                },
               ".MuiSvgIcon-root ": {
                 fill: "#FFA500 !important",
               },
@@ -180,6 +193,10 @@ const OrderForm = () => {
             onChange={selectDelivery}
             className={s.orderForm_select}
             sx={{
+              ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                {
+                  padding: "16px 0px",
+                },
               ".MuiSvgIcon-root ": {
                 fill: "#FFA500 !important",
               },
@@ -212,6 +229,10 @@ const OrderForm = () => {
               className={s.orderForm_select}
               // error={formik.touched.time && Boolean(formik.errors.time)}
               sx={{
+                ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                  {
+                    padding: "16px 0px",
+                  },
                 ".MuiSvgIcon-root ": {
                   fill: "#FFA500 !important",
                 },
@@ -312,6 +333,10 @@ const OrderForm = () => {
                 onChange={selectTime}
                 className={s.orderForm_select}
                 sx={{
+                  ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                    {
+                      padding: "16px 0px",
+                    },
                   ".MuiSvgIcon-root ": {
                     fill: "#FFA500 !important",
                   },
@@ -344,7 +369,7 @@ const OrderForm = () => {
           value={formik.values.comment}
           onChange={formik.handleChange}
           className={s.orderForm_comment}
-          style={{ height: 80, marginBottom: 20 }}
+          style={{ height: 80, marginBottom: 20, padding: 10 }}
         />
         <FormGroup className={s.orderForm_chekbox}>
           <FormControlLabel
