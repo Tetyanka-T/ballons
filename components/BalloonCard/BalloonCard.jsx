@@ -10,8 +10,10 @@ const BalloonCard = () => {
     <ul className={s.list}>
       <li className={s.card_item}>
         <div className={s.card_item__hover}></div>
-        <div className={s.img_container}>
-          <Image src={photo1} alt="" width={0} height={0} className={s.img} />
+        <div>
+          <div className={s.img_container}>
+            <Image src={photo1} alt="" width={0} height={0} className={s.img} />
+          </div>
           <button className={s.cardDescription_button__favorite}>
             <FavoriteContour className={s.cardDescription_button__icon} />
             <FavoriteSelect
@@ -19,6 +21,7 @@ const BalloonCard = () => {
             />
           </button>
         </div>
+
         <div className={s.cart_description}>
           <h3 className={s.card_title}>Супер-пупер композиція</h3>
           <p className={s.card_price}>2000 грн.</p>
