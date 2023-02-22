@@ -4,19 +4,18 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 1.2;
-    padding: 100px 80px;
+    padding: 50px 20px;
     text-align: center;
     background-image: linear-gradient(to right, rgba(47,48,58,0.4), rgba(47,48,58,0.4)), url(../../public/background-grey.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    margin-bottom: 20px;
     width: 330px;
 }
 .find_text {
     font-size: 16px;
     text-align: left;
-    width: 200px;
+    width: 280px;
     margin: 0 auto;
 }
 .find_button {
@@ -36,12 +35,32 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 20px;
     
     & .find_list__item__call {
         margin-right: 10px;
     }
 } 
+.footer_list {
+    margin-top: 60px;
+    color: $accent-color;
+    & .footer_list__item:last-child {
+        margin-bottom: 0;
+    }
+}
+.footer_list__item {
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    & svg {
+        fill: $accent-color;
+        margin-left: 10px;
+        width: 15px;
+        height: 15px;
+    }
+}
 
 @media screen and (min-width: 330px) {
     .find {
@@ -51,7 +70,7 @@
 }
 @media screen and (min-width: 768px) {
     .find {
-        padding: 160px 80px;
+        padding: 70px 20px 90px 40px;
     }
     .find_list {
     display: flex;
@@ -69,7 +88,7 @@
   
 }
     .find_text {
-        width: 360px;
+        width: 350px;
         font-size: 18px;
     }
 
@@ -77,16 +96,19 @@
         margin-top: 30px;
         font-size: 18px;
     }
+    .footer_list {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .find {
-      padding: 280px 190px;
-      background-size: 1400px 750px;
-      background-image: linear-gradient(to right, rgba(47,48,58,0.4), rgba(47,48,58,0.4)), url(../../public/background_desktop.jpg);
+        padding: 180px 20px 200px 75px;
+        background-size: cover;
+        background-image: linear-gradient(to right, rgba(47,48,58,0.4), rgba(47,48,58,0.4)), url(../../public/background_desktop.jpg);
     }
     .find_text {
-        width: 400px;
+        width: 450px;
         font-size: 18px;
     }
     .find_list {
@@ -96,5 +118,27 @@
          
         }
     }
+    .footer_list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        margin-top: 120px;
+  
+        & .footer_list__item:last-child {
+            margin-right: 0;
+        }
+        & .footer_list__item  {
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+    }
  
+}
+
+@media screen and (min-width: 1200px) {
+    .find {
+        padding: 250px 20px 250px 75px;
+        
+    }
 }

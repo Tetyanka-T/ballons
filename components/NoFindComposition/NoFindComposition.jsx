@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Call, Viber, Telegram, Instagram2, Ballon } from "../svg";
 import s from "./NoFindComposition.module.scss";
+import Link from "next/link";
+import { Instagram } from "../svg";
+import ss from "../Footer/Footer.module.scss";
 
 const NoFindComposition = () => {
   const [showPhone, SetShowPhone] = useState(false);
@@ -14,8 +17,8 @@ const NoFindComposition = () => {
   return (
     <div className={s.find}>
       <p className={s.find_text}>
-        Якщо ви не знайшли композицію на нашому сайті, яка вам припала до душі,
-        ми можемо зібрати будь-яку за вашим побажанням та бюджетом
+        Якщо Ви не знайшли композицію на нашому сайті, яка Вам припала до душі,
+        ми можемо зібрати будь-яку за Вашим побажанням та бюджетом.
       </p>
       <button className={s.find_button} onClick={() => onShowPhone()}>
         Зв&apos;яжіться з нами
@@ -53,6 +56,27 @@ const NoFindComposition = () => {
           </li>
         </ul>
       )}
+      <ul className={s.footer_list}>
+        <li className={s.footer_list__item}>
+          <Link href="/contacts">Контакти</Link>
+        </li>
+        <li className={s.footer_list__item}>
+          <Link href="/payment-delivery">Оплата і доставка</Link>
+        </li>
+        <li className={s.footer_list__item}>
+          <Link href="/about-us">Про нас</Link>
+        </li>
+        <li className={s.footer_list__item}>
+          <a
+            href="https://www.instagram.com/veselavutivka/?igshid=13ixk4qj193va"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Підписатися
+          </a>
+          <Instagram />
+        </li>
+      </ul>
     </div>
   );
 };
