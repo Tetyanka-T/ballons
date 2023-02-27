@@ -1,9 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
-import { Home, NextPage, Location, Call, Leter } from '../components/svg'
 import common from '../styles/common.module.scss'
-import style from '../styles/Categories.module.scss'
+import Novigation from '../components/Navigation/Novigation'
 
 
 
@@ -21,18 +20,8 @@ const FavoritePage = () => {
      
         <Header />
         <div className={common.section}>
-            <ul className={style.categories_list}>
-              <li>
-                <Home/>
-              </li>
-              <li>
-                <NextPage/>
-              </li>
-              <li>
-              Вподобайки
-              </li>
-            </ul>
-       <h1 className={common.section_title}>Ваші улюблені композиції</h1>
+          <Novigation section='Ваші улюблені композиції'/>
+          <h1 className={common.section_title}>Ваші улюблені композиції</h1>
        </div>
       </main>
 

@@ -3,9 +3,9 @@ import Image from 'next/image'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import common from '../styles/common.module.scss'
-import { Home, NextPage, Location, Call, Leter } from '../components/svg'
+import { Home, Location, Call, Leter } from '../components/svg'
 import s from '../styles/Contacts.module.scss'
-import style from '../styles/Categories.module.scss'
+import Novigation from '../components/Navigation/Novigation'
 
 export default function ContactsPage() {
   return (
@@ -20,17 +20,7 @@ export default function ContactsPage() {
         <Header />
      
         <div className={common.section}>
-        <ul className={style.categories_list}>
-              <li>
-                <Home/>
-              </li>
-              <li>
-                <NextPage/>
-              </li>
-              <li>
-              Контакти
-              </li>
-            </ul>
+        <Novigation section='Контакти'/>
         <h2 className={common.section_title}>Контакти</h2>
         <div className={s.contacts_container}>
             <ul className={s.contacts_list}>
