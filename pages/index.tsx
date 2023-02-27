@@ -2,11 +2,10 @@ import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
+import SliderBirthDayFirst from '../components/SliderBirthDayFirst/SliderBirthDayFirst'
 import common from '../styles/common.module.scss'
-import s from '../styles/Home.module.scss'
-import BalloonCard from '../components/BalloonCard/BalloonCard'
-import CardDescription from '../components/CardDescription/CardDescription'
-import OrderForm from '../components/OrderForm/OrderForm'
+
+
 
 
 export default function Home() {
@@ -25,6 +24,7 @@ export default function Home() {
         <div className={common.section}>
         <CategoriesListDesktop />
         <h1>Ви довіряєте нам Ваші свята</h1>
+        <SliderBirthDayFirst/>
         </div>
       </main>
 
