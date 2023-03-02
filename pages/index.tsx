@@ -3,6 +3,7 @@ import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
 import SliderBirthDayFirst from '../components/SliderBirthDayFirst/SliderBirthDayFirst'
+import SliderBirthDayBoys from "../components/SliderBirthDayBoys/SliderBirthDayBoys"
 import common from '../styles/common.module.scss'
 
 
@@ -25,6 +26,7 @@ export default function Home() {
         <CategoriesListDesktop />
         <h1>Ви довіряєте нам Ваші свята</h1>
         <SliderBirthDayFirst/>
+        <SliderBirthDayBoys/>
         </div>
       </main>
 

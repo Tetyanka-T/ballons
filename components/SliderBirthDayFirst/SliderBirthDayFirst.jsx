@@ -7,6 +7,7 @@ import {
   Autoplay,
 } from "swiper";
 import Image from "next/image";
+import imgs from "./birthDayFirstLinks.json";
 import s from "./SliderBirthDayFirst.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -37,90 +38,17 @@ const SliderBirthDayFirst = () => {
             "--swiper-navigation-color": "#FFA500",
           }}
         >
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/qMq74N3/2.jpg"
-              alt="composition of balloons"
-              border="0"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/ZXsPMc4/1.jpg"
-              alt="composition of balloons"
-              border="0"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/gMP1zzz/3.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/xCvyHkD/4.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/hBjsWtr/5.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/T8vw36t/6.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/m0WMqQw/8.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/GMg0DXC/9.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/L6J0x6V/10.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/mbz08vN/11.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
+          {imgs.map((img) => (
+            <SwiperSlide key={img.id}>
+              <Image
+                src={img.src}
+                alt="composition of balloons"
+                width={280}
+                height={200}
+              />
+            </SwiperSlide>
+          ))}
+          <SwiperSlide>
             <Image
               src="https://i.ibb.co/z7DT4QQ/4.jpg"
               alt="composition of balloons"
@@ -135,7 +63,7 @@ const SliderBirthDayFirst = () => {
           className="mySwiper"
           slidesPerView={3}
           effect={"coverflow"}
-          centeredSlides={true}
+          // centeredSlides={true}
           spaceBetween={10}
           grabCursor={true}
           coverflowEffect={{
@@ -154,89 +82,16 @@ const SliderBirthDayFirst = () => {
             "--swiper-navigation-color": "#FFA500",
           }}
         >
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/qMq74N3/2.jpg"
-              alt="composition of balloons"
-              border="0"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/ZXsPMc4/1.jpg"
-              alt="composition of balloons"
-              border="0"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/gMP1zzz/3.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/xCvyHkD/4.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/hBjsWtr/5.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/T8vw36t/6.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/m0WMqQw/8.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/GMg0DXC/9.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/L6J0x6V/10.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
-          <SwiperSlide className={s.image_container}>
-            <Image
-              src="https://i.ibb.co/mbz08vN/11.jpg"
-              alt="composition of balloons"
-              width={280}
-              height={200}
-            />
-          </SwiperSlide>
+          {imgs.map((img) => (
+            <SwiperSlide key={img.id}>
+              <Image
+                src={img.src}
+                alt="composition of balloons"
+                width={280}
+                height={200}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>
