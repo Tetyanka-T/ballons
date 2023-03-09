@@ -14,6 +14,7 @@ const CardDescription = () => {
           height={100}
           className={s.cardDescription_image}
         />
+        <div className={s.transparent}></div>
       </div>
 
       <button className={s.cardDescription_button__favorite}>

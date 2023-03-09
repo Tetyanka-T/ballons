@@ -2,10 +2,10 @@ import Head from 'next/head'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
-import SliderBirthDayFirst from '../components/SliderBirthDayFirst/SliderBirthDayFirst'
-import SliderBirthDayBoys from "../components/SliderBirthDayBoys/SliderBirthDayBoys"
-import SliderBirthDayGirls from "../components/SliderBirthDayGirls/SliderBirthDayGirls"
+import CollageHomePage from '../components/CollageHomePage/CollageHomePage'
+import SliderHomePage from "../components/SliderHomePage/SliderHomePage"
 import common from '../styles/common.module.scss'
+import s from '../styles/Home.module.scss'
 
 
 
@@ -25,15 +25,11 @@ export default function Home() {
         <Header />
         <div className={common.section}>
         <CategoriesListDesktop />
-        <h1>Ви довіряєте нам Ваші свята</h1>
-        <SliderBirthDayFirst/>
-        <SliderBirthDayBoys/>
-        <SliderBirthDayGirls/>
+        <SliderHomePage/>
+        <CollageHomePage/>
+        
         </div>
       </main>
-
-    
-       
         <footer>
         <Footer/>
       </footer>

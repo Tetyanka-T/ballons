@@ -31,6 +31,8 @@ const NavigatorBar = () => {
           <div className={s.logo}>
             <Link href="/">
               <Image src="/logo.png" alt="logo" width={100} height={70} />
+
+              {/* <Image src="/logo3.jpg" alt="logo" width={100} height={70} /> */}
             </Link>
           </div>
         )}

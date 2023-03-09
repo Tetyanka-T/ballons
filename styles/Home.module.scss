@@ -1,16 +1,3 @@
 @use './common.module.scss';
 @use './variables' as *;
 
-.logo_container {
-    font-size: 32px;
-    font-weight: 600;
-    // line-height: 1.2;
-    color: $accent-color;
-    background-image: url(../public/balloon.svg);
-}
-.logo_city {
-    font-size: 18px;
-    
-    font-weight: 400;
-    margin-left: 10px;
-}
