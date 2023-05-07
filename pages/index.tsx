@@ -5,9 +5,6 @@ import CategoriesListDesktop from '../components/CategoriesListDesktop/Categorie
 import CollageHomePage from '../components/CollageHomePage/CollageHomePage'
 import SliderHomePage from "../components/SliderHomePage/SliderHomePage"
 import common from '../styles/common.module.scss'
-import s from '../styles/Home.module.scss'
-
-
 
 
 export default function Home() {
