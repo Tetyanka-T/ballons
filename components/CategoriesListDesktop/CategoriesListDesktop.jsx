@@ -1,9 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { Cansel, Menu, Select } from "../svg";
+import { Select } from "../svg";
 import s from "./CategoriesListDesktop.module.scss";
-import common from "../../styles/common.module.scss";
 
 const CategoriesListDesktop = () => {
   const [baby, SetBaby] = useState(false);

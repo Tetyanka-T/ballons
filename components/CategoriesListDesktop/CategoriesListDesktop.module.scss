@@ -58,35 +58,34 @@
     }
 
     .categories_listBaby, .categories_listBirthDay, .categories_listThematics  {
-       text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 1053px;
         position: absolute;
-        top: 45px;
-        padding: 15px;
+        top: 60px;
+        left: -286px;
+        padding: 30px;
         background-color: $background-color-second;
-        border-radius: 0 0 15px 15px;
         opacity: 1;
         z-index: 200;
         margin: 0 auto;
 
         & li {
-            margin-top: 20px;
-            margin-left: 0;
+            margin-right: 50px;
+        }
+        & li:last-child {
+            margin-right: 0;
         }
         & li:hover,
         & li:focus {
             color: $accent-color;
         }
     }
-    .categories_listBaby {
-        left: 13px;
-        width: 230px;
-    }
     .categories_listBirthDay {
-        width: 180px;
-        left: -25px;
+        left: -521px;
     }
     .categories_listThematics {
-        width: 190px;
-        left: -20px;
+        left: -756px;
     }
 }

@@ -348,7 +348,6 @@ const OrderForm = () => {
                     fill: "#FFA500 !important",
                   },
                 }}
-                // error={formik.touched.time && Boolean(formik.errors.time)}
               >
                 <MenuItem value="6-7">6.00-7.00</MenuItem>
                 <MenuItem value="7-8">7.00-8.00</MenuItem>
