@@ -16,6 +16,7 @@ export {default as Cross} from './cross.svg';
 export {default as SortDown} from './sort-down.svg';
 export {default as SortUp} from './sort-up.svg';
 export {default as NextPage} from './next.svg';
+export {default as PrevPage} from './prev.svg';
 export {default as Viber} from './viber.svg';
 export {default as Telegram} from './telegram.svg';
 export {default as Instagram2} from './instagram2.svg';

@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { Cansel, Menu, Select } from "../svg";
+import { Select } from "../svg";
 import s from "./CategoriesList.module.scss";
-import common from "../../styles/common.module.scss";
 
-const CategoriesList = () => {
+const CategoriesList = ({ onClick }) => {
   const [baby, SetBaby] = useState(false);
   const [birthDay, SetBirthDay] = useState(false);
   const [thematics, SetThematics] = useState(false);
@@ -36,18 +35,15 @@ const CategoriesList = () => {
 
   return (
     <div className={s.categoriesList__container}>
-      <Image
-        src="/logo.png"
-        alt="logo"
-        width={100}
-        height={70}
-        className={s.logo}
-      />
+      <div className={s.logo_container}>
+        <Image src="/logo.png" alt="logo" width={100} height={70} />
+      </div>
+
       <ul className={s.categories_list}>
-        <li className={s.categories_list__item}>
+        <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories">Дивитись всі композиції</Link>
         </li>
-        <li className={s.categories_list__item}>
+        <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/gender-party">Gender party</Link>
         </li>
         <li className={s.categories_list__item}>
@@ -57,13 +53,22 @@ const CategoriesList = () => {
           </button>
           {baby && (
             <ul className={s.categories_listBaby}>
-              <li className={s.categories_listBaby__item}>
+              <li
+                className={s.categories_listBaby__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/baby">Дивитись все</Link>
               </li>
-              <li className={s.categories_listBaby__item}>
+              <li
+                className={s.categories_listBaby__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/baby/girl">Для дівчинки</Link>
               </li>
-              <li className={s.categories_listBaby__item}>
+              <li
+                className={s.categories_listBaby__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/baby/boy">Для хлопчика</Link>
               </li>
             </ul>
@@ -76,30 +81,50 @@ const CategoriesList = () => {
           </button>
           {birthDay && (
             <ul className={s.categories_listBirthDay}>
-              <li className={s.categories_listBirthDay__item}>
+              <li
+                className={s.categories_listBirthDay__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/birthday">Дивитись все</Link>
               </li>
-              <li className={s.categories_listBirthDay__item}>
+              <li
+                className={s.categories_listBirthDay__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/birthday/first">
                   Перший День народження
                 </Link>
               </li>
               <li className={s.categories_listBirthDay__item}>
-                <Link href="/categories/birthday/girls">Для дівчинки</Link>
+                <Link
+                  href="/categories/birthday/girls"
+                  onClick={() => onClick()}
+                >
+                  Для дівчинки
+                </Link>
               </li>
-              <li className={s.categories_listBirthDay__item}>
+              <li
+                className={s.categories_listBirthDay__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/birthday/boys">Для хлопчика</Link>
               </li>
-              <li className={s.categories_listBirthDay__item}>
+              <li
+                className={s.categories_listBirthDay__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/birthday/she">Для неї</Link>
               </li>
-              <li className={s.categories_listBirthDay__item}>
+              <li
+                className={s.categories_listBirthDay__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/birthday/he">Для нього</Link>
               </li>
             </ul>
           )}
         </li>
-        <li className={s.categories_list__item}>
+        <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/photo-zone">Фотозони</Link>
         </li>
         <li className={s.categories_list__item}>
@@ -109,30 +134,48 @@ const CategoriesList = () => {
           </button>
           {thematics && (
             <ul className={s.categories_listThematics}>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics">Дивитись все</Link>
               </li>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics/valentine's-day">
                   День Закоханих
                 </Link>
               </li>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics/hen-party">Дівич-вечір</Link>
               </li>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics/wedding">Весілля</Link>
               </li>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics/halloween">Хелловін</Link>
               </li>
-              <li className={s.categories_listThematics__item}>
+              <li
+                className={s.categories_listThematics__item}
+                onClick={() => onClick()}
+              >
                 <Link href="/categories/thematics/new-year">Новий Рік</Link>
               </li>
             </ul>
           )}
         </li>
-        <li className={s.categories_list__item}>
+        <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/design">Оформлення фасадів</Link>
         </li>
       </ul>

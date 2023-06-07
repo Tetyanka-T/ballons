@@ -1,13 +1,19 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CategoriesList from "../CategoriesList/CategoriesList";
 import { Modal, Box } from "@mui/material";
 import SearchInput from "../Search/SearchInput";
 import { Basket, FavoriteContour, Search, Menu } from "../svg";
 import s from "./NavBar.module.scss";
+import CartContext from "../../context/CartContext";
 
 const NavigatorBar = () => {
+  const { cart } = useContext(CartContext);
+  const cartItems = cart?.cartItems;
+  const { favorite } = useContext(CartContext);
+  const favoriteItems = favorite?.favoriteItems;
+
   const [showMenu, SetShowMenu] = useState(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -43,7 +49,7 @@ const NavigatorBar = () => {
           <span className={s.showMenu_cansel} onClick={() => onShowMenu()}>
             Закрити
           </span>
-          <CategoriesList />
+          <CategoriesList onClick={onShowMenu} />
         </div>
       </div>
 
@@ -56,13 +62,16 @@ const NavigatorBar = () => {
               </button>
             </li>
             <li className={s.header_user__item}>
-              <Link href="/favorite">
+              <Link href="/favorite" className={s.header_icon_count}>
                 <FavoriteContour className={s.header_icon} />
+
+                <p className={s.basket_count}>{favoriteItems?.length || 0}</p>
               </Link>
             </li>
             <li className={s.header_user__item}>
-              <Link href="/basket">
+              <Link href="/basket" className={s.header_icon_count}>
                 <Basket className={s.header_icon} />
+                <p className={s.basket_count}>{cartItems?.length || 0}</p>
               </Link>
             </li>
           </ul>

@@ -13,19 +13,16 @@
 }
 .logo {
     overflow: hidden;
-    margin-left: 10px;
-    // width: 130px;
-    // height: 80px;
-    // border-radius: 40px;
-    width: 90px;
-    height: 70px;
+    margin: 10px 0 0 10px;
+    width: 100px;
+  
     & img {
         width: 100%;
-        height: 100%;
+        height:auto;
         margin: 0 auto;
-        // object-fit: cover;
     }
 }
+
 .showMenu {
     display: block;
 }
@@ -67,6 +64,7 @@
     width: 20px;
     height: 20px;
     fill: $accent-color;
+    
 }
 
 .header_nav__modal {
@@ -79,6 +77,27 @@
     border: 2px solid $accent-color;
     box-shadow: 24;
     padding: 50px 30px 50px 30px;
+}
+.header_icon_count {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    fill: $accent-color;
+}
+.basket_count, .favorite_count {
+    position: absolute;
+    bottom: -10px;
+    left: 15px;
+    border-radius: 50px;
+    background-color: $accent-color;
+    padding: 5px;
+    color: $main-color;
+    font-size: 10px;
+    width: 15px;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (min-width: 330px) {

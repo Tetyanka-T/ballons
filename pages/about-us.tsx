@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Header from '../components/Header/Header'
-import Footer from '../components/Footer/Footer'
 import style from '../styles/common.module.scss'
 import Novigation from '../components/Navigation/Novigation'
 
@@ -16,7 +14,7 @@ export default function AboutUs() {
       </Head>
 
       <main className={style.container}>
-        <Header />
+   
         <div className={style.section}>
           <Novigation section='Про нас'/>
         <h2 className={style.section_title}>Про нас</h2>
@@ -24,9 +22,6 @@ export default function AboutUs() {
         </div>
         </main>
 
-      <footer>
-        <Footer/>
-      </footer>
     </div>
   )
 }

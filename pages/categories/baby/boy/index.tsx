@@ -8,7 +8,7 @@ import NoFindComposition from '../../../../components/NoFindComposition/NoFindCo
 import Novigation from '../../../../components/Navigation/Novigation'
 import common from '../../../../styles/common.module.scss'
 
-const ExtractFromMaternityHospitalBoy = () => {
+const ExtractFromMaternityHospitalBoy = ({balloon}) => {
     return (
         <div>
         <Head>
@@ -18,20 +18,18 @@ const ExtractFromMaternityHospitalBoy = () => {
         </Head>
   
         <main className={common.container}>
-          <Header />
+     
           <div className={common.section}>
             <CategoriesListDesktop/>
             <Novigation section='Виписка з пологового будинку' category='хлопчик' link='/categories/baby'/>
             <h1 className={common.section_title}>Виписка з пологового будинку для хлопчика</h1>
             <Filter/>
-            <BalloonCard/>
+            <BalloonCard balloon={balloon}/>
           </div>
           
         </main>
         <NoFindComposition/>
-        <footer>
-          <Footer/>
-        </footer>
+  
       </div>
     )
 

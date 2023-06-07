@@ -15,6 +15,7 @@ const CollageHomePage = () => {
               alt=""
               width={280}
               height={220}
+              priority={true}
               className={s.imageList_photo}
             />
             <div className={s.transparent}></div>

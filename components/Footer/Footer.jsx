@@ -5,7 +5,7 @@ import s from "./Footer.module.scss";
 const Footer = () => {
   return (
     <div className={s.footer}>
-      <p>&#169; 2023</p>
+      <p>&#169; {new Date().getFullYear()}</p>
       <a href="" className={s.footer_rules__link}>
         Правила використання сайту
       </a>

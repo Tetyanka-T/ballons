@@ -72,24 +72,42 @@ const CategoriesListDesktop = () => {
         </button>
         {birthDay && (
           <ul className={s.categories_listBirthDay}>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday">Дивитись все</Link>
             </li>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday/first">
                 Перший День народження
               </Link>
             </li>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday/girls">Для дівчинки</Link>
             </li>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday/boys">Для хлопчика</Link>
             </li>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday/she">Для неї</Link>
             </li>
-            <li className={s.categories_listBirthDay__item}>
+            <li
+              className={s.categories_listBirthDay__item}
+              onClick={() => SetBirthDay(false)}
+            >
               <Link href="/categories/birthday/he">Для нього</Link>
             </li>
           </ul>

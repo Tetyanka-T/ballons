@@ -1,0 +1,48 @@
+@use '../../styles/variables' as *;
+
+.cardDescription_button__favorite {
+
+      box-shadow: 1px 1px 1px $accent-color;
+      border-radius: 50px;
+      padding: 6px;
+      background-color: $accent-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      &:hover,
+      &:focus {
+          background-color: $accent-color;
+  
+          & .cardDescription_button__icon__select {
+              display: flex;
+              fill: $main-color;
+          }
+          & .cardDescription_button__icon {
+              display: none;
+          }
+      }
+  }
+  .cardDescription_button__icon__select {
+      display: none;
+  }
+  .cardDescription_button__icon {
+      width: 20px;
+      height: 20px;
+      fill: $main-color;
+  }
+
+  .cardDescription_button__deletefavorite {
+    box-shadow: 1px 1px 1px $accent-color;
+    border-radius: 50px;
+    padding: 6px;
+    background-color: $accent-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & svg {
+        width: 20px;
+        height: 20px;
+        fill: $main-color;
+    }
+  }

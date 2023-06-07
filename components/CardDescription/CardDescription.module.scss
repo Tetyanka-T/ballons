@@ -18,6 +18,7 @@
     color: $text-color;
     padding-bottom: 15px;
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 
@@ -29,10 +30,12 @@
         height: auto;
     }
 }
+.fav_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 .cardDescription_button__favorite {
-    position: absolute;
-    top: 10px;
-    left: 235px;
     box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
     border-radius: 50px;
     width: 35px;
@@ -41,24 +44,23 @@
     align-items: center;
     justify-content: center;
     background-color: $accent-color;
-    
+    & .cardDescription_button__icon__select {
+        display: none;
+    }
     &:hover,
     &:focus {
-        background-color: $accent-color;
+   
 
         & .cardDescription_button__icon__select {
             display: flex;
-            fill: $main-color;
-            
+            fill: $main-color; 
         }
         & .cardDescription_button__icon {
             display: none;
         }
     }
 }
-.cardDescription_button__icon__select {
-    display: none;
-}
+
 .cardDescription_button__icon {
     width: 20px;
     height: 20px;
@@ -77,6 +79,7 @@
     line-height: 1.02;
 }
 .cardDescription_descriptionComposition {
+    width: 280px;
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -106,14 +109,14 @@
     justify-content: center;
     align-items: center;
     margin-left: auto;
-    width: 100px;
+    width: 120px;
     color: $text-color;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.02;
     border-radius: 20px;
     box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
-    padding: 6px;
+    padding: 10px;
 
     & svg {
         margin-left: 5px;
@@ -135,24 +138,21 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
         box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
         padding: 20px;
         border-radius: 30px;
     }
     
- 
-    .cardDescription_button__favorite {
-        left: 255px;
-        top: 30px;
-    }
     .cardDescription_inform {
         margin-top: 30px;
     }
-    .cardDescription_button__basket {
-        width: 120px;
-        padding: 10px;
-        font-size: 16px;
+.cardDescription_price_container {
+    margin-top: 30px;
+}
+    .cardDescription_descriptionComposition {
+        width: 350px;
+    
     }
 }
 @media screen and (min-width: 1200px) {
@@ -161,14 +161,18 @@
         width: 300px;
         height: auto;
     }
-    .cardDescription_button__favorite {
-        left: 275px;
-        top: 35px;
-    }
+  
     .cardDescription_button__basket {
         width: 200px;
         padding: 15px;
         font-size: 18px;
     }
+    .cardDescription_price_container {
+        margin-top: 40px;
+    }
+        .cardDescription_descriptionComposition {
+            width: 650px;
+        
+        }
 
 }

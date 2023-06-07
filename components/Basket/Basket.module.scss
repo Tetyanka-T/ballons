@@ -10,10 +10,10 @@
     padding: 6px 0 6px 0;
 }
 .basket_photo {
-    width: 80px;
-    height: 110px;
+    width: 70px;
+    height: 90px;
     & img {
-        width: 100%;
+        width: auto;
         height: 100%;
     }
 }
@@ -72,15 +72,7 @@
     line-height: 1.2;
     color: $text-color;
 }
-.counter_close {
-    position: relative;
-}
-.basket_close {
-    position: absolute;
-    top: 2px;
-    left: 250px;
 
-}
 .basket_sum {
     display: flex;
     align-items: center;
@@ -98,6 +90,7 @@
     color: $text-color;
     font-weight: 400;
     line-height: 1.2;
+    margin-bottom: 40px;
 }
 
 .basket_order_continu {
@@ -126,8 +119,11 @@
         padding: 25px 0 25px 0;
     }
     .basket_photo {
-        width: 130px;
-        height: 180px;
+        width: 115px;
+        height: 140px;
+        & img {
+            width: 100%;
+        }
     }
     .basket_list__item__product {
         margin-left: 30px;
@@ -157,9 +153,7 @@
     .basket__price {
         margin-left: 30px;
     }
-    .basket_close {
-        left: 600px;
-    }
+  
     .basket_sum {
      margin: 20px;
     }
@@ -179,8 +173,10 @@
 }
 
 @media screen and (min-width: 1200px) {
-    .basket_close {
-        left: 1000px;
+  
+    .basket_photo {
+        width: 120px;
+        height: 150px;
+       
     }
-    
 }

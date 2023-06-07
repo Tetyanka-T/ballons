@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Header from "../../../components/Header/Header";
+import Link from "next/link";
 import Footer from "../../../components/Footer/Footer";
 import common from "../../../styles/common.module.scss";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
@@ -7,27 +8,22 @@ import CategoriesListDesktop from "../../../components/CategoriesListDesktop/Cat
 import Filter from "../../../components/Filter/Filter";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
+import { getAllBalloons } from "../../../lib/balloons";
+import BuyButton from "../../../components/BuyButton/BuyButton";
+import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
+import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await fetch(
-    "https://balloons-shop.onrender.com/api/balloons"
+  const response = await getAllBalloons();
+  const genderBalloons = response.filter(
+    (bal) => bal.category === "Gender party"
   );
-  const data = await response.json();
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
   return {
-    props: { balloons: data.data },
+    props: { balloons: genderBalloons },
   };
 };
 
 const GenderParty = ({ balloons }) => {
-  const genderBalloons = balloons.filter(
-    (bal) => bal.category === "Gender party"
-  );
-  console.log(genderBalloons);
   return (
     <div>
       <Head>
@@ -39,21 +35,29 @@ const GenderParty = ({ balloons }) => {
         <link rel="icon" href="/balloon.svg" />
       </Head>
       <main className={common.container}>
-        <Header />
-        <div className={common.section}>
-          <CategoriesListDesktop />
-          <Novigation section="Визначення статті малюка" />
-          <h1 className={common.section_title}>Визначення статті малюка</h1>
-          <Filter />
-          {balloons && <BalloonCard balloons={genderBalloons} />}
-        </div>
+        <Novigation section="Визначення статті малюка" />
+        <h1 className={common.section_title}>Визначення статті малюка</h1>
+        <Filter />
+        {balloons && (
+          <ul className={s.list}>
+            {balloons.map((balloon) => (
+              <li key={balloon._id} className={s.card_item}>
+                <Link
+                  href="/categories/gender-party/[id]"
+                  as={`/categories/gender-party/${balloon._id}`}
+                >
+                  <BalloonCard balloon={balloon} />
+                </Link>
+                <div className={s.list_button}>
+                  <BuyButton balloon={balloon} />
+                  <FavoriteButton balloon={balloon} />
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </main>
       <NoFindComposition />
-      <footer>
-        <Footer />
-      </footer>
-
-      <h1></h1>
     </div>
   );
 };

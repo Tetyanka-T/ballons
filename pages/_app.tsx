@@ -1,19 +1,34 @@
 import '../styles/globals.css'
-import '../styles/common.module.scss'
+import common from '../styles/common.module.scss'
 import type { AppProps } from 'next/app'
 import { Inter } from '@next/font/google'
-// Lora
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
+import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
+import { CartProvider } from '../context/CartContext'
+
 const inter = Inter({
   weight: ['400', '500', '600'],
   subsets: ['latin'],
 })
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
 <main className={inter.className}>
+  <CartProvider>
+  <Header/>
+  <div className={common.container}>
+     
+      
+     <div className={common.section}>
+     <CategoriesListDesktop />
+     </div>
+     </div>
  <Component {...pageProps} />
+ <Footer/>
+  </CartProvider>
+ 
   </main>
   )
-  
- 
 }
+export default App;
