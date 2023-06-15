@@ -20,7 +20,10 @@ const Favorite = () => {
           {favorite.favoriteItems.map((balloon) => (
             <li key={balloon.id} className={s.card_item}>
               <BalloonCard balloon={balloon} />
-              <div className={s.list_button}>
+              <div className={s.list_button_favorite}>
+                <DeleteFavoriteButton balloon={balloon} />
+              </div>
+              <div className={s.list_button_basket}>
                 <button
                   className={ss.button_buy}
                   onClick={() => addItemToCart(balloon)}
@@ -28,7 +31,6 @@ const Favorite = () => {
                   <span>Купити</span>
                   <Basket className={ss.card_basket__button__icon} />
                 </button>
-                <DeleteFavoriteButton balloon={balloon} />
               </div>
             </li>
           ))}

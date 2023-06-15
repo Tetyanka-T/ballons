@@ -8,15 +8,22 @@
 
 .card_item {
     color: $text-color;
+    position: relative;;
 }
 
- 
-.list_button {
-    display: flex;
-    align-items: center;
-   justify-content: center;
-    margin: 30px 0 10px 0px;
+.list_button_favorite {
+    position: absolute;
+    bottom: 65px;
+    right: 15px;
 }
+.list_button_basket {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+
+
 .img_container {
     position: relative;
     height: 190px;
@@ -47,7 +54,6 @@
 }
 
 .card_price {
-    margin-left: 10px;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.02;
@@ -56,7 +62,7 @@
 
 @media screen and (min-width: 400px) {
     .img_container {
-        height: 210px;
+        height: 250px;
     }
     .card_title {
         width: 160px;
@@ -100,4 +106,5 @@
     .img_container {
         height: 350px;
     }
+  
 }

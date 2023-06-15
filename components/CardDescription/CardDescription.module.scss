@@ -18,53 +18,23 @@
     color: $text-color;
     padding-bottom: 15px;
     margin-top: 20px;
-    margin-bottom: 30px;
 }
 
 
 .cardDescription_photo_container {
-    width: 280px;
-
+width: 280px;
     & img {
         width: 100%;
         height: auto;
     }
 }
-.fav_wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.cardDescription_fav_container {
+position: relative;
 }
-.cardDescription_button__favorite {
-    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
-    border-radius: 50px;
-    width: 35px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $accent-color;
-    & .cardDescription_button__icon__select {
-        display: none;
-    }
-    &:hover,
-    &:focus {
-   
-
-        & .cardDescription_button__icon__select {
-            display: flex;
-            fill: $main-color; 
-        }
-        & .cardDescription_button__icon {
-            display: none;
-        }
-    }
-}
-
-.cardDescription_button__icon {
-    width: 20px;
-    height: 20px;
-    fill: $main-color;
+.cardDescription_button_fav {
+    position: absolute;
+    top: 0px;
+    right: 10px;
 }
 .cardDescription_title {
     margin-top: 15px;
@@ -72,14 +42,15 @@
     font-size: 18px;
     font-weight: 600;
     line-height: 1.2;
+    width: 230px;
 }
+
 .cardDescription_article {
     font-size: 12px;
     font-weight: 400;
     line-height: 1.02;
 }
 .cardDescription_descriptionComposition {
-    width: 280px;
     margin-top: 15px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -87,13 +58,16 @@
     line-height: 1.2;
 }
 .cardDescription_price_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.2;
+}
+.cardDescription_button_buy {
+    position: absolute;
+    top: -5px;
+    right: 10px;
 }
 .cardDescription_price {
     font-weight: 600;
@@ -103,33 +77,7 @@
     font-size: 12px;
     font-weight: 400;
     line-height: 1.02;
-}
-.cardDescription_button__basket {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    width: 120px;
-    color: $text-color;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.02;
-    border-radius: 20px;
-    box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
-    padding: 10px;
-
-    & svg {
-        margin-left: 5px;
-    }
-
-    &:hover,
-    &:focus {
-        background-color: $accent-color;
-
-        & svg {
-            fill: $main-color;
-        }
-    }
+    
 }
 
 @media screen and (min-width: 768px) {
@@ -138,22 +86,26 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
         gap: 30px;
-        margin-bottom: 40px;
         box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
-        padding: 20px;
+        padding: 20px 20px 70px 20px;
         border-radius: 30px;
+        margin-bottom: 30px;
     }
     
     .cardDescription_inform {
         margin-top: 30px;
+        
     }
 .cardDescription_price_container {
     margin-top: 30px;
 }
-    .cardDescription_descriptionComposition {
-        width: 350px;
-    
-    }
+.cardDescription_button_fav {
+    top: -5px;
+}
+.cardDescription_title {
+    width: 300px;
+}
+   
 }
 @media screen and (min-width: 1200px) {
    
@@ -161,18 +113,15 @@
         width: 300px;
         height: auto;
     }
-  
-    .cardDescription_button__basket {
-        width: 200px;
-        padding: 15px;
-        font-size: 18px;
+    .cardDescription_container {
+      height: 500px;
     }
+  
     .cardDescription_price_container {
         margin-top: 40px;
     }
-        .cardDescription_descriptionComposition {
-            width: 650px;
-        
-        }
+    .cardDescription_title {
+        width: 100%;
+    }   
 
 }

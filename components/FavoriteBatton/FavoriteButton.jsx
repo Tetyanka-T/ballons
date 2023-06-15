@@ -1,6 +1,8 @@
 import { FavoriteContour, FavoriteSelect } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
 import s from "./FavoriteButton.module.scss";
 
 const FavoriteButton = ({ balloon }) => {

@@ -1,15 +1,6 @@
-import { TextField, ThemeProvider, Modal } from "@mui/material";
-import { createTheme } from "@mui/material/styles";
+import { TextField, Modal } from "@mui/material";
 import { Search } from "../svg";
 import s from "./SearchInput.module.scss";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#FFA500",
-    },
-  },
-});
 
 const SearchInput = () => {
   // const handleSearch = (e) => {
@@ -18,15 +9,14 @@ const SearchInput = () => {
   // };
   return (
     <form className={s.search_form}>
-      <ThemeProvider theme={theme}>
-        <TextField
-          autoFocus
-          className={s.searchForm_input}
-          id="searchBalloon"
-          name="searchBalloon"
-          placeholder="Знайти композицію"
-        />
-      </ThemeProvider>
+      <TextField
+        autoFocus
+        className={s.searchForm_input}
+        id="searchBalloon"
+        name="searchBalloon"
+        placeholder="Знайти композицію"
+      />
+
       <button className={s.searchForm_button}>
         <Search width={20} height={20} />
       </button>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import BalloonCard from '../../../../components/BalloonCard/BalloonCard'
-import Filter from '../../../../components/Filter/Filter'
+import Filter from '../../../../components/FilterGender/FilterGender'
 import NoFindComposition from '../../../../components/NoFindComposition/NoFindComposition'
 import Novigation from '../../../../components/Navigation/Novigation'
 import common from '../../../../styles/common.module.scss'

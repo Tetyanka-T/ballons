@@ -18,7 +18,7 @@ function BuyButton({ balloon }) {
   };
   return (
     <button className={s.button_buy} onClick={addToCartHandler}>
-      <span>Купити</span>
+      Купити
       <Basket className={s.card_basket__button__icon} />
     </button>
   );
