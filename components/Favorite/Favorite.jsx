@@ -13,7 +13,7 @@ const Favorite = () => {
   return (
     <div>
       <ComeBackButton />
-      <h2>Добавте свої улюблені композиції</h2>
+      <h2>Додайте свої улюблені композиції</h2>
 
       {favorite.favoriteItems && (
         <ul className={s.list}>

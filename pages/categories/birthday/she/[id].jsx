@@ -45,9 +45,11 @@ const CardId = ({ balloon }) => {
       </Head>
       <main className={common.container}>
         <Novigation
-          section="Всі композиції"
+          section="День народження"
+          category="Для неї"
           composition="Композиція"
-          linkSection="/categories"
+          linkSection="/categories/birthday"
+          linkCategory="/categories/birthday/she"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

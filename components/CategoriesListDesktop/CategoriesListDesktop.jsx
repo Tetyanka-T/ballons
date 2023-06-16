@@ -54,13 +54,19 @@ const CategoriesListDesktop = () => {
         {baby && (
           <ul className={s.categories_listBaby}>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby">Дивитись все</Link>
+              <Link href="/categories/baby" onClick={() => SetBaby(false)}>
+                Дивитись все
+              </Link>
             </li>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby/girl">Для дівчинки</Link>
+              <Link href="/categories/baby/girl" onClick={() => SetBaby(false)}>
+                Для дівчинки
+              </Link>
             </li>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby/boy">Для хлопчика</Link>
+              <Link href="/categories/baby/boy" onClick={() => SetBaby(false)}>
+                Для хлопчика
+              </Link>
             </li>
           </ul>
         )}
@@ -123,24 +129,42 @@ const CategoriesListDesktop = () => {
         </button>
         {thematics && (
           <ul className={s.categories_listThematics}>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics">Дивитись все</Link>
             </li>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics/valentine's-day">
                 День Закоханих
               </Link>
             </li>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics/hen-party">Дівич-вечір</Link>
             </li>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics/wedding">Весілля</Link>
             </li>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics/halloween">Хелловін</Link>
             </li>
-            <li className={s.categories_listThematics__item}>
+            <li
+              className={s.categories_listThematics__item}
+              onClick={() => SetThematics(false)}
+            >
               <Link href="/categories/thematics/new-year">Новий Рік</Link>
             </li>
           </ul>
@@ -150,7 +174,6 @@ const CategoriesListDesktop = () => {
         <Link href="/categories/design">Оформлення фасадів</Link>
       </li>
     </ul>
-    // </div>
   );
 };
 export default CategoriesListDesktop;

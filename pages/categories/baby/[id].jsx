@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import common from "../../../../styles/common.module.scss";
-import Novigation from "../../../../components/Navigation/Novigation";
-import ComeBackButton from "../../../../components/ComeBackButton/ComeBackButton";
-import s from "../../../../components/CardDescription/CardDescription.module.scss";
-import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
-import BuyButton from "../../../../components/BuyButton/BuyButton";
-import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../styles/common.module.scss";
+import Novigation from "../../../components/Navigation/Novigation";
+import ComeBackButton from "../../../components/ComeBackButton/ComeBackButton";
+import s from "../../../components/CardDescription/CardDescription.module.scss";
+import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
+import BuyButton from "../../../components/BuyButton/BuyButton";
+import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -45,11 +45,9 @@ const CardId = ({ balloon }) => {
       </Head>
       <main className={common.container}>
         <Novigation
-           section="День народження"
-           category="Для нього"
-           composition="Композиція"
-           linkSection="/categories/birthday"
-           linkCategory="/categories/birthday/he"
+          section="Виписка з пологового будинку"
+          composition="Композиція"
+          linkSection="/categories/baby"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

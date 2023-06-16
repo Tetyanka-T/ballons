@@ -150,7 +150,10 @@ const BirthDays = ({ balloons }) => {
           <ul className={s.list}>
             {filteredBalloons.map((balloon) => (
               <li key={balloon._id} className={s.card_item}>
-                <Link href="/categories/[id]" as={`/categories/${balloon._id}`}>
+                <Link
+                  href="/categories/birthday/[id]"
+                  as={`/categories/birthday/${balloon._id}`}
+                >
                   <BalloonCard balloon={balloon} />
                 </Link>
                 <div className={s.list_button_favorite}>
@@ -169,8 +172,8 @@ const BirthDays = ({ balloons }) => {
                 {paginatedPosts.map((balloon) => (
                   <li key={balloon._id} className={s.card_item}>
                     <Link
-                      href="/categories/[id]"
-                      as={`/categories/${balloon._id}`}
+                      href="/categories/birthday/[id]"
+                      as={`/categories/birthday/${balloon._id}`}
                     >
                       <BalloonCard balloon={balloon} />
                     </Link>
