@@ -15,9 +15,9 @@ const NavigatorBar = () => {
   const favoriteItems = favorite?.favoriteItems;
 
   const [showMenu, SetShowMenu] = useState(false);
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  // const [open, setOpen] = useState(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
 
   const onShowMenu = () => {
     SetShowMenu(true);
@@ -57,9 +57,13 @@ const NavigatorBar = () => {
         <>
           <ul className={s.header_user__list}>
             <li className={s.header_user__item}>
-              <button onClick={handleOpen}>
-                <Search className={s.header_icon} />
-              </button>
+              <Link href="/search">
+                <button
+                //  onClick={handleOpen}
+                >
+                  <Search className={s.header_icon} />
+                </button>
+              </Link>
             </li>
             <li className={s.header_user__item}>
               <Link href="/favorite" className={s.header_icon_count}>
@@ -75,7 +79,7 @@ const NavigatorBar = () => {
               </Link>
             </li>
           </ul>
-          <Modal
+          {/* <Modal
             open={open}
             onClose={handleClose}
             aria-labelledby="modal-search-balloon"
@@ -84,7 +88,7 @@ const NavigatorBar = () => {
             <Box className={s.header_nav__modal}>
               <SearchInput />
             </Box>
-          </Modal>
+          </Modal> */}
         </>
       )}
     </div>
