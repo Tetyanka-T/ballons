@@ -29,7 +29,6 @@ const CategoriesPage = ({ balloons }) => {
   const [filter, setFilter] = useState(false);
   const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
-
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();

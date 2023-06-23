@@ -216,14 +216,14 @@ const OrderForm = () => {
                   },
                 }}
               >
-                <MenuItem value="9-10">9.00-10.00</MenuItem>
-                <MenuItem value="10-11">10.00-11.00</MenuItem>
-                <MenuItem value="11-12">11.00-12.00</MenuItem>
-                <MenuItem value="12-13">12.00-13.00</MenuItem>
-                <MenuItem value="13-14">13.00-14.00</MenuItem>
-                <MenuItem value="14-15">14.00-15.00</MenuItem>
-                <MenuItem value="15-16">15.00-16.00</MenuItem>
-                <MenuItem value="16-17">16.00-17.00</MenuItem>
+                <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
+                <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
+                <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
+                <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
+                <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
+                <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
+                <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
+                <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
               </Select>
             </FormControl>
           )}
@@ -328,20 +328,20 @@ const OrderForm = () => {
                     },
                   }}
                 >
-                  <MenuItem value="6-7">6.00-7.00</MenuItem>
-                  <MenuItem value="7-8">7.00-8.00</MenuItem>
-                  <MenuItem value="8-9">8.00-9.00</MenuItem>
-                  <MenuItem value="9-10">9.00-10.00</MenuItem>
-                  <MenuItem value="10-11">10.00-11.00</MenuItem>
-                  <MenuItem value="11-12">11.00-12.00</MenuItem>
-                  <MenuItem value="12-13">12.00-13.00</MenuItem>
-                  <MenuItem value="13-14">13.00-14.00</MenuItem>
-                  <MenuItem value="14-15">14.00-15.00</MenuItem>
-                  <MenuItem value="15-16">15.00-16.00</MenuItem>
-                  <MenuItem value="16-17">16.00-17.00</MenuItem>
-                  <MenuItem value="17-18">17.00-18.00</MenuItem>
-                  <MenuItem value="18-19">18.00-19.00</MenuItem>
-                  <MenuItem value="19-20">19.00-20.00</MenuItem>
+                  <MenuItem value="06:00-07:00">06:00-07:00</MenuItem>
+                  <MenuItem value="07:00-08:00">07:00-08:00</MenuItem>
+                  <MenuItem value="08:00-09:00">08:00-09:00</MenuItem>
+                  <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
+                  <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
+                  <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
+                  <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
+                  <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
+                  <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
+                  <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
+                  <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
+                  <MenuItem value="17:00-18:00">17:00-18:00</MenuItem>
+                  <MenuItem value="18:00-19:00">18:00-19:00</MenuItem>
+                  <MenuItem value="19:00-20:00">19:00-20:00</MenuItem>
                 </Select>
               </FormControl>
             </>

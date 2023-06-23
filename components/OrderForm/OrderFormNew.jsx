@@ -1,7 +1,6 @@
 import { useState, useContext } from "react";
 import { Cross } from "../../components/svg";
 import Image from "next/image";
-import { nanoid } from "nanoid";
 import * as yup from "yup";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
@@ -22,33 +21,33 @@ import ss from "../../styles/OrderPage.module.scss";
 import sss from "../Basket/Basket.module.scss";
 import common from "../../styles/common.module.scss";
 import OrderSuccess from "../OrderSuccess/OrderSuccess";
-
 import CartContext from "../../context/CartContext";
-// const validationSchema = yup.object().shape({
-//   userName: yup.string().required("Введіть своє ім'я"),
-//   userPhone: yup
-//     .number()
-//     .integer("Некоректний телефон")
-//     .typeError()
-//     .required("Введіть свій номер телефону"),
-//   userEmail: yup
-//     .string()
-//     .email("Некоректний email")
-//     .required("Введіть свій email"),
-//   dateHoliday: yup.date().required(),
-//   deliveryTime: yup.string().required("Оберіть бажаний час"),
-//   payment: yup.string().required("Оберіть спосіб оплати"),
-//   deliveryMethod: yup.string().required("Оберіть спосіб доставки"),
-//   userAddress: yup.string().required("Вкажіть вашу адресу"),
-//   comment: yup.string(),
-//   callBack: yup.boolean(),
-// });
+
+const validationSchema = yup.object().shape({
+  userName: yup.string().required("Введіть своє ім'я"),
+  userPhone: yup
+    .number()
+    .integer("Некоректний телефон")
+    .typeError()
+    .required("Введіть свій номер телефону"),
+  userEmail: yup
+    .string()
+    .email("Некоректний email")
+    .required("Введіть свій email"),
+  dateHoliday: yup.date().required(),
+  deliveryTime: yup.string().required("Оберіть бажаний час"),
+  payment: yup.string().required("Оберіть спосіб оплати"),
+  deliveryMethod: yup.string().required("Оберіть спосіб доставки"),
+  userAddress: yup.string().required("Вкажіть вашу адресу"),
+  comment: yup.string(),
+  callBack: yup.boolean(),
+});
 
 const OrderFormNew = () => {
   const { addItemToCart, deleteItemFromCart, cart, removeItemCart } =
     useContext(CartContext);
 
-  const amountWithoutTax = cart?.cartItems?.reduce(
+  const amount = cart?.cartItems?.reduce(
     (acc, item) => acc + item.quantity * item.price,
     0
   );
@@ -89,7 +88,7 @@ const OrderFormNew = () => {
   const month = startDate.getMonth() + 1;
   const year = startDate.getFullYear();
   const deliveryDate = `${day}.${month}.${year}`;
-  const numberOrder = nanoid(10);
+  const numberOrder = Date.now().toString();
   const selectTime = (e) => {
     SetDeliveryTime(e.target.value);
   };
@@ -147,6 +146,7 @@ const OrderFormNew = () => {
     const basket = cart.cartItems.map((b) => ({
       balloon: b.id,
       quantity: b.quantity,
+      price: b.quantity * b.price,
     }));
     const orderFull = {
       numberOrder,
@@ -162,6 +162,7 @@ const OrderFormNew = () => {
       callBack,
       basket,
     };
+
     const JSONdata = JSON.stringify(orderFull);
     const link = "https://balloons-shop.onrender.com/api/orders";
     const options = {
@@ -175,7 +176,7 @@ const OrderFormNew = () => {
 
     setFormSuccess(true);
 
-    // removeItemCart();
+    removeItemCart();
     // router.push("/categories");
     // toast.success("Done!");
   };
@@ -191,29 +192,32 @@ const OrderFormNew = () => {
             <TextField
               id="userName"
               name="userName"
+              type="text"
               label="Ім'я"
               value={userName}
               className={s.textField}
               onChange={handleChange}
               required
-              pattern="^[a-яА-Я]+(([' -][a-яА-Я ])?[a-яА-Я]*)*$"
             />
 
             <TextField
               id="userPhone"
               name="userPhone"
+              type="number"
               label="Номер телефону"
               value={userPhone}
               className={s.textField}
               onChange={handleChange}
               required
               placeholder="+38"
+              pattern="[0-9]*"
             />
 
             <TextField
               id="userEmail"
               name="userEmail"
               label="Email"
+              type="email"
               value={userEmail}
               className={s.textField}
               onChange={handleChange}
@@ -514,7 +518,7 @@ const OrderFormNew = () => {
                 </ul>
                 <div className={sss.basket_sum}>
                   <p>Разом:</p>
-                  <p>{amountWithoutTax} грн</p>
+                  <p>{amount} грн</p>
                 </div>
               </>
             )}

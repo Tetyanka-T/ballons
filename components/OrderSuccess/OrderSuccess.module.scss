@@ -1,0 +1,21 @@
+@use '../../styles/variables' as *;
+
+.container {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+.successform_list {
+    text-align: left;
+    margin-bottom: 20px;
+    & li {
+        margin-top: 10px;
+    }
+}
+
+.succeessform_info {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+}

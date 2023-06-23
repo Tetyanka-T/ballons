@@ -1,6 +1,6 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { TextField } from "@mui/material";
+import { TextField, Alert } from "@mui/material";
 import BalloonCard from "../BalloonCard/BalloonCard";
 import FavoriteButton from "../FavoriteBatton/FavoriteButton";
 import BuyButton from "../BuyButton/BuyButton";
@@ -29,9 +29,12 @@ const SearchInput = () => {
   const searchEndpoint = (query) =>
     `https://balloons-shop.onrender.com/api/search/${query}`;
 
-  const onChange = useCallback((event) => {
-    const query = event.target.value;
-    setQuery(query);
+  const onChange = (e) => {
+    setQuery(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (!query) {
       return;
     }
@@ -39,13 +42,16 @@ const SearchInput = () => {
     fetch(searchEndpoint(query))
       .then((res) => res.json())
       .then((res) => {
+        if (res.length === 0) {
+          alert(`За вашим запитом '${query}' композиції відсутні`);
+        }
         setResults(res);
       });
-  }, []);
-
+    setQuery("");
+  };
   return (
     <>
-      <div className={s.search_form}>
+      <form className={s.search_form} onSubmit={handleSubmit}>
         <TextField
           autoFocus
           className={s.searchForm_input}
@@ -59,7 +65,8 @@ const SearchInput = () => {
         <button className={s.searchForm_button} type="submit">
           <Search width={20} height={20} />
         </button>
-      </div>
+      </form>
+
       {results && (
         <ul className={ss.list}>
           {paginatedBalloons.map((balloon) => (
@@ -77,6 +84,7 @@ const SearchInput = () => {
           ))}
         </ul>
       )}
+
       <div className={common.button_pagenext}>
         {page > 1 && (
           <button type="button" onClick={() => fetchPrevPage()}>

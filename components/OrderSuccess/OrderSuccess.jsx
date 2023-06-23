@@ -1,42 +1,11 @@
-import Image from "next/image";
-import { useState, useContext } from "react";
-import CartContext from "../../context/CartContext";
-import sss from "../Basket/Basket.module.scss";
-import ss from "../../styles/OrderPage.module.scss";
+import s from "./OrderSuccess.module.scss";
 
 const OrderSuccess = ({ order }) => {
-  const { cart } = useContext(CartContext);
-  console.log(order);
   return (
-    <div>
-      <h2>Дякуємо, що обрали нас {order.userName}</h2>
+    <div className={s.container}>
+      <h2>Дякуємо за замовлення {order.userName}!</h2>
       <p>Ваше замовлення № {order.numberOrder}</p>
-      <ul>
-        Деталі замовлення
-        {cart.cartItems.map((balloon) => (
-          <li className={ss.basket_list__item} key={balloon._id}>
-            <div className={ss.basket_photo}>
-              <Image src={balloon.imgSrc} alt="" width={70} height={90} />
-            </div>
-            <div className={ss.basket_list__item__product}>
-              <h3 className={ss.basket_list__item__product__title}>
-                {balloon.name}
-              </h3>
-              <p className={ss.basket_list__item__product__art}>
-                арт.№ {balloon.code}
-              </p>
-              <div className={sss.basket_couter}>
-                <p>{balloon.quantity}</p>
-
-                <p className={sss.basket__price}>
-                  {balloon.quantity * balloon.price} грн
-                </p>
-              </div>
-            </div>
-          </li>
-        ))}
-      </ul>
-      <ul>
+      <ul className={s.successform_list}>
         <li>Дата свята: {order.deliveryDate}</li>
         <li>Спосіб доставки: {order.deliveryMethod}</li>
         <li>Час доставки: {order.deliveryTime}</li>
@@ -45,6 +14,11 @@ const OrderSuccess = ({ order }) => {
         <li>Ваш Email: {order.userEmail}</li>
         {order.comment && <li>Ваш коментарій: {order.comment}</li>}
       </ul>
+      <p className={s.succeessform_info}>
+        *Після обробки замовлення менеджером, вам на пошту надійде
+        лист-підтвердження. Перевірте папку «Спам» або «Промо», якщо не побачите
+        його.
+      </p>
     </div>
   );
 };
