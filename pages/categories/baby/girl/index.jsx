@@ -4,7 +4,8 @@ import { useState } from "react";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
-import { Sort } from "../../../../components/svg";
+import { Sort, PrevPage, NextPage } from "../../../../components/svg";
+import { paginate } from "../../../../lib/paginate";
 import { getAllBalloons } from "../../../../lib/balloons";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
@@ -17,15 +18,17 @@ export const getStaticProps = async () => {
   const babyBalloons = response.filter(
     (bal) => bal.category === "Виписка з пологового будинку"
   );
-  // const babyBalloonsGirls = babyBalloons.filter(
-  //   (bal) => bal.grup === "Для дівчинки"
-  // );
+  const babyBalloonsGirls = babyBalloons.filter(
+    (bal) => bal.grup === "Для дівчинки"
+  );
   return {
-    props: { balloons: babyBalloons },
+    props: { balloons: babyBalloonsGirls },
   };
 };
 
 const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
+  const [page, SetPage] = useState(1);
+  const pageSize = 24;
   const [showSort, setShowSort] = useState(false);
   const [sortered, setSortered] = useState([]);
   const onShowSort = () => {
@@ -45,6 +48,14 @@ const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
     setSortered(higePrice);
     setShowSort(false);
   };
+  const fetchNextPage = () => {
+    SetPage((prevState) => prevState + 1);
+  };
+  const fetchPrevPage = () => {
+    SetPage((prevState) => prevState - 1);
+  };
+  const paginatedBalloons = paginate(balloons, page, pageSize);
+  const pagesCount = Math.ceil(balloons.length / pageSize);
   return (
     <div>
       <Head>
@@ -65,7 +76,6 @@ const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
         <h1 className={common.section_title}>
           Виписка з пологового будинку для дівчинки
         </h1>
-
         <div className={fil.sort_button}>
           <button onClick={() => onShowSort()}>
             <Sort />
@@ -79,7 +89,7 @@ const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
         </div>
         {balloons && (
           <ul className={s.list}>
-            {balloons.map((balloon) => (
+            {paginatedBalloons.map((balloon) => (
               <li key={balloon._id} className={s.card_item}>
                 <Link
                   href="/categories/baby/girl/[id]"
@@ -97,6 +107,19 @@ const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
             ))}
           </ul>
         )}
+        <div className={common.button_pagenext}>
+          {page > 1 && (
+            <button type="button" onClick={() => fetchPrevPage()}>
+              <PrevPage />
+            </button>
+          )}
+
+          {page < pagesCount && (
+            <button type="button" onClick={() => fetchNextPage()}>
+              <NextPage />
+            </button>
+          )}
+        </div>
       </main>
       <NoFindComposition />
     </div>

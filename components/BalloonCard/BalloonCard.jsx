@@ -29,6 +29,7 @@ const BalloonCard = ({ balloon }) => {
 
       <div className={s.cart_description}>
         <h3 className={s.card_title}>{balloon.name}</h3>
+        <p className={s.card_code}>арт.№ {balloon.code}</p>
         <p className={s.card_price}>{balloon.price} грн.</p>
       </div>
     </>

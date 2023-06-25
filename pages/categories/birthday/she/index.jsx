@@ -102,7 +102,7 @@ const BirthDayShe = ({ balloons }) => {
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
   };
-  const paginatedPosts = paginate(balloons, page, pageSize);
+  const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
     const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
@@ -181,7 +181,7 @@ const BirthDayShe = ({ balloons }) => {
           <>
             {balloons && (
               <ul className={s.list}>
-                {paginatedPosts.map((balloon) => (
+                {paginatedBalloons.map((balloon) => (
                   <li key={balloon._id} className={s.card_item}>
                     <Link
                       href="/categories/birthday/she/[id]"

@@ -4,7 +4,8 @@ import { useState } from "react";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
-import { Sort } from "../../../components/svg";
+import { Sort, NextPage, PrevPage } from "../../../components/svg";
+import { paginate } from "../../../lib/paginate";
 import { getAllBalloons } from "../../../lib/balloons";
 import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
@@ -23,6 +24,8 @@ export const getStaticProps = async () => {
 };
 
 const ExtractFromMaternityHospital = ({ balloons }) => {
+  const [page, SetPage] = useState(1);
+  const pageSize = 24;
   const [showSort, setShowSort] = useState(false);
   const [sortered, setSortered] = useState([]);
   const onShowSort = () => {
@@ -42,6 +45,14 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
     setSortered(higePrice);
     setShowSort(false);
   };
+  const fetchNextPage = () => {
+    SetPage((prevState) => prevState + 1);
+  };
+  const fetchPrevPage = () => {
+    SetPage((prevState) => prevState - 1);
+  };
+  const paginatedBalloons = paginate(balloons, page, pageSize);
+  const pagesCount = Math.ceil(balloons.length / pageSize);
   return (
     <div>
       <Head>
@@ -69,7 +80,7 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
         </div>
         {balloons && (
           <ul className={s.list}>
-            {balloons.map((balloon) => (
+            {paginatedBalloons.map((balloon) => (
               <li key={balloon._id} className={s.card_item}>
                 <Link
                   href="/categories/baby/[id]"
@@ -87,6 +98,19 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
             ))}
           </ul>
         )}
+        <div className={common.button_pagenext}>
+          {page > 1 && (
+            <button type="button" onClick={() => fetchPrevPage()}>
+              <PrevPage />
+            </button>
+          )}
+
+          {page < pagesCount && (
+            <button type="button" onClick={() => fetchNextPage()}>
+              <NextPage />
+            </button>
+          )}
+        </div>
       </main>
       <NoFindComposition />
     </div>

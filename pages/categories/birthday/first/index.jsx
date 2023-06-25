@@ -34,7 +34,7 @@ const FirstBirthDay = ({ balloons }) => {
   const [filter, setFilter] = useState(false);
   const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
-  console.log(filteredBalloons);
+
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();
@@ -63,7 +63,7 @@ const FirstBirthDay = ({ balloons }) => {
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
   };
-  const paginatedPosts = paginate(balloons, page, pageSize);
+  const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
     const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
@@ -136,7 +136,7 @@ const FirstBirthDay = ({ balloons }) => {
           <>
             {balloons && (
               <ul className={s.list}>
-                {paginatedPosts.map((balloon) => (
+                {paginatedBalloons.map((balloon) => (
                   <li key={balloon._id} className={s.card_item}>
                     <Link
                       href="/categories/birthday/first/[id]"
