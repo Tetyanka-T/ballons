@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import common from '../../../../styles/common.module.scss'
 import BalloonCard from '../../../../components/BalloonCard/BalloonCard'
-import Filter from '../../../../components/FilterGender/FilterGender'
+
 import NoFindComposition from '../../../../components/NoFindComposition/NoFindComposition'
 import Novigation from '../../../../components/Navigation/Novigation'
 
-const Halloween = () => {
+const HenParty = ({balloon}) => {
     return (
         <div>
         <Head>
@@ -16,17 +16,18 @@ const Halloween = () => {
   
         <main className={common.container}>
           
-            <Novigation section='Тематична свята' category='Halloween' link='/categories/thematics'/>
-            <h1 className={common.section_title}>Halloween</h1>
-            <Filter/>
+            <Novigation section='Тематична свята' category='Дівич-вечір' link='/categories/thematics'/>
+            <h1 className={common.section_title}>Дівич-вечір</h1>
+         
             <BalloonCard balloon={balloon}/>
-      
+        
         </main>
         <NoFindComposition/>
+  
       
       </div>
     )
 }
 
 
-export default Halloween;
+export default HenParty;
