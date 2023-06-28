@@ -122,7 +122,7 @@ const CategoriesListDesktop = () => {
       <li className={s.categories_list__item}>
         <Link href="/categories/photo-zone">Фотозони</Link>
       </li>
-      <li className={s.categories_list__item}>
+      {/* <li className={s.categories_list__item}>
         <button onClick={() => onShowThematics()} className={s.button_select}>
           Тематичні свята
           <Select className={s.button_thematics__icon} />
@@ -169,7 +169,7 @@ const CategoriesListDesktop = () => {
             </li>
           </ul>
         )}
-      </li>
+      </li> */}
       <li className={s.categories_list__item}>
         <Link href="/categories/design">Оформлення фасадів</Link>
       </li>

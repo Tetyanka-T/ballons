@@ -19,15 +19,15 @@ export const getStaticProps = async () => {
   const birthDayBalloons = response.filter(
     (bal) => bal.category === "День народження"
   );
-  const birthDayBalloonsGirls = birthDayBalloons.filter(
-    (bal) => bal.grup === "дівчинка"
+  const birthDayBalloonsBoy = birthDayBalloons.filter(
+    (bal) => bal.grup === "Для хлопчика"
   );
   return {
-    props: { balloons: birthDayBalloonsGirls },
+    props: { balloons: birthDayBalloonsBoy },
   };
 };
 
-const BirthDayGirls = ({ balloons }) => {
+const BirthDayBoy = ({ balloons }) => {
   const [page, SetPage] = useState(1);
   const pageSize = 24;
   const [filteredBalloons, setFilteredBalloons] = useState([]);
@@ -138,10 +138,10 @@ const BirthDayGirls = ({ balloons }) => {
         <Novigation
           section="День народження"
           linkSection="/categories/birthday"
-          category="дівчинка"
-          linkCategory="/categories/birthday/girls"
+          category="хлопчик"
+          linkCategory="/categories/birthday/boys"
         />
-        <h1 className={common.section_title}>День народження для дівчинки</h1>
+        <h1 className={common.section_title}>День народження для хлопчика</h1>
         {balloons.length === 0 ? (
           <h2>Сторінка знаходиться у стадії розробки</h2>
         ) : (
@@ -175,8 +175,8 @@ const BirthDayGirls = ({ balloons }) => {
                   {filteredBalloons.map((balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
-                        href="/categories/birthday/girls/[id]"
-                        as={`/categories/birthday/girls/${balloon._id}`}
+                        href="/categories/birthday/boys/[id]"
+                        as={`/categories/birthday/boys/${balloon._id}`}
                       >
                         <BalloonCard balloon={balloon} />
                       </Link>
@@ -197,8 +197,8 @@ const BirthDayGirls = ({ balloons }) => {
                     {paginatedBalloons.map((balloon) => (
                       <li key={balloon._id} className={s.card_item}>
                         <Link
-                          href="/categories/birthday/girls/[id]"
-                          as={`/categories/birthday/girls/${balloon._id}`}
+                          href="/categories/birthday/boys/[id]"
+                          as={`/categories/birthday/boys/${balloon._id}`}
                         >
                           <BalloonCard balloon={balloon} />
                         </Link>
@@ -235,4 +235,4 @@ const BirthDayGirls = ({ balloons }) => {
   );
 };
 
-export default BirthDayGirls;
+export default BirthDayBoy;

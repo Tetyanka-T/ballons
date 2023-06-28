@@ -50,9 +50,19 @@ const ExtractFromMaternityHospitalGirl = ({ balloons }) => {
   };
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);

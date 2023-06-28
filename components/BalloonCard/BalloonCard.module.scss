@@ -22,7 +22,15 @@
     align-items: center;
     margin: 20px 0 20px 0;
 }
-
+.list_button_consultation {
+    color: $text-color;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    border: 1px solid $accent-color;
+    border-radius: 20px;
+    padding: 8px;
+}
 
 .img_container {
     position: relative;

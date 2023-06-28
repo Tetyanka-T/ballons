@@ -7,7 +7,7 @@ import { NextPage, PrevPage, Sort } from "../../components/svg";
 import FilterGender from "../../components/FilterGender/FilterGender";
 import NoFindComposition from "../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../components/Navigation/Novigation";
-import { getAllBalloons } from "../../lib/balloons";
+import { getAllBalloons, getAllBalloonsLimit } from "../../lib/balloons";
 import { paginate } from "../../lib/paginate";
 import BuyButton from "../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../components/FavoriteBatton/FavoriteButton";
@@ -16,7 +16,6 @@ import fil from "../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
   const response = await getAllBalloons();
-
   return {
     props: { balloons: response },
   };
@@ -65,9 +64,19 @@ const CategoriesPage = ({ balloons }) => {
 
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);

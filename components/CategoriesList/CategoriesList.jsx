@@ -127,7 +127,7 @@ const CategoriesList = ({ onClick }) => {
         <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/photo-zone">Фотозони</Link>
         </li>
-        <li className={s.categories_list__item}>
+        {/* <li className={s.categories_list__item}>
           <button onClick={() => onShowThematics()} className={s.button_select}>
             Тематичні свята
             <Select className={s.button_thematics__icon} />
@@ -174,7 +174,7 @@ const CategoriesList = ({ onClick }) => {
               </li>
             </ul>
           )}
-        </li>
+        </li> */}
         <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/design">Оформлення фасадів</Link>
         </li>

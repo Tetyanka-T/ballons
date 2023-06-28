@@ -14,7 +14,8 @@ import {
   FormGroup,
   FormControlLabel,
 } from "@mui/material";
-import DatePicker from "react-datepicker";
+import DatePicker, { registerLocale } from "react-datepicker";
+import uk from "date-fns/locale/uk";
 import "react-datepicker/dist/react-datepicker.css";
 import s from "./OrderForm.module.scss";
 import ss from "../../styles/OrderPage.module.scss";
@@ -63,13 +64,11 @@ const OrderFormNew = () => {
   const decreaseQty = (cartItem) => {
     const newQty = cartItem?.quantity - 1;
     const item = { ...cartItem, quantity: newQty };
-
     if (newQty <= 0) return;
-
     addItemToCart(item);
   };
-  const [formSuccess, setFormSuccess] = useState(false);
 
+  const [formSuccess, setFormSuccess] = useState(false);
   const [userName, SetUserName] = useState("");
   const [userPhone, SetUserPhone] = useState("");
   const [userEmail, SetUserEmail] = useState("");
@@ -81,14 +80,14 @@ const OrderFormNew = () => {
   const [comment, SetComment] = useState("");
   const [callBack, setCallBack] = useState(false);
 
+  registerLocale("uk", uk);
   const handleChangeCheck = (event) => {
     setCallBack(event.target.checked);
   };
-  const day = startDate.getDate();
-  const month = startDate.getMonth() + 1;
-  const year = startDate.getFullYear();
-  const deliveryDate = `${day}.${month}.${year}`;
+
+  const deliveryDate = startDate.toISOString().slice(0, 10);
   const numberOrder = Date.now().toString();
+
   const selectTime = (e) => {
     SetDeliveryTime(e.target.value);
   };
@@ -140,14 +139,18 @@ const OrderFormNew = () => {
     comment,
     callBack,
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const basket = cart.cartItems.map((b) => ({
-      balloon: b.id,
+      id: b.id,
+      img: b.imgSrc,
+      name: b.name,
+      code: b.code,
+      price: b.price,
       quantity: b.quantity,
       price: b.quantity * b.price,
     }));
+
     const orderFull = {
       numberOrder,
       userName,
@@ -162,7 +165,6 @@ const OrderFormNew = () => {
       callBack,
       basket,
     };
-
     const JSONdata = JSON.stringify(orderFull);
     const link = "https://balloons-shop.onrender.com/api/orders";
     const options = {
@@ -173,12 +175,8 @@ const OrderFormNew = () => {
       body: JSONdata,
     };
     const response = await fetch(link, options);
-
     setFormSuccess(true);
-
     removeItemCart();
-    // router.push("/categories");
-    // toast.success("Done!");
   };
 
   return (
@@ -203,13 +201,12 @@ const OrderFormNew = () => {
             <TextField
               id="userPhone"
               name="userPhone"
-              type="number"
+              type="tel"
               label="Номер телефону"
               value={userPhone}
               className={s.textField}
               onChange={handleChange}
               required
-              placeholder="+38"
               pattern="[0-9]*"
             />
 
@@ -228,6 +225,7 @@ const OrderFormNew = () => {
             <div className={s.calendarColor}>
               <p className={s.orderForm_select_date}>Виберіть дату свята:</p>
               <DatePicker
+                locale="uk"
                 dateFormat="dd.MM.yyyy"
                 minDate={new Date()}
                 selected={startDate}
@@ -324,14 +322,14 @@ const OrderFormNew = () => {
                     },
                   }}
                 >
-                  <MenuItem value="9-10">9.00-10.00</MenuItem>
-                  <MenuItem value="10-11">10.00-11.00</MenuItem>
-                  <MenuItem value="11-12">11.00-12.00</MenuItem>
-                  <MenuItem value="12-13">12.00-13.00</MenuItem>
-                  <MenuItem value="13-14">13.00-14.00</MenuItem>
-                  <MenuItem value="14-15">14.00-15.00</MenuItem>
-                  <MenuItem value="15-16">15.00-16.00</MenuItem>
-                  <MenuItem value="16-17">16.00-17.00</MenuItem>
+                  <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
+                  <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
+                  <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
+                  <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
+                  <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
+                  <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
+                  <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
+                  <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
                 </Select>
               </FormControl>
             )}
@@ -393,20 +391,20 @@ const OrderFormNew = () => {
                       },
                     }}
                   >
-                    <MenuItem value="6-7">6.00-7.00</MenuItem>
-                    <MenuItem value="7-8">7.00-8.00</MenuItem>
-                    <MenuItem value="8-9">8.00-9.00</MenuItem>
-                    <MenuItem value="9-10">9.00-10.00</MenuItem>
-                    <MenuItem value="10-11">10.00-11.00</MenuItem>
-                    <MenuItem value="11-12">11.00-12.00</MenuItem>
-                    <MenuItem value="12-13">12.00-13.00</MenuItem>
-                    <MenuItem value="13-14">13.00-14.00</MenuItem>
-                    <MenuItem value="14-15">14.00-15.00</MenuItem>
-                    <MenuItem value="15-16">15.00-16.00</MenuItem>
-                    <MenuItem value="16-17">16.00-17.00</MenuItem>
-                    <MenuItem value="17-18">17.00-18.00</MenuItem>
-                    <MenuItem value="18-19">18.00-19.00</MenuItem>
-                    <MenuItem value="19-20">19.00-20.00</MenuItem>
+                    <MenuItem value="06:00-07:00">06:00-07:00</MenuItem>
+                    <MenuItem value="07:00-08:00">07:00-08:00</MenuItem>
+                    <MenuItem value="08:00-09:00">08:00-09:00</MenuItem>
+                    <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
+                    <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
+                    <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
+                    <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
+                    <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
+                    <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
+                    <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
+                    <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
+                    <MenuItem value="17:00-18:00">17:00-18:00</MenuItem>
+                    <MenuItem value="18:00-19:00">18:00-19:00</MenuItem>
+                    <MenuItem value="19:00-20:00">19:00-20:00</MenuItem>
                   </Select>
                 </FormControl>
               </>

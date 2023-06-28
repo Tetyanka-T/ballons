@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
-import Filter from "../../../../components/FilterGender/FilterGender";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
 import { NextPage, PrevPage, Sort } from "../../../../components/svg";
@@ -98,9 +97,19 @@ const BirthDayShe = ({ balloons }) => {
 
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   };
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
