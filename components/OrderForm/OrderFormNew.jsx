@@ -139,9 +139,10 @@ const OrderFormNew = () => {
     comment,
     callBack,
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const basket = cart.cartItems.map((b) => ({
+    const basketBalloons = cart.cartItems.map((b) => ({
       id: b.id,
       img: b.imgSrc,
       name: b.name,
@@ -150,7 +151,10 @@ const OrderFormNew = () => {
       quantity: b.quantity,
       price: b.quantity * b.price,
     }));
-
+    const basket = {
+      balloons: basketBalloons,
+      amount: amount,
+    };
     const orderFull = {
       numberOrder,
       userName,
