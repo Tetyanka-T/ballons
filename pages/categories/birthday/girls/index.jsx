@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
     (bal) => bal.category === "День народження"
   );
   const birthDayBalloonsGirls = birthDayBalloons.filter(
-    (bal) => bal.grup === "дівчинка"
+    (bal) => bal.grup === "Для дівчинки"
   );
   return {
     props: { balloons: birthDayBalloonsGirls },
@@ -138,7 +138,7 @@ const BirthDayGirls = ({ balloons }) => {
         <Novigation
           section="День народження"
           linkSection="/categories/birthday"
-          category="дівчинка"
+          category="Для дівчинки"
           linkCategory="/categories/birthday/girls"
         />
         <h1 className={common.section_title}>День народження для дівчинки</h1>

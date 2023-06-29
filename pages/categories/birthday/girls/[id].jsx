@@ -46,7 +46,7 @@ const CardId = ({ balloon }) => {
       <main className={common.container}>
         <Novigation
           section="День народження"
-          category="дівчинка"
+          category="Для дівчинки"
           composition="Композиція"
           linkSection="/categories/birthday"
           linkCategory="/categories/birthday/girls"
