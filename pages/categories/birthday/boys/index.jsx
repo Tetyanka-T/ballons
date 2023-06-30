@@ -45,53 +45,22 @@ const BirthDayBoy = ({ balloons }) => {
   };
   const filteredNumber = () => {
     const number = balloons.filter((bal) => bal.filter === "фольговані цифри");
-    const number2 = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури"
-    );
-    const number3 = balloons.filter(
-      (bal) => bal.filter === "гігант, фольговані цифри"
-    );
-    const number4 = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-    );
-    const numbers = [...number, ...number2, ...number3, ...number4];
-    setFilteredBalloons(numbers);
+    setFilteredBalloons(number);
   };
   const filteredGiant = () => {
     const giant = balloons.filter((bal) => bal.filter === "гігант");
-    const giant2 = balloons.filter(
-      (bal) => bal.filter === "гігант, фольговані цифри"
-    );
-    const giant3 = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-    );
-    const giant4 = balloons.filter((bal) => bal.filter === "гігант, баблс");
-    const giants = [...giant, ...giant2, ...giant3, ...giant4];
-    setFilteredBalloons(giants);
+    setFilteredBalloons(giant);
   };
   const filteredFigures = () => {
-    const figure = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури"
-    );
-    const figure2 = balloons.filter(
-      (bal) => bal.filter === "фольговані фігури"
-    );
-    const figure3 = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-    );
-    const figures = [...figure, ...figure2, ...figure3];
-    setFilteredBalloons(figures);
+    const figure = balloons.filter((bal) => bal.filter === "фольговані фігури");
+    setFilteredBalloons(figure);
   };
   const filteredBabls = () => {
     const babls = balloons.filter((bal) => bal.filter === "баблс");
-    const babls2 = balloons.filter((bal) => bal.filter === "гігант, баблс");
-    const allbabls = [...babls, ...babls2];
-    setFilteredBalloons(allbabls);
+    setFilteredBalloons(babls);
   };
   const filteredBox = () => {
-    const box = balloons.filter(
-      (bal) => bal.filter === "фольговані цифри, фольговані фігури, коробка"
-    );
+    const box = balloons.filter((bal) => bal.filter === "коробка");
     setFilteredBalloons(box);
   };
 
@@ -138,7 +107,7 @@ const BirthDayBoy = ({ balloons }) => {
         <Novigation
           section="День народження"
           linkSection="/categories/birthday"
-          category="хлопчик"
+          category="Для хлопчика"
           linkCategory="/categories/birthday/boys"
         />
         <h1 className={common.section_title}>День народження для хлопчика</h1>
