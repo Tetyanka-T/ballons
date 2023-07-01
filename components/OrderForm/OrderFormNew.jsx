@@ -203,7 +203,7 @@ const OrderFormNew = () => {
               onChange={handleChange}
               required
               sx={{
-                padding: "0 0 10px 0",
+                margin: "0 0 10px 0",
               }}
             />
 
@@ -218,7 +218,7 @@ const OrderFormNew = () => {
               required
               pattern="[0-9]*"
               sx={{
-                padding: "0 0 10px 0",
+                margin: "0 0 10px 0",
               }}
             />
 
@@ -233,7 +233,7 @@ const OrderFormNew = () => {
               required
               pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
               sx={{
-                padding: "0 0 10px 0",
+                margin: "0 0 10px 0",
               }}
             />
 
@@ -384,7 +384,7 @@ const OrderFormNew = () => {
                   required
                   onChange={handleChange}
                   sx={{
-                    padding: "0 0 10px 0",
+                    margin: "0 0 10px 0",
                   }}
                 />
                 <FormControl>
