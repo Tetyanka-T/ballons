@@ -558,9 +558,13 @@ const OrderFormNew = () => {
               sx={{
                 ".MuiButtonBase-root .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .OrderForm_orderForm_button__XfFSP css-51084n":
                   {
-                    mr: "0 auto",
+                    bgcolor: "#ffff",
+                    boxShadow:
+                      "0px 1px 3px #FFA500, 0px 1px 1px #FFA500, 0px 2px 1px #FFA500",
+                    borderRadius: "4px",
+                    p: "10px",
                     width: "220px",
-                    color: "#696969",
+                    margin: "0 auto",
                   },
               }}
             >
