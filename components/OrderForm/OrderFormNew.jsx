@@ -556,9 +556,11 @@ const OrderFormNew = () => {
               type="submit"
               className={s.orderForm_button}
               sx={{
-                ".MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium OrderForm_orderForm_button__XfFSP css-51084n":
+                ".MuiButtonBase-root .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .OrderForm_orderForm_button__XfFSP css-51084n":
                   {
                     mr: "0 auto",
+                    width: "220px",
+                    color: "#696969",
                   },
               }}
             >
