@@ -203,7 +203,10 @@ const OrderFormNew = () => {
               onChange={handleChange}
               required
               sx={{
-                margin: "0 0 10px 0",
+                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
+                  {
+                    mr: "0 0 10px 0",
+                  },
               }}
             />
 
@@ -218,7 +221,10 @@ const OrderFormNew = () => {
               required
               pattern="[0-9]*"
               sx={{
-                margin: "0 0 10px 0",
+                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
+                  {
+                    mr: "0 0 10px 0",
+                  },
               }}
             />
 
@@ -233,7 +239,10 @@ const OrderFormNew = () => {
               required
               pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
               sx={{
-                margin: "0 0 10px 0",
+                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
+                  {
+                    mr: "0 0 10px 0",
+                  },
               }}
             />
 
@@ -384,7 +393,10 @@ const OrderFormNew = () => {
                   required
                   onChange={handleChange}
                   sx={{
-                    margin: "0 0 10px 0",
+                    ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
+                      {
+                        mr: "0 0 10px 0",
+                      },
                   }}
                 />
                 <FormControl>
