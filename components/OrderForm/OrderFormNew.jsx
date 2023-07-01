@@ -202,6 +202,9 @@ const OrderFormNew = () => {
               className={s.textField}
               onChange={handleChange}
               required
+              sx={{
+                padding: "0 0 10px 0",
+              }}
             />
 
             <TextField
@@ -214,6 +217,9 @@ const OrderFormNew = () => {
               onChange={handleChange}
               required
               pattern="[0-9]*"
+              sx={{
+                padding: "0 0 10px 0",
+              }}
             />
 
             <TextField
@@ -226,6 +232,9 @@ const OrderFormNew = () => {
               onChange={handleChange}
               required
               pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
+              sx={{
+                padding: "0 0 10px 0",
+              }}
             />
 
             <div className={s.calendarColor}>
@@ -374,6 +383,9 @@ const OrderFormNew = () => {
                   className={s.textField}
                   required
                   onChange={handleChange}
+                  sx={{
+                    padding: "0 0 10px 0",
+                  }}
                 />
                 <FormControl>
                   <InputLabel id="deliveryTime">
