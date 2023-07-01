@@ -170,7 +170,8 @@ const OrderFormNew = () => {
       basket,
     };
     const JSONdata = JSON.stringify(orderFull);
-    const link = "https://balloons-shop.onrender.com/api/orders";
+    // const link = "https://balloons-shop.onrender.com/api/orders";
+    const link = "https://backend-balloons.netlify.app/api/orders";
     const options = {
       method: "POST",
       headers: {
@@ -179,6 +180,7 @@ const OrderFormNew = () => {
       body: JSONdata,
     };
     const response = await fetch(link, options);
+    console.log(response);
     setFormSuccess(true);
     removeItemCart();
   };
