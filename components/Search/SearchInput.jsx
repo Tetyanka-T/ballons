@@ -27,7 +27,7 @@ const SearchInput = () => {
   const paginatedBalloons = paginate(results, page, pageSize);
   const pagesCount = Math.ceil(results.length / pageSize);
   const searchEndpoint = (query) =>
-    `https://backend-balloons.netlify.app/search/${query}`;
+    `https://backend-balloons.netlify.app/api/search/${query}`;
 
   const onChange = (e) => {
     setQuery(e.target.value);
