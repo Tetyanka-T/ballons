@@ -39,6 +39,9 @@
   box-shadow: 0px 1px 3px $accent-color, 0px 1px 1px $accent-color, 0px 2px 1px $accent-color;
   border-radius: 4px 4px 4px 4px;
   padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
   color: $text-color;
   width: 220px;
   margin: 20px 0 20px 20px;
@@ -117,16 +120,16 @@
   color: $text-color;
   border-bottom: 1px solid $text-color;
   margin-bottom: 20px;
-  width: 170px;
+  width: 190px;
 
   &:focus,
   &:hover {
     border-bottom: none;
   .orderForm_delivery_price_item {
     display: block;
-    margin-top: 5px;
+    margin-top: 10px;
     font-weight: 400;
-    width: 280px;
+    width: 290px;
   }
  }
 }

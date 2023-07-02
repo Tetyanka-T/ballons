@@ -193,58 +193,44 @@ const OrderFormNew = () => {
         <>
           <h1 className={common.section_title}>Оформлення замовлення</h1>
           <form onSubmit={handleSubmit} className={s.orderForm}>
-            <TextField
-              id="userName"
-              name="userName"
-              type="text"
-              label="Ім'я"
-              value={userName}
-              className={s.textField}
-              onChange={handleChange}
-              required
-              sx={{
-                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
-                  {
-                    mr: "0 0 10px 0",
-                  },
-              }}
-            />
-
-            <TextField
-              id="userPhone"
-              name="userPhone"
-              type="tel"
-              label="Номер телефону"
-              value={userPhone}
-              className={s.textField}
-              onChange={handleChange}
-              required
-              pattern="[0-9]*"
-              sx={{
-                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
-                  {
-                    mr: "0 0 10px 0",
-                  },
-              }}
-            />
-
-            <TextField
-              id="userEmail"
-              name="userEmail"
-              label="Email"
-              type="email"
-              value={userEmail}
-              className={s.textField}
-              onChange={handleChange}
-              required
-              pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
-              sx={{
-                ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
-                  {
-                    mr: "0 0 10px 0",
-                  },
-              }}
-            />
+            <div className={s.textField}>
+              <TextField
+                id="userName"
+                name="userName"
+                type="text"
+                label="Ім'я"
+                value={userName}
+                className={s.textField}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            <div className={s.textField}>
+              <TextField
+                id="userPhone"
+                name="userPhone"
+                type="tel"
+                label="Номер телефону"
+                value={userPhone}
+                className={s.textField}
+                onChange={handleChange}
+                required
+                pattern="[0-9]*"
+              />
+            </div>
+            <div className={s.textField}>
+              <TextField
+                id="userEmail"
+                name="userEmail"
+                label="Email"
+                type="email"
+                value={userEmail}
+                className={s.textField}
+                onChange={handleChange}
+                required
+                pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
+              />
+            </div>
 
             <div className={s.calendarColor}>
               <p className={s.orderForm_select_date}>Виберіть дату свята:</p>
@@ -383,22 +369,19 @@ const OrderFormNew = () => {
                     Тернівський район: 500-1000 грн
                   </li>
                 </ul>
-                <TextField
-                  name="userAddress"
-                  id="userAddress"
-                  label="Адреса"
-                  placeholder="Введіть вулицю, будинок, квартиру"
-                  value={userAddress}
-                  className={s.textField}
-                  required
-                  onChange={handleChange}
-                  sx={{
-                    ".MuiFormControl-root MuiTextField-root OrderForm_textField__Q3Y_W css-i44wyl":
-                      {
-                        mr: "0 0 10px 0",
-                      },
-                  }}
-                />
+                <div className={s.textField}>
+                  <TextField
+                    name="userAddress"
+                    id="userAddress"
+                    label="Адреса"
+                    placeholder="Введіть вулицю, будинок, квартиру"
+                    value={userAddress}
+                    className={s.textField}
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
+
                 <FormControl>
                   <InputLabel id="deliveryTime">
                     Виберіть час доставки
@@ -551,25 +534,9 @@ const OrderFormNew = () => {
               </>
             )}
 
-            <Button
-              variant="contained"
-              type="submit"
-              className={s.orderForm_button}
-              sx={{
-                ".MuiButtonBase-root .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .MuiButton-root .MuiButton-contained .MuiButton-containedPrimary .MuiButton-sizeMedium .MuiButton-containedSizeMedium .OrderForm_orderForm_button__XfFSP css-51084n":
-                  {
-                    bgcolor: "#ffff",
-                    boxShadow:
-                      "0px 1px 3px #FFA500, 0px 1px 1px #FFA500, 0px 2px 1px #FFA500",
-                    borderRadius: "4px",
-                    p: "10px",
-                    width: "220px",
-                    margin: "0 auto",
-                  },
-              }}
-            >
+            <button type="submit" className={s.orderForm_button}>
               Оформити замовлення
-            </Button>
+            </button>
           </form>
         </>
       )}
