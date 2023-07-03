@@ -303,8 +303,8 @@ const OrderFormNew = () => {
                     </span>
                   </span>
                 </MenuItem>
-                <MenuItem value="Достака кур'єр">
-                  Достака кур&apos;єром
+                <MenuItem value="Доставка кур'єр">
+                  Доставка кур&apos;єром
                 </MenuItem>
               </Select>
             </FormControl>
@@ -343,7 +343,7 @@ const OrderFormNew = () => {
                 </Select>
               </FormControl>
             )}
-            {deliveryMethod === "Достака кур'єр" && (
+            {deliveryMethod === "Доставка кур'єр" && (
               <>
                 <ul className={s.orderForm_delivery_price_list}>
                   Орієнтовна ціна доставки
