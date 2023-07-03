@@ -5,7 +5,7 @@
     justify-content: space-between;
     position: relative;
     width: 330px;
-    top: 30px;
+    top: -5px;
     left: 0px;
     padding: 0px 20px 0px 20px;
     background-color: $background-color-second;
@@ -51,6 +51,7 @@
     justify-content: center;
     align-items: center;
     margin-left: 80px;
+    margin-top: 20px;
 
     & .header_user__item:last-child {
         margin-right: 0;
@@ -98,6 +99,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.header_user__list_container {
+    position: relative;
 }
 
 @media screen and (min-width: 330px) {

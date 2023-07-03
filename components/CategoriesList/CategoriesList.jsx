@@ -40,9 +40,9 @@ const CategoriesList = ({ onClick }) => {
       </div>
 
       <ul className={s.categories_list}>
-        <li className={s.categories_list__item} onClick={() => onClick()}>
+        {/* <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories">Дивитись всі композиції</Link>
-        </li>
+        </li> */}
         <li className={s.categories_list__item} onClick={() => onClick()}>
           <Link href="/categories/gender-party">Gender party</Link>
         </li>

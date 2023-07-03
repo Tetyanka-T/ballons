@@ -79,16 +79,6 @@ const NavigatorBar = () => {
               </Link>
             </li>
           </ul>
-          {/* <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-search-balloon"
-            aria-describedby="search balloon composition by world"
-          >
-            <Box className={s.header_nav__modal}>
-              <SearchInput />
-            </Box>
-          </Modal> */}
         </>
       )}
     </div>

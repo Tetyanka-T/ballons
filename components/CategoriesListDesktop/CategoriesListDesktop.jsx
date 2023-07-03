@@ -40,9 +40,9 @@ const CategoriesListDesktop = () => {
 
   return (
     <ul className={s.categories_list}>
-      <li className={s.categories_list__item}>
+      {/* <li className={s.categories_list__item}>
         <Link href="/categories">Дивитись всі композиції</Link>
-      </li>
+      </li> */}
       <li className={s.categories_list__item}>
         <Link href="/categories/gender-party">Gender party</Link>
       </li>

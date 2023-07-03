@@ -9,13 +9,14 @@
     .categories_list {
      display: flex;
      align-items: center;
-    margin-bottom: 30px;
+     justify-content: center;
+     margin-bottom: 30px;
      width: 100%;
-     font-size: 18px;
+     font-size: 20px;
      font-weight: 400;
      line-height: 1.2;
      color: $text-color;
-     padding-top: 40px;
+     padding-top: 60px;
     }
     .categories_list__item {
         margin-right: 25px;
@@ -39,7 +40,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 20px;
         font-weight: 400;
         line-height: 1.2;
         color: $text-color;
@@ -51,6 +52,7 @@
         &  svg {
             width: 15px;
             height: 15px;
+            margin-left: 10px;
         }
     }
     .categories_list .categories_list__item:last-child {
@@ -64,7 +66,7 @@
         width: 1053px;
         position: absolute;
         top: 60px;
-        left: -286px;
+        left: -165px;
         padding: 30px;
         background-color: $background-color-second;
         opacity: 1;
@@ -72,7 +74,10 @@
         margin: 0 auto;
 
         & li {
-            margin-right: 50px;
+            margin-right: 40px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.2;
         }
         & li:last-child {
             margin-right: 0;
@@ -83,7 +88,7 @@
         }
     }
     .categories_listBirthDay {
-        left: -521px;
+        left: -495px;
     }
     .categories_listThematics {
         left: -756px;
