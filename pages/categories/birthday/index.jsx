@@ -7,7 +7,7 @@ import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import FilterBD from "../../../components/FilterGender/FilterBD";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
-import { getAllBalloons } from "../../../lib/balloons";
+import { getBirthDayBalloons } from "../../../lib/balloons";
 import { paginate } from "../../../lib/paginate";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 import BuyButton from "../../../components/BuyButton/BuyButton";
@@ -15,12 +15,10 @@ import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import fil from "../../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await getAllBalloons();
-  const birthdayBalloons = response.filter(
-    (bal) => bal.category === "День народження"
-  );
+  const response = await getBirthDayBalloons();
+
   return {
-    props: { balloons: birthdayBalloons },
+    props: { balloons: response },
   };
 };
 

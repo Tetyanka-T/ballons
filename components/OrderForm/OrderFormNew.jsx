@@ -170,8 +170,8 @@ const OrderFormNew = () => {
       basket,
     };
     const JSONdata = JSON.stringify(orderFull);
-    // const link = "https://balloons-shop.onrender.com/api/orders";
-    const link = "https://backend-balloons.netlify.app/api/orders";
+    const link = "https://balloons-shop.onrender.com/api/orders";
+    // const link = "https://backend-balloons.netlify.app/api/orders";
     const options = {
       method: "POST",
       headers: {
@@ -309,79 +309,52 @@ const OrderFormNew = () => {
               </Select>
             </FormControl>
             {deliveryMethod === "Самовивіз з магазину" && (
-              <FormControl>
-                <InputLabel id="deliveryTime">
-                  Виберіть час, коли бажаєте забрати композицію
-                </InputLabel>
-                <Select
-                  labelId="deliveryTime"
-                  id="deliveryTime"
-                  name="deliveryTime"
-                  value={deliveryTime}
-                  label="Виберіть час, коли бажаєте забрати композицію"
-                  onChange={selectTime}
-                  required
-                  className={s.orderForm_select}
-                  sx={{
-                    ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                      {
-                        padding: "16px 0px 16px 10px",
+              <>
+                <p className={s.orderForm_timeInfo}>
+                  Важливо! На опрацювання та підготовку ваших замовлень потрібен
+                  деякий час, тому плануйте ваше свято заздалегідь.
+                </p>
+                <FormControl>
+                  <InputLabel id="deliveryTime">
+                    Виберіть час, коли бажаєте забрати композицію
+                  </InputLabel>
+                  <Select
+                    labelId="deliveryTime"
+                    id="deliveryTime"
+                    name="deliveryTime"
+                    value={deliveryTime}
+                    label="Виберіть час, коли бажаєте забрати композицію"
+                    onChange={selectTime}
+                    required
+                    className={s.orderForm_select}
+                    sx={{
+                      ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
+                        {
+                          padding: "16px 0px 16px 10px",
+                        },
+                      ".MuiSvgIcon-root ": {
+                        fill: "#FFA500 !important",
                       },
-                    ".MuiSvgIcon-root ": {
-                      fill: "#FFA500 !important",
-                    },
-                  }}
-                >
-                  <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
-                  <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
-                  <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
-                  <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
-                  <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
-                  <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
-                  <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
-                  <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
-                </Select>
-              </FormControl>
+                    }}
+                  >
+                    <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
+                    <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
+                    <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
+                    <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
+                    <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
+                    <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
+                    <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
+                    <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
+                  </Select>
+                </FormControl>
+              </>
             )}
             {deliveryMethod === "Доставка кур'єр" && (
               <>
-                <ul className={s.orderForm_delivery_price_list}>
-                  Орієнтовна ціна доставки
-                  <li className={s.orderForm_delivery_price_item}>
-                    Металургійний район: 70-150 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Саксаганський район: 150-300 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Довгинцівський район: 100-250 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Інгулецький район: 200-1000 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Центрально-Міський район: 150-300 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Покровський район: 250-400 грн
-                  </li>
-                  <li className={s.orderForm_delivery_price_item}>
-                    Тернівський район: 500-1000 грн
-                  </li>
-                </ul>
-                <div className={s.textField}>
-                  <TextField
-                    name="userAddress"
-                    id="userAddress"
-                    label="Адреса"
-                    placeholder="Введіть вулицю, будинок, квартиру"
-                    value={userAddress}
-                    className={s.textField}
-                    required
-                    onChange={handleChange}
-                  />
-                </div>
-
+                <p className={s.orderForm_timeInfo}>
+                  Важливо! На опрацювання та підготовку ваших замовлень потрібен
+                  деякий час, тому плануйте ваше свято заздалегідь.
+                </p>
                 <FormControl>
                   <InputLabel id="deliveryTime">
                     Виберіть час доставки
@@ -420,6 +393,42 @@ const OrderFormNew = () => {
                     <MenuItem value="19:00-20:00">19:00-20:00</MenuItem>
                   </Select>
                 </FormControl>
+                <ul className={s.orderForm_delivery_price_list}>
+                  Орієнтовна ціна доставки
+                  <li className={s.orderForm_delivery_price_item}>
+                    Металургійний район: 70-150 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Саксаганський район: 150-300 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Довгинцівський район: 100-250 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Інгулецький район: 200-1000 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Центрально-Міський район: 150-300 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Покровський район: 250-400 грн
+                  </li>
+                  <li className={s.orderForm_delivery_price_item}>
+                    Тернівський район: 500-1000 грн
+                  </li>
+                </ul>
+                <div className={s.textField}>
+                  <TextField
+                    name="userAddress"
+                    id="userAddress"
+                    label="Адреса"
+                    placeholder="Введіть вулицю, будинок, квартиру"
+                    value={userAddress}
+                    className={s.textField}
+                    required
+                    onChange={handleChange}
+                  />
+                </div>
               </>
             )}
             <TextareaAutosize

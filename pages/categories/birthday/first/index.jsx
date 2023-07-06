@@ -6,7 +6,7 @@ import NoFindComposition from "../../../../components/NoFindComposition/NoFindCo
 import Novigation from "../../../../components/Navigation/Novigation";
 import { NextPage, PrevPage, Sort } from "../../../../components/svg";
 import common from "../../../../styles/common.module.scss";
-import { getAllBalloons } from "../../../../lib/balloons";
+import { getBirthDayBalloons } from "../../../../lib/balloons";
 import { paginate } from "../../../../lib/paginate";
 import FilterFirstBD from "../../../../components/FilterGender/FilterFirstBD";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
@@ -15,11 +15,8 @@ import s from "../../../../components/BalloonCard/BalloonCard.module.scss";
 import fil from "../../../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await getAllBalloons();
-  const birthDayBalloons = response.filter(
-    (bal) => bal.category === "День народження"
-  );
-  const birthDayFirstBalloons = birthDayBalloons.filter(
+  const response = await getBirthDayBalloons();
+  const birthDayFirstBalloons = response.filter(
     (bal) => bal.grup === "Перший день народження"
   );
   return {

@@ -4,22 +4,18 @@ import { useState } from "react";
 import { NextPage, PrevPage, Sort } from "../../../components/svg";
 import common from "../../../styles/common.module.scss";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
-import FilterBD from "../../../components/FilterGender/FilterBD";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
-import { getAllBalloons } from "../../../lib/balloons";
+import { getPhotozoneBalloons } from "../../../lib/balloons";
 import { paginate } from "../../../lib/paginate";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import fil from "../../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await getAllBalloons();
-  const balloonsPhotoZone = response.filter(
-    (bal) => bal.category === "Фотозони"
-  );
+  const response = await getPhotozoneBalloons();
   return {
-    props: { balloons: balloonsPhotoZone },
+    props: { balloons: response },
   };
 };
 
@@ -39,57 +35,7 @@ const PhotoZone = ({ balloons }) => {
   const toggleSort = () => {
     showSort ? setShowSort(false) : setShowSort(true);
   };
-  // const filteredNumber = () => {
-  //   const number = balloons.filter((bal) => bal.filter === "фольговані цифри");
-  //   const number2 = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури"
-  //   );
-  //   const number3 = balloons.filter(
-  //     (bal) => bal.filter === "гігант, фольговані цифри"
-  //   );
-  //   const number4 = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-  //   );
-  //   const numbers = [...number, ...number2, ...number3, ...number4];
-  //   setFilteredBalloons(numbers);
-  // };
-  // const filteredGiant = () => {
-  //   const giant = balloons.filter((bal) => bal.filter === "гігант");
-  //   const giant2 = balloons.filter(
-  //     (bal) => bal.filter === "гігант, фольговані цифри"
-  //   );
-  //   const giant3 = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-  //   );
-  //   const giant4 = balloons.filter((bal) => bal.filter === "гігант, баблс");
-  //   const giants = [...giant, ...giant2, ...giant3, ...giant4];
-  //   setFilteredBalloons(giants);
-  // };
-  // const filteredFigures = () => {
-  //   const figure = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури"
-  //   );
-  //   const figure2 = balloons.filter(
-  //     (bal) => bal.filter === "фольговані фігури"
-  //   );
-  //   const figure3 = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури, гігант"
-  //   );
-  //   const figures = [...figure, ...figure2, ...figure3];
-  //   setFilteredBalloons(figures);
-  // };
-  // const filteredBabls = () => {
-  //   const babls = balloons.filter((bal) => bal.filter === "баблс");
-  //   const babls2 = balloons.filter((bal) => bal.filter === "гігант, баблс");
-  //   const allbabls = [...babls, ...babls2];
-  //   setFilteredBalloons(allbabls);
-  // };
-  // const filteredBox = () => {
-  //   const box = balloons.filter(
-  //     (bal) => bal.filter === "фольговані цифри, фольговані фігури, коробка"
-  //   );
-  //   setFilteredBalloons(box);
-  // };
+
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
     window.scrollTo({
@@ -137,15 +83,6 @@ const PhotoZone = ({ balloons }) => {
         ) : (
           <>
             <div className={fil.button_filter_container}>
-              {/* <FilterBD
-            onChangeNumbers={filteredNumber}
-            onChangeGiant={filteredGiant}
-            onChangeFigures={filteredFigures}
-            onChangeBabls={filteredBabls}
-            onChangeBox={filteredBox}
-            onClickFilter={() => setFilter(true)}
-          /> */}
-
               <div className={fil.sort_container}>
                 <button onClick={() => onShowSort()}>
                   <Sort />

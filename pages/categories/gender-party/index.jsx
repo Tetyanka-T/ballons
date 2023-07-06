@@ -5,7 +5,7 @@ import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
 import { Sort } from "../../../components/svg";
-import { getAllBalloons } from "../../../lib/balloons";
+import { getGenderBalloons } from "../../../lib/balloons";
 import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
@@ -13,12 +13,9 @@ import common from "../../../styles/common.module.scss";
 import fil from "../../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await getAllBalloons();
-  const genderBalloons = response.filter(
-    (bal) => bal.category === "Gender party"
-  );
+  const response = await getGenderBalloons();
   return {
-    props: { balloons: genderBalloons },
+    props: { balloons: response },
   };
 };
 

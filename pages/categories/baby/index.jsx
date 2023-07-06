@@ -6,7 +6,7 @@ import NoFindComposition from "../../../components/NoFindComposition/NoFindCompo
 import Novigation from "../../../components/Navigation/Novigation";
 import { Sort, NextPage, PrevPage } from "../../../components/svg";
 import { paginate } from "../../../lib/paginate";
-import { getAllBalloons } from "../../../lib/balloons";
+import { getBabyBalloons } from "../../../lib/balloons";
 import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
@@ -14,12 +14,9 @@ import common from "../../../styles/common.module.scss";
 import fil from "../../../components/FilterGender/Filter.module.scss";
 
 export const getStaticProps = async () => {
-  const response = await getAllBalloons();
-  const babyBalloons = response.filter(
-    (bal) => bal.category === "Виписка з пологового будинку"
-  );
+  const response = await getBabyBalloons();
   return {
-    props: { balloons: babyBalloons },
+    props: { balloons: response },
   };
 };
 
