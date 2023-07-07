@@ -45,12 +45,21 @@
   color: $text-color;
   width: 220px;
   margin: 20px 0 20px 20px;
+
   
-  
-    &:hover,
+   &:hover,
     &:focus {
       background-color: $accent-color;
+  
     }
+}
+.text_waite_back {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: $text-color;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .orderForm_select {
   margin-bottom: 10px;

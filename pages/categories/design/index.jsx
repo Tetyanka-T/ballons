@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import { NextPage, PrevPage, Sort } from "../../../components/svg";
 import common from "../../../styles/common.module.scss";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
-import FilterBD from "../../../components/FilterGender/FilterBD";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
 import { getFasadBalloons } from "../../../lib/balloons";
@@ -22,10 +23,38 @@ export const getStaticProps = async () => {
 };
 
 const Design = ({ balloons }) => {
+  const router = useRouter();
+
+  // set scroll restoration to manual
+  useEffect(() => {
+    if (
+      "scrollRestoration" in history &&
+      history.scrollRestoration !== "manual"
+    ) {
+      history.scrollRestoration = "manual";
+    }
+  }, []);
+
+  // handle and store scroll position
+  useEffect(() => {
+    const handleRouteChange = () => {
+      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
+    };
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router.events]);
+
+  // restore scroll position
+  useEffect(() => {
+    if ("scrollPosition" in sessionStorage) {
+      window.scrollTo(0, Number(sessionStorage.getItem("scrollPosition")));
+      sessionStorage.removeItem("scrollPosition");
+    }
+  }, []);
   const [page, SetPage] = useState(1);
   const pageSize = 24;
-  const [filteredBalloons, setFilteredBalloons] = useState([]);
-  const [filter, setFilter] = useState(false);
   const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
 
@@ -98,72 +127,46 @@ const Design = ({ balloons }) => {
               </div>
             </div>
 
-            {filter === true ? (
-              <ul className={s.list}>
-                {filteredBalloons.map((balloon) => (
-                  <li key={balloon._id} className={s.card_item}>
-                    <Link
-                      href="/categories/design/[id]"
-                      as={`/categories/design/${balloon._id}`}
-                    >
-                      <BalloonCard balloon={balloon} />
-                    </Link>
-                    <div className={s.list_button_favorite}>
-                      <FavoriteButton balloon={balloon} />
-                    </div>
-                    <div className={s.list_button_basket}>
-                      <a
-                        href="tel:+380968118244"
-                        className={s.list_button_consultation}
+            <>
+              {balloons && (
+                <ul className={s.list}>
+                  {paginatedBalloons.map((balloon) => (
+                    <li key={balloon._id} className={s.card_item}>
+                      <Link
+                        href="/categories/design/[id]"
+                        as={`/categories/design/${balloon._id}`}
                       >
-                        Отримати консультацію
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <>
-                {balloons && (
-                  <ul className={s.list}>
-                    {paginatedBalloons.map((balloon) => (
-                      <li key={balloon._id} className={s.card_item}>
-                        <Link
-                          href="/categories/design/[id]"
-                          as={`/categories/design/${balloon._id}`}
+                        <BalloonCard balloon={balloon} />
+                      </Link>
+                      <div className={s.list_button_favorite_design}>
+                        <FavoriteButton balloon={balloon} />
+                      </div>
+                      <div className={s.list_button_basket}>
+                        <a
+                          href="tel:+380968118244"
+                          className={s.list_button_consultation}
                         >
-                          <BalloonCard balloon={balloon} />
-                        </Link>
-                        <div className={s.list_button_favorite}>
-                          <FavoriteButton balloon={balloon} />
-                        </div>
-                        <div className={s.list_button_basket}>
-                          <a
-                            href="tel:+380968118244"
-                            className={s.list_button_consultation}
-                          >
-                            Отримати консультацію
-                          </a>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+                          Отримати консультацію
+                        </a>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <div className={common.button_pagenext}>
+                {page > 1 && (
+                  <button type="button" onClick={() => fetchPrevPage()}>
+                    <PrevPage />
+                  </button>
                 )}
-                <div className={common.button_pagenext}>
-                  {page > 1 && (
-                    <button type="button" onClick={() => fetchPrevPage()}>
-                      <PrevPage />
-                    </button>
-                  )}
 
-                  {page < pagesCount && (
-                    <button type="button" onClick={() => fetchNextPage()}>
-                      <NextPage />
-                    </button>
-                  )}
-                </div>
-              </>
-            )}
+                {page < pagesCount && (
+                  <button type="button" onClick={() => fetchNextPage()}>
+                    <NextPage />
+                  </button>
+                )}
+              </div>
+            </>
           </>
         )}
       </main>

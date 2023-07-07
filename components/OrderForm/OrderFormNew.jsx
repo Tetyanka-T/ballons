@@ -2,7 +2,6 @@ import { useState, useContext } from "react";
 import { Cross } from "../../components/svg";
 import Image from "next/image";
 import * as yup from "yup";
-import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 import FormControl from "@mui/material/FormControl";
@@ -79,6 +78,8 @@ const OrderFormNew = () => {
   const [userAddress, SetUserAddress] = useState("");
   const [comment, SetComment] = useState("");
   const [callBack, setCallBack] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+  const [waiteBack, setWaiteBack] = useState(false);
 
   registerLocale("uk", uk);
   const handleChangeCheck = (event) => {
@@ -180,7 +181,8 @@ const OrderFormNew = () => {
       body: JSONdata,
     };
     const response = await fetch(link, options);
-    console.log(response);
+    setDisabled(true);
+    setWaiteBack(true);
     setFormSuccess(true);
     removeItemCart();
   };
@@ -543,9 +545,18 @@ const OrderFormNew = () => {
               </>
             )}
 
-            <button type="submit" className={s.orderForm_button}>
+            <button
+              type="submit"
+              disabled={disabled}
+              className={s.orderForm_button}
+            >
               Оформити замовлення
             </button>
+            {waiteBack && (
+              <p className={s.text_waite_back}>
+                Зачекайте інформація обробляється...
+              </p>
+            )}
           </form>
         </>
       )}

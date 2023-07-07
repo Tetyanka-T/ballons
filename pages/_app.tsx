@@ -1,7 +1,6 @@
 import '../styles/globals.css'
 import common from '../styles/common.module.scss'
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+
 import { ThemeProvider } from "@emotion/react"
 import { createTheme } from "@mui/material/styles"
 import type { AppProps } from 'next/app'
@@ -23,33 +22,7 @@ const theme = createTheme({
   }})
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
-
-  // set scroll restoration to manual
-  useEffect(() => {
-    if ('scrollRestoration' in history && history.scrollRestoration !== 'manual') {
-      history.scrollRestoration = 'manual';
-    }
-  }, []);
-
-  // handle and store scroll position
-  useEffect(() => {
-    const handleRouteChange = () => {
-      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
-    };
-    router.events.on('routeChangeStart', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
-    };
-  }, [router.events]);
-
-  // restore scroll position
-  useEffect(() => {
-    if ('scrollPosition' in sessionStorage) {
-      window.scrollTo(0, Number(sessionStorage.getItem('scrollPosition')));
-      sessionStorage.removeItem('scrollPosition');
-    }
-  }, []);
+ 
   return (
 <div className={inter.className}>
   <CartProvider>

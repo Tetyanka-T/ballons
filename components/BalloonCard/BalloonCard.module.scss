@@ -16,6 +16,11 @@
     bottom: 65px;
     right: 15px;
 }
+.list_button_favorite_design {
+    position: absolute;
+    bottom: 85px;
+    right: 15px;
+}
 .list_button_basket {
     display: flex;
     justify-content: center;
@@ -26,6 +31,8 @@
     color: $text-color;
     font-size: 14px;
     font-weight: 400;
+    width: 140px;
+    text-align: center;
     line-height: 1.2;
     border: 1px solid $accent-color;
     border-radius: 20px;
@@ -81,11 +88,25 @@
     .card_title {
         width: 160px;
     }
+    .list_button_consultation {
+      width: 185px;
+    }
+    .list_button_favorite_design {
+        bottom: 70px;
+    
+    }
 }
 
 @media screen and (min-width: 500px) {
     .list {
         grid-template-columns: 1fr 1fr 1fr;
+    }
+    .list_button_consultation {
+        width: 150px;
+      }
+      .list_button_favorite_design {
+        bottom: 85px;
+
     }
 }
 @media screen and (min-width: 600px) {
@@ -93,6 +114,9 @@
     .img_container {
         height: 280px;
     }
+    .list_button_consultation {
+        width: 170px;
+      }
   
 }
 @media screen and (min-width: 768px) {
@@ -105,7 +129,13 @@
     .img_container {
         height: 300px;
     }
+    .list_button_consultation {
+        width: 200px;
+      }
+      .list_button_favorite_design {
+        bottom: 70px;
 
+    }
 }
 
 @media screen and (min-width: 1200px) {
