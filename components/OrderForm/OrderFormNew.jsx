@@ -143,6 +143,8 @@ const OrderFormNew = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setDisabled(true);
+    setWaiteBack(true);
     const basketBalloons = cart.cartItems.map((b) => ({
       id: b.id,
       img: b.imgSrc,
@@ -181,8 +183,7 @@ const OrderFormNew = () => {
       body: JSONdata,
     };
     const response = await fetch(link, options);
-    setDisabled(true);
-    setWaiteBack(true);
+
     setFormSuccess(true);
     removeItemCart();
   };
