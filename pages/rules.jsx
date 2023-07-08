@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Novigation from "../components/Navigation/Novigation";
-import OrderFormNew from "../components/OrderForm/OrderFormNew";
-
 import common from "../styles/common.module.scss";
+import s from "../styles/RulesPage.module.scss";
 
-const OrderPage = () => {
+export default function PaymentPage() {
   return (
     <div>
       <Head>
@@ -17,12 +16,19 @@ const OrderPage = () => {
       </Head>
 
       <main className={common.container}>
-        <Novigation section="Оформлення замовлення" />
+        <Novigation section="Правила користування сайтом" />
 
-        <OrderFormNew />
+        <h2 className={common.section_title}>Правила користування сайтом</h2>
+        <div className={s.rules_section}>
+          <p></p>
+          <p></p>
+          <p></p>
+          <p className={s.delivery_list_title}></p>
+
+          <p></p>
+          <p></p>
+        </div>
       </main>
     </div>
   );
-};
-
-export default OrderPage;
+}

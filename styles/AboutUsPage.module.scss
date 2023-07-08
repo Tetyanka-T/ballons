@@ -2,4 +2,12 @@
 
 .about_text {
     margin-bottom: 15px;
+    color: $text-color;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    width: 100%;
+    & span {
+        font-weight: 600;
+    }
 }

@@ -14,7 +14,7 @@ export default function ContactsPage() {
           name="description"
           content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/balloon.svg" />
       </Head>
 
       <main className={common.container}>
