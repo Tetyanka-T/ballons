@@ -1,2 +1,12 @@
 @use './common.module.scss';
 @use './variables' as *;
+
+.rules_section {
+    & p {
+        margin-bottom: 20px;
+        font-size: 14px;
+        color: $text-color;
+        font-weight: 400;
+        line-height: 1.2;
+    }
+}

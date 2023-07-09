@@ -29,14 +29,55 @@ export default function AboutUs() {
           перешкоди, враховуючи всі «за» і «проти», ми вирішили спробувати. І в
           2019 році відкриваємо Перший в місті party-shop.
         </p>
-        <p>сюда можно фото с открытия</p>
+        <div className={s.about_photo_we}>
+          <Image
+            src="/we.jpg"
+            alt="Власники магазину"
+            width={290}
+            height={150}
+          />
+        </div>
+
         <p className={s.about_text}>
           Поступово, з діяльністю магазину, ми розвивали сторінку в інстаграм.
           Там ми більш зорієнтували свою діяльність на виготовленні композицій з
           повітряних кульок. Хотілося створювати щось незвичне, цікаве, не таке
           як в усіх.
         </p>
-        <p>сюда можно фото с как делаются композиции</p>
+        <ul className={s.about_photo_madecomposition_list}>
+          <li>
+            <Image
+              src="/made.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/made2.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/made4.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/made3.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+        </ul>
         <p className={s.about_text}>
           Своєю працьовитістю, відповідальністю та жагою до розвитку ми
           залучилися вашою підтримкою, довірою, а головне - любовʼю.
@@ -63,7 +104,40 @@ export default function AboutUs() {
           Ми займаємось улюбленою справою, тому з легкістю підберемо сучасну
           композицію, враховуючи вік, стать та смаки іменинника.
         </p>
-        <p>сюда можно фото как вы отдаете свои работы</p>
+        <ul className={s.about_photo_madecomposition_list}>
+          <li>
+            <Image
+              src="/delivery.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/delivery2.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/delivery3.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+          <li>
+            <Image
+              src="/delivery4.jpg"
+              alt="Виготовлення композиції"
+              width={290}
+              height={150}
+            />
+          </li>
+        </ul>
         <p className={s.about_text}>Нам довіряють ваші посмішки.</p>
       </main>
     </div>
