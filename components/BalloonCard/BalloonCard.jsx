@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { useContext } from "react";
-import CartContext from "../../context/CartContext";
-import { Basket, FavoriteContour, FavoriteSelect } from "../svg";
+import photo from "../../public/default.jpg";
 import s from "./BalloonCard.module.scss";
 
 // interface Balloon {
@@ -17,7 +15,7 @@ const BalloonCard = ({ balloon }) => {
     <>
       <div className={s.img_container}>
         <Image
-          src={balloon.imgSrc}
+          src={balloon.imgSrc ?? photo}
           alt="photo composition"
           width={200}
           height={300}

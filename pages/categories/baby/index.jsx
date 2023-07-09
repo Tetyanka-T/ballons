@@ -76,7 +76,7 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
   };
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
-    window.scrollTo({
+    window.scroll({
       top: 0,
       left: 0,
       behavior: "smooth",
@@ -84,7 +84,7 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
-    window.scrollTo({
+    window.scroll({
       top: 0,
       left: 0,
       behavior: "smooth",

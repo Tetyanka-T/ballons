@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
@@ -88,7 +88,7 @@ const FirstBirthDay = ({ balloons }) => {
 
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
-    window.scrollTo({
+    window.scroll({
       top: 0,
       left: 0,
       behavior: "smooth",
@@ -96,7 +96,7 @@ const FirstBirthDay = ({ balloons }) => {
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
-    window.scrollTo({
+    window.scroll({
       top: 0,
       left: 0,
       behavior: "smooth",
