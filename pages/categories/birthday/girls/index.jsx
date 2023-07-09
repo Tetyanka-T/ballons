@@ -95,19 +95,11 @@ const BirthDayGirls = ({ balloons }) => {
 
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scroll(0, 0);
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scroll(0, 0);
   };
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);

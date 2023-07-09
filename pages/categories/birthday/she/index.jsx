@@ -1,8 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
@@ -29,27 +29,30 @@ const BirthDayShe = ({ balloons }) => {
 
   // set scroll restoration to manual
   useEffect(() => {
-    if ('scrollRestoration' in history && history.scrollRestoration !== 'manual') {
-      history.scrollRestoration = 'manual';
+    if (
+      "scrollRestoration" in history &&
+      history.scrollRestoration !== "manual"
+    ) {
+      history.scrollRestoration = "manual";
     }
   }, []);
 
   // handle and store scroll position
   useEffect(() => {
     const handleRouteChange = () => {
-      sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+      sessionStorage.setItem("scrollPosition", window.scrollY.toString());
     };
-    router.events.on('routeChangeStart', handleRouteChange);
+    router.events.on("routeChangeStart", handleRouteChange);
     return () => {
-      router.events.off('routeChangeStart', handleRouteChange);
+      router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router.events]);
 
   // restore scroll position
   useEffect(() => {
-    if ('scrollPosition' in sessionStorage) {
-      window.scrollTo(0, Number(sessionStorage.getItem('scrollPosition')));
-      sessionStorage.removeItem('scrollPosition');
+    if ("scrollPosition" in sessionStorage) {
+      window.scrollTo(0, Number(sessionStorage.getItem("scrollPosition")));
+      sessionStorage.removeItem("scrollPosition");
     }
   }, []);
   const [page, SetPage] = useState(1);
@@ -121,19 +124,11 @@ const BirthDayShe = ({ balloons }) => {
 
   const fetchNextPage = () => {
     SetPage((prevState) => prevState + 1);
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scroll(0, 0);
   };
   const fetchPrevPage = () => {
     SetPage((prevState) => prevState - 1);
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    window.scroll(0, 0);
   };
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
