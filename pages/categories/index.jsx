@@ -7,7 +7,7 @@ import { NextPage, PrevPage, Sort } from "../../components/svg";
 import FilterGender from "../../components/FilterGender/FilterGender";
 import NoFindComposition from "../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../components/Navigation/Novigation";
-import { getAllBalloons, getAllBalloonsLimit } from "../../lib/balloons";
+import { getAllBalloons } from "../../lib/balloons";
 import { paginate } from "../../lib/paginate";
 import BuyButton from "../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../components/FavoriteBatton/FavoriteButton";

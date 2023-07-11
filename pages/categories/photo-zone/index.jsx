@@ -91,6 +91,10 @@ const PhotoZone = ({ balloons }) => {
       <Head>
         <title>Весела витівка</title>
         <meta
+          name="keywords"
+          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят, Кривий Ріг, фотозони"
+        ></meta>
+        <meta
           name="description"
           content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
         />
