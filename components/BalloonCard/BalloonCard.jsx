@@ -17,10 +17,11 @@ const BalloonCard = ({ balloon }) => {
         <Image
           src={balloon.imgSrc ?? photo}
           alt="photo composition"
-          width={200}
-          height={300}
+          // width={200}
+          // height={300}
           className={s.img}
           loading="lazy"
+          fill={true}
         />
         <div className={s.transparent}></div>
       </div>

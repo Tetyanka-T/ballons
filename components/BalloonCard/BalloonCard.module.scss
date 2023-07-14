@@ -41,6 +41,7 @@
 
 .img_container {
     position: relative;
+    overflow: hidden;
     height: 195px;
 
     & img {
@@ -99,19 +100,23 @@
 }
 
 @media screen and (min-width: 500px) {
-    .list {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+    // .list {
+    //     grid-template-columns: 1fr 1fr 1fr;
+    // }
     .list_button_consultation {
         width: 150px;
       }
       .list_button_favorite_design {
         bottom: 85px;
-
+    }
+    .img_container {
+        height: 320px;
     }
 }
 @media screen and (min-width: 600px) {
-  
+    .list {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
     .img_container {
         height: 280px;
     }
