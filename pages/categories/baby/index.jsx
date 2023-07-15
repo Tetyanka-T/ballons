@@ -90,7 +90,7 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
         <title>Весела витівка</title>
         <meta
           name="keywords"
-          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят, Кривий Ріг, виписка з пологового будинку, для малюків"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, виписка з пологового будинку, для малюків"
         ></meta>
         <meta
           legalName="Весела витівка"
@@ -99,9 +99,9 @@ const ExtractFromMaternityHospital = ({ balloons }) => {
         ></meta>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
-        <link rel="icon" href="../balloon.svg" />
+        <link rel="icon" href="/balloon.svg" />
       </Head>
 
       <main className={common.container}>

@@ -39,17 +39,17 @@ const CardId = ({ balloon }) => {
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
       <main className={common.container}>
         <Novigation
-           section="День народження"
-           category="Для нього"
-           composition="Композиція"
-           linkSection="/categories/birthday"
-           linkCategory="/categories/birthday/he"
+          section="День народження"
+          category="Для нього"
+          composition="Композиція"
+          linkSection="/categories/birthday"
+          linkCategory="/categories/birthday/he"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

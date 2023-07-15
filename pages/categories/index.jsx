@@ -85,12 +85,16 @@ const CategoriesPage = ({ balloons }) => {
   return (
     <div>
       <Head>
+        <meta
+          name="keywords"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, фотозони, на день народження, для бізнесу, визначення статті малюка, оформлення фасадів"
+        ></meta>
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
-        <link rel="icon" href="./balloon.svg" />
+        <link rel="icon" href="/balloon.svg" />
       </Head>
       <main className={common.container}>
         <Novigation section="Всі композиції" linkSection="/categories" />

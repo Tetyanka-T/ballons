@@ -39,7 +39,7 @@ const CardId = ({ balloon }) => {
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>

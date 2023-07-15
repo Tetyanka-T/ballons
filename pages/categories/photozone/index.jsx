@@ -89,14 +89,14 @@ const PhotoZone = ({ balloons }) => {
   return (
     <div>
       <Head>
-        <title>Весела витівка</title>
         <meta
           name="keywords"
-          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят, Кривий Ріг, фотозони"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, фотозони, на день народження, для бізнесу"
         ></meta>
+         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
@@ -128,8 +128,8 @@ const PhotoZone = ({ balloons }) => {
                   {paginatedBalloons.map((balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
-                        href="/categories/photo-zone/[id]"
-                        as={`/categories/photo-zone/${balloon._id}`}
+                        href="/categories/photozone/[id]"
+                        as={`/categories/photozone/${balloon._id}`}
                       >
                         <BalloonCard balloon={balloon} />
                       </Link>

@@ -35,18 +35,22 @@ const CardId = ({ balloon }) => {
   return (
     <>
       <Head>
+        <meta
+          name="keywords"
+          content="композиції із повітряних кульок, оформлення свят, Кривий Ріг, фотозони"
+        ></meta>
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
       <main className={common.container}>
         <Novigation
-          section="Оформлення фасадів"
+          section="Фотозони"
           composition="Композиція"
-          linkSection="/categories/design"
+          linkSection="/categories/photozone"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

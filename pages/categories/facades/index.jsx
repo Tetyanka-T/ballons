@@ -90,14 +90,14 @@ const Design = ({ balloons }) => {
   return (
     <div>
       <Head>
-        <title>Весела витівка</title>
         <meta
           name="keywords"
-          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят, Кривий Ріг, оформлення фасадів"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, оформлення фасадів магазинів, кафе"
         ></meta>
+        <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
@@ -129,8 +129,8 @@ const Design = ({ balloons }) => {
                   {paginatedBalloons.map((balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
-                        href="/categories/design/[id]"
-                        as={`/categories/design/${balloon._id}`}
+                        href="/categories/facades/[id]"
+                        as={`/categories/facades/${balloon._id}`}
                       >
                         <BalloonCard balloon={balloon} />
                       </Link>
