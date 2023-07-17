@@ -8,10 +8,14 @@ export default function AboutUs() {
   return (
     <div>
       <Head>
+        <meta
+          name="keywords"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, історія створення, власники магазину"
+        ></meta>
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
+          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>

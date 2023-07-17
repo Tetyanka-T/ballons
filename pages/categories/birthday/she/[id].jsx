@@ -36,6 +36,10 @@ const CardId = ({ balloon }) => {
   return (
     <>
       <Head>
+        <meta
+          name="keywords"
+          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, день народження, для жінки, для дівчини, для неї, для коханої, ідея для подарунку"
+        ></meta>
         <title>Весела витівка</title>
         <meta
           name="description"
