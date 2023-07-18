@@ -8,16 +8,16 @@ export default function PaymentPage() {
   return (
     <div>
       <Head>
-      <meta
+        <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, умови доставки, оплата"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, умови доставки, оплата"
         ></meta>
-         <title>Весела витівка</title>
+        <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
+          content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
-         <link rel="icon" href="/balloon.svg" />
+        <link rel="icon" href="/balloon.svg" />
       </Head>
 
       <main className={common.container}>

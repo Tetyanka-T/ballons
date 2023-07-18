@@ -92,7 +92,7 @@ const CategoriesPage = ({ balloons }) => {
         <title>Весела витівка</title>
         <meta
           name="description"
-          content="Інтернет-магазин виробів із повітряних кульок, оформлення свят у місті Кривий Ріг"
+          content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
