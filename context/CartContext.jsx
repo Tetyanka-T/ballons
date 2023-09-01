@@ -35,6 +35,7 @@ export const CartProvider = ({ children }) => {
     name,
     price,
     code,
+    category,
     description,
     imgSrc,
     quantity = 1,
@@ -47,6 +48,7 @@ export const CartProvider = ({ children }) => {
       description,
       imgSrc,
       quantity,
+      category,
     };
 
     const isItemExist = cart?.cartItems?.find((i) => i.id === item.id);
@@ -82,6 +84,7 @@ export const CartProvider = ({ children }) => {
     code,
     description,
     imgSrc,
+    category,
   }) => {
     const item = {
       id,
@@ -90,6 +93,7 @@ export const CartProvider = ({ children }) => {
       code,
       description,
       imgSrc,
+      category,
     };
 
     const isItemExist = favorite?.favoriteItems?.find((i) => i.id === item.id);

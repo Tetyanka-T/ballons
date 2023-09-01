@@ -13,6 +13,7 @@ const FavoriteButton = ({ balloon }) => {
       id: balloon._id,
       name: balloon.name,
       price: balloon.price,
+      category: balloon.category,
       code: balloon.code,
       description: balloon.description,
       imgSrc: balloon.imgSrc,
