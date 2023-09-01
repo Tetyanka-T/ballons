@@ -2,14 +2,6 @@ import Image from "next/image";
 import photo from "../../public/default.jpg";
 import s from "./BalloonCard.module.scss";
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
-
-// }
-
 const BalloonCard = ({ balloon }) => {
   return (
     <>
