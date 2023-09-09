@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { NextPage, PrevPage, Sort } from "../../../components/svg";
+import { Ballon, NextPage, PrevPage, Sort } from "../../../components/svg";
 import common from "../../../styles/common.module.scss";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
@@ -13,6 +13,8 @@ import { paginate } from "../../../lib/paginate";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import fil from "../../../components/FilterGender/Filter.module.scss";
+import Balloon from "../../../Interface/interface";
+
 
 export const getStaticProps = async () => {
   const response = await getPhotozoneBalloons();
@@ -21,7 +23,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const PhotoZone = ({ balloons }) => {
+const PhotoZone = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -54,13 +56,11 @@ const PhotoZone = ({ balloons }) => {
   }, []);
   const [page, SetPage] = useState(1);
   const pageSize = 24;
-  const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
 
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();
-    setFilter(false);
   };
   const toggleSort = () => {
     showSort ? setShowSort(false) : setShowSort(true);
@@ -77,13 +77,11 @@ const PhotoZone = ({ balloons }) => {
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   return (
@@ -125,7 +123,7 @@ const PhotoZone = ({ balloons }) => {
             <>
               {balloons && (
                 <ul className={s.list}>
-                  {paginatedBalloons.map((balloon) => (
+                  {paginatedBalloons.map((balloon: Balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
                         href="/categories/photozone/[id]"

@@ -6,22 +6,24 @@ import { useRouter } from "next/router";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
-import { Sort } from "../../../components/svg";
-import { getGenderBalloons } from "../../../lib/balloons";
+import { Sort, NextPage, PrevPage } from "../../../components/svg";
+import { paginate } from "../../../lib/paginate";
+import { getBabyBalloons } from "../../../lib/balloons";
 import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 import common from "../../../styles/common.module.scss";
 import fil from "../../../components/FilterGender/Filter.module.scss";
+import Balloon from "../../../Interface/interface";
 
 export const getStaticProps = async () => {
-  const response = await getGenderBalloons();
+  const response = await getBabyBalloons();
   return {
     props: { balloons: response },
   };
 };
 
-const GenderParty = ({ balloons }) => {
+const ExtractFromMaternityHospital = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -52,6 +54,8 @@ const GenderParty = ({ balloons }) => {
       sessionStorage.removeItem("scrollPosition");
     }
   }, []);
+  const [page, SetPage] = useState(1);
+  const pageSize = 24;
   const [showSort, setShowSort] = useState(false);
   const [sortered, setSortered] = useState([]);
   const onShowSort = () => {
@@ -62,33 +66,41 @@ const GenderParty = ({ balloons }) => {
     showSort ? setShowSort(false) : setShowSort(true);
   };
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+  balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
-
+  const fetchNextPage = () => {
+    SetPage((prevState) => prevState + 1);
+    window.scroll(0, 0);
+  };
+  const fetchPrevPage = () => {
+    SetPage((prevState) => prevState - 1);
+    window.scroll(0, 0);
+  };
+  const paginatedBalloons = paginate(balloons, page, pageSize);
+  const pagesCount = Math.ceil(balloons.length / pageSize);
   return (
     <div>
       <Head>
+        <title>Весела витівка</title>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, вечірка на визначення статті дитини, gender-party, хлопчик чи дівчинка, ідеї оформлення вечірки, майбутні батьки, гендер куля, вогнегасник, кольоровий дим, куля сюрприз, коробка з кульками, вагітність, емоції, в очікуванні дива, при надії, майбутня мама, вагітна фотосесія"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, виписка з пологового будинку, для малюків, кульки на виписку, лелека, зустріч малюка, щасливий тато, сім'я, стати батьками"
         ></meta>
-        <title>Весела витівка</title>
         <meta
           name="description"
           content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/balloon.svg" />
       </Head>
+
       <main className={common.container}>
-        <Novigation section="Визначення статті малюка" />
-        <h1 className={common.section_title}>Визначення статті малюка</h1>
+        <Novigation section="Виписка з пологового будинку" />
+        <h1 className={common.section_title}>Виписка з пологового будинку</h1>
         <div className={fil.sort_button}>
           <button onClick={() => onShowSort()}>
             <Sort />
@@ -102,11 +114,11 @@ const GenderParty = ({ balloons }) => {
         </div>
         {balloons && (
           <ul className={s.list}>
-            {balloons.map((balloon) => (
+            {paginatedBalloons.map((balloon: Balloon) => (
               <li key={balloon._id} className={s.card_item}>
                 <Link
-                  href="/categories/gender-party/[id]"
-                  as={`/categories/gender-party/${balloon._id}`}
+                  href="/categories/baby/[id]"
+                  as={`/categories/baby/${balloon._id}`}
                 >
                   <BalloonCard balloon={balloon} />
                 </Link>
@@ -120,10 +132,23 @@ const GenderParty = ({ balloons }) => {
             ))}
           </ul>
         )}
+        <div className={common.button_pagenext}>
+          {page > 1 && (
+            <button type="button" onClick={() => fetchPrevPage()}>
+              <PrevPage />
+            </button>
+          )}
+
+          {page < pagesCount && (
+            <button type="button" onClick={() => fetchNextPage()}>
+              <NextPage />
+            </button>
+          )}
+        </div>
       </main>
       <NoFindComposition />
     </div>
   );
 };
 
-export default GenderParty;
+export default ExtractFromMaternityHospital;

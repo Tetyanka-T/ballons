@@ -7,6 +7,14 @@ import s from "../../../components/CardDescription/CardDescription.module.scss";
 import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
 import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
+import Balloon from "../../../Interface/interface";
+
+type Params = {
+	params: {
+		id: string
+	}
+}
+
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +23,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params ) => {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,15 +32,9 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
 
-// }
 
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
@@ -40,11 +42,6 @@ const CardId = ({ balloon }) => {
         <meta
           name="keywords"
           content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, виписка з пологового будинку, для малюків, кульки на виписку, лелека, зустріч малюка, щасливий тато, сім'я, стати батьками"
-        ></meta>
-        <meta
-          legalName="Весела витівка"
-          location="Кривий Ріг"
-          logo="/logo.png"
         ></meta>
         <meta
           name="description"

@@ -14,18 +14,19 @@ import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton
 import s from "../../../../components/BalloonCard/BalloonCard.module.scss";
 import common from "../../../../styles/common.module.scss";
 import fil from "../../../../components/FilterGender/Filter.module.scss";
+import Balloon from "../../../../Interface/interface";
 
 export const getStaticProps = async () => {
   const response = await getBabyBalloons();
   const babyBalloonsBoys = response.filter(
-    (bal) => bal.grup === "Для хлопчика"
+    (bal: Balloon) => bal.grup === "Для хлопчика"
   );
   return {
     props: { balloons: babyBalloonsBoys },
   };
 };
 
-const ExtractFromMaternityHospitalBoy = ({ balloons }) => {
+const ExtractFromMaternityHospitalBoy = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -59,7 +60,7 @@ const ExtractFromMaternityHospitalBoy = ({ balloons }) => {
   const [page, SetPage] = useState(1);
   const pageSize = 24;
   const [showSort, setShowSort] = useState(false);
-  const [sortered, setSortered] = useState([]);
+
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();
@@ -68,13 +69,11 @@ const ExtractFromMaternityHospitalBoy = ({ balloons }) => {
     showSort ? setShowSort(false) : setShowSort(true);
   };
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+   balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   const fetchNextPage = () => {
@@ -124,7 +123,7 @@ const ExtractFromMaternityHospitalBoy = ({ balloons }) => {
         </div>
         {balloons && (
           <ul className={s.list}>
-            {paginatedBalloons.map((balloon) => (
+            {paginatedBalloons.map((balloon: Balloon) => (
               <li key={balloon._id} className={s.card_item}>
                 <Link
                   href="/categories/baby/boy/[id]"

@@ -13,6 +13,7 @@ import { paginate } from "../../../lib/paginate";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import fil from "../../../components/FilterGender/Filter.module.scss";
+import Balloon from "../../../Interface/interface";
 
 export const getStaticProps = async () => {
   const response = await getFasadBalloons();
@@ -22,7 +23,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Design = ({ balloons }) => {
+const Design = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -55,13 +56,11 @@ const Design = ({ balloons }) => {
   }, []);
   const [page, SetPage] = useState(1);
   const pageSize = 24;
-  const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
 
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();
-    setFilter(false);
   };
   const toggleSort = () => {
     showSort ? setShowSort(false) : setShowSort(true);
@@ -78,13 +77,11 @@ const Design = ({ balloons }) => {
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   return (
@@ -126,7 +123,7 @@ const Design = ({ balloons }) => {
             <>
               {balloons && (
                 <ul className={s.list}>
-                  {paginatedBalloons.map((balloon) => (
+                  {paginatedBalloons.map((balloon: Balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
                         href="/categories/facades/[id]"

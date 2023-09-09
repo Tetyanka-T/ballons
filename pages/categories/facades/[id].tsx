@@ -5,8 +5,15 @@ import Novigation from "../../../components/Navigation/Novigation";
 import ComeBackButton from "../../../components/ComeBackButton/ComeBackButton";
 import s from "../../../components/CardDescription/CardDescription.module.scss";
 import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
-import BuyButton from "../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
+import Balloon from "../../../Interface/interface";
+
+type Params = {
+	params: {
+		id: string
+	}
+}
+
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +22,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params ) => {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,21 +31,14 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
 
-// }
-
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, вечірка на визначення статті дитини, gender-party, хлопчик чи дівчинка, ідеї оформлення вечірки, майбутні батьки, гендер куля, вогнегасник, кольоровий дим, куля сюрприз, коробка з кульками, вагітність, емоції, в очікуванні дива, при надії, майбутня мама, вагітна фотосесія"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, прикрашання фасаду магазинів, кафе, декорація, на відкриття магазину, гірлянда, арка з кульок, каркас"
         ></meta>
         <title>Весела витівка</title>
         <meta
@@ -49,9 +49,9 @@ const CardId = ({ balloon }) => {
       </Head>
       <main className={common.container}>
         <Novigation
-          section="Визначення статті малюка"
+          section="Оформлення фасадів"
           composition="Композиція"
-          linkSection="/categories/gender-party"
+          linkSection="/categories/facades"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>
@@ -83,7 +83,12 @@ const CardId = ({ balloon }) => {
             <div className={s.cardDescription_price_container}>
               <p className={s.cardDescription_price}>{balloon.price} грн.</p>
               <div className={s.cardDescription_button_buy}>
-                <BuyButton balloon={balloon} />
+                <a
+                  href="tel:+380968118244"
+                  className={s.list_button_consultation}
+                >
+                  Отримати консультацію
+                </a>
               </div>
             </div>
             <p className={s.cardDescription_inform}>

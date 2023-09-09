@@ -1,12 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
-import common from "../../styles/common.module.scss";
-import Novigation from "../../components/Navigation/Novigation";
-import s from "../../components/CardDescription/CardDescription.module.scss";
-import ComeBackButton from "../../components/ComeBackButton/ComeBackButton";
-import { getAllBalloonsIds, getBalloonById } from "../../lib/balloons";
-import BuyButton from "../../components/BuyButton/BuyButton";
-import FavoriteButton from "../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../styles/common.module.scss";
+import Novigation from "../../../components/Navigation/Novigation";
+import ComeBackButton from "../../../components/ComeBackButton/ComeBackButton";
+import s from "../../../components/CardDescription/CardDescription.module.scss";
+import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
+import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
+import Balloon from "../../../Interface/interface";
+
+type Params = {
+	params: {
+		id: string
+	}
+}
+
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +22,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params ) => {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,18 +31,14 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
-
-// }
-
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
+        <meta
+          name="keywords"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, фотозона, на день народження, для бізнесу, кругла фотозона, декорація, арка з кульок, гірлянда, каркас"
+        ></meta>
         <title>Весела витівка</title>
         <meta
           name="description"
@@ -45,9 +48,9 @@ const CardId = ({ balloon }) => {
       </Head>
       <main className={common.container}>
         <Novigation
-          section="Всі композиції"
+          section="Фотозони"
           composition="Композиція"
-          linkSection="/categories"
+          linkSection="/categories/photozone"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>
@@ -79,7 +82,12 @@ const CardId = ({ balloon }) => {
             <div className={s.cardDescription_price_container}>
               <p className={s.cardDescription_price}>{balloon.price} грн.</p>
               <div className={s.cardDescription_button_buy}>
-                <BuyButton balloon={balloon} />
+                <a
+                  href="tel:+380968118244"
+                  className={s.list_button_consultation}
+                >
+                  Отримати консультацію
+                </a>
               </div>
             </div>
             <p className={s.cardDescription_inform}>

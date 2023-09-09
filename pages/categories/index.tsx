@@ -13,6 +13,7 @@ import BuyButton from "../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../components/FavoriteBatton/FavoriteButton";
 import s from "../../components/BalloonCard/BalloonCard.module.scss";
 import fil from "../../components/FilterGender/Filter.module.scss";
+import Balloon from "../../Interface/interface";
 
 export const getStaticProps = async () => {
   const response = await getAllBalloons();
@@ -21,13 +22,13 @@ export const getStaticProps = async () => {
   };
 };
 
-const CategoriesPage = ({ balloons }) => {
+const CategoriesPage = ({ balloons }: {balloons: Balloon[]}) => {
   const [page, SetPage] = useState(1);
   const pageSize = 24;
   const [filteredBalloons, setFilteredBalloons] = useState([]);
   const [filter, setFilter] = useState(false);
-  const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
+  
   const onShowSort = () => {
     setShowSort(true);
     toggleSort();
@@ -41,25 +42,25 @@ const CategoriesPage = ({ balloons }) => {
     const woman = balloons.filter((bal) => bal.gender === "жінка, дівчинка");
     const woman2 = balloons.filter((bal) => bal.gender === "жінка");
     const women = [...woman, ...woman2];
-    setFilteredBalloons(women);
+    // setFilteredBalloons(women);
   };
   const filteredMan = () => {
     const man = balloons.filter((bal) => bal.gender === "чоловік, хлопчик");
     const man2 = balloons.filter((bal) => bal.gender === "чоловік");
     const men = [...man, ...man2];
-    setFilteredBalloons(men);
+    // setFilteredBalloons(men);
   };
   const filteredGirl = () => {
     const girl = balloons.filter((bal) => bal.gender === "дівчинка");
     const girl2 = balloons.filter((bal) => bal.gender === "жінка, дівчинка");
     const girls = [...girl, ...girl2];
-    setFilteredBalloons(girls);
+    // setFilteredBalloons(girls);
   };
   const filteredBoy = () => {
     const boy = balloons.filter((bal) => bal.gender === "хлопчик");
     const boy2 = balloons.filter((bal) => bal.gender === "чоловік, хлопчик");
     const boys = [...boy, ...boy2];
-    setFilteredBalloons(boys);
+    // setFilteredBalloons(boys);
   };
 
   const fetchNextPage = () => {
@@ -73,13 +74,11 @@ const CategoriesPage = ({ balloons }) => {
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   return (
@@ -122,7 +121,7 @@ const CategoriesPage = ({ balloons }) => {
 
         {filter === true ? (
           <ul className={s.list}>
-            {filteredBalloons.map((balloon) => (
+            {filteredBalloons.map((balloon: Balloon) => (
               <li key={balloon._id} className={s.card_item}>
                 <Link href="/categories/[id]" as={`/categories/${balloon._id}`}>
                   <BalloonCard balloon={balloon} />
@@ -140,7 +139,7 @@ const CategoriesPage = ({ balloons }) => {
           <>
             {balloons && (
               <ul className={s.list}>
-                {paginatedBalloons.map((balloon) => (
+                {paginatedBalloons.map((balloon: Balloon) => (
                   <li key={balloon._id} className={s.card_item}>
                     <Link
                       href="/categories/[id]"
