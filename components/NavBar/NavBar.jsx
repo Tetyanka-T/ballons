@@ -1,23 +1,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useContext } from "react";
+import CartContext from "../../context/CartContext";
 import CategoriesList from "../CategoriesList/CategoriesList";
-import { Modal, Box } from "@mui/material";
-import SearchInput from "../Search/SearchInput";
 import { Basket, FavoriteContour, Search, Menu } from "../svg";
 import s from "./NavBar.module.scss";
-import CartContext from "../../context/CartContext";
 
 const NavigatorBar = () => {
   const { cart } = useContext(CartContext);
   const cartItems = cart?.cartItems;
   const { favorite } = useContext(CartContext);
   const favoriteItems = favorite?.favoriteItems;
-
   const [showMenu, SetShowMenu] = useState(false);
-  // const [open, setOpen] = useState(false);
-  // const handleOpen = () => setOpen(true);
-  // const handleClose = () => setOpen(false);
 
   const onShowMenu = () => {
     SetShowMenu(true);
@@ -37,8 +31,6 @@ const NavigatorBar = () => {
           <div className={s.logo}>
             <Link href="/">
               <Image src="/logo.png" alt="logo" width={100} height={70} />
-
-              {/* <Image src="/logo3.jpg" alt="logo" width={100} height={70} /> */}
             </Link>
           </div>
         )}
@@ -58,9 +50,7 @@ const NavigatorBar = () => {
           <ul className={s.header_user__list}>
             <li className={s.header_user__item}>
               <Link href="/search">
-                <button
-                //  onClick={handleOpen}
-                >
+                <button>
                   <Search className={s.header_icon} />
                 </button>
               </Link>

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import photo from "../../public/default.jpg";
 import s from "./BalloonCard.module.scss";
+import Balloon from "../../Interface/interface";
 
-const BalloonCard = ({ balloon }) => {
+const BalloonCard = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <div className={s.img_container}>

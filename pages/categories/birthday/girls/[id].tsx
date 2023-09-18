@@ -7,6 +7,14 @@ import s from "../../../../components/CardDescription/CardDescription.module.scs
 import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import Balloon from "../../../../Interface/interface";
+
+type Params = {
+	params: {
+		id: string
+	}
+}
+
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +23,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params )=> {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,21 +32,14 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
 
-// }
-
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, день народження, для жінки, для дівчини, для неї, для коханої, ідея для подарунку, трендові оформлення, незабутні враження, кульки з гелієм, річниця, чим порадувати іменинника"
+          content="композиції із повітряних кульок, оформлення свят, доставка Кривий Ріг, день народження, зв'язка для дівчинки, кольорова гама, річниця, індивідуальний напис, кульки з гелієм, трендові оформлення, незабутні враження"
         ></meta>
         <title>Весела витівка</title>
         <meta
@@ -50,10 +51,10 @@ const CardId = ({ balloon }) => {
       <main className={common.container}>
         <Novigation
           section="День народження"
-          category="Для неї"
+          category="Для дівчинки"
           composition="Композиція"
           linkSection="/categories/birthday"
-          linkCategory="/categories/birthday/she"
+          linkCategory="/categories/birthday/girls"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

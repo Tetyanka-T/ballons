@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
 
-const FilterFirstBD = ({ onChangeGirls, onChangeBoys, onClickFilter }) => {
+const FilterFirstBD = ({ onChangeGirls, onChangeBoys, onClickFilter }: {
+  onChangeGirls: Function,
+  onChangeBoys: Function,
+  onClickFilter: Function
+}) => {
   const [girl, setGirl] = useState(false);
   const [boy, setBoy] = useState(false);
   const [showFilter, setShowFilter] = useState(false);
@@ -15,14 +19,14 @@ const FilterFirstBD = ({ onChangeGirls, onChangeBoys, onClickFilter }) => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
   };
 
-  const handleChangeGirl = async (event) => {
+  const handleChangeGirl = async (event: ChangeEvent<HTMLInputElement>) => {
     setGirl(event.target.checked);
     onChangeGirls();
     setBoy(false);
     setShowFilter(false);
     onClickFilter();
   };
-  const handleChangeBoy = async (event) => {
+  const handleChangeBoy = async (event: ChangeEvent<HTMLInputElement>) => {
     setBoy(event.target.checked);
     onChangeBoys();
     setGirl(false);

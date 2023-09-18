@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { Call, Viber, Telegram, Instagram2, Ballon } from "../svg";
+import { Call, Viber, Telegram, Instagram2 } from "../svg";
 import s from "./NoFindComposition.module.scss";
 import Link from "next/link";
 import { Instagram } from "../svg";
-import ss from "../Footer/Footer.module.scss";
 
 const NoFindComposition = () => {
   const [showPhone, SetShowPhone] = useState(false);

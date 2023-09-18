@@ -1,32 +1,33 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect  } from "react";
 import { useRouter } from "next/router";
+import Balloon from "../../../../Interface/interface";
+import { getBirthDayBalloons } from "../../../../lib/balloons";
+import { paginate } from "../../../../lib/paginate";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
 import { NextPage, PrevPage, Sort } from "../../../../components/svg";
-import common from "../../../../styles/common.module.scss";
-import { getBirthDayBalloons } from "../../../../lib/balloons";
-import { paginate } from "../../../../lib/paginate";
 import FilterBD from "../../../../components/FilterGender/FilterBD";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../../styles/common.module.scss";
 import s from "../../../../components/BalloonCard/BalloonCard.module.scss";
 import fil from "../../../../components/FilterGender/Filter.module.scss";
 
+
 export const getStaticProps = async () => {
   const response = await getBirthDayBalloons();
-  const birthDayBalloonsBoy = response.filter(
-    (bal) => bal.grup === "Для хлопчика"
+  const birthDayBalloonsGirls = response.filter(
+    (bal: Balloon) => bal.grup === "Для дівчинки"
   );
   return {
-    props: { balloons: birthDayBalloonsBoy },
+    props: { balloons: birthDayBalloonsGirls },
   };
 };
 
-const BirthDayBoy = ({ balloons }) => {
+const BirthDayGirls = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -59,9 +60,8 @@ const BirthDayBoy = ({ balloons }) => {
   }, []);
   const [page, SetPage] = useState(1);
   const pageSize = 24;
-  const [filteredBalloons, setFilteredBalloons] = useState([]);
+  const [filteredBalloons, setFilteredBalloons] = useState<any[]>([]);
   const [filter, setFilter] = useState(false);
-  const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
 
   const onShowSort = () => {
@@ -104,13 +104,11 @@ const BirthDayBoy = ({ balloons }) => {
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   return (
@@ -118,7 +116,7 @@ const BirthDayBoy = ({ balloons }) => {
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, день народження, ідеї подарунка для іменинника, сюрприз, нюдові кульки, трендові оформлення, святковий настрій, індивідуальний напис, кольорова гама, кульки з гелієм, річниця"
+          content="композиції із повітряних кульок, оформлення свят, доставка Кривий Ріг, день народження, зв'язка для дівчинки, кольорова гама, річниця, індивідуальний напис, кульки з гелієм, трендові оформлення, незабутні враження"
         ></meta>
         <title>Весела витівка</title>
         <meta
@@ -132,10 +130,10 @@ const BirthDayBoy = ({ balloons }) => {
         <Novigation
           section="День народження"
           linkSection="/categories/birthday"
-          category="Для хлопчика"
-          linkCategory="/categories/birthday/boys"
+          category="Для дівчинки"
+          linkCategory="/categories/birthday/girls"
         />
-        <h1 className={common.section_title}>День народження для хлопчика</h1>
+        <h1 className={common.section_title}>День народження для дівчинки</h1>
         {balloons.length === 0 ? (
           <h2>Сторінка знаходиться у стадії розробки</h2>
         ) : (
@@ -169,8 +167,8 @@ const BirthDayBoy = ({ balloons }) => {
                   {filteredBalloons.map((balloon) => (
                     <li key={balloon._id} className={s.card_item}>
                       <Link
-                        href="/categories/birthday/boys/[id]"
-                        as={`/categories/birthday/boys/${balloon._id}`}
+                        href="/categories/birthday/girls/[id]"
+                        as={`/categories/birthday/girls/${balloon._id}`}
                       >
                         <BalloonCard balloon={balloon} />
                       </Link>
@@ -188,11 +186,11 @@ const BirthDayBoy = ({ balloons }) => {
               <>
                 {balloons && (
                   <ul className={s.list}>
-                    {paginatedBalloons.map((balloon) => (
+                    {paginatedBalloons.map((balloon: Balloon) => (
                       <li key={balloon._id} className={s.card_item}>
                         <Link
-                          href="/categories/birthday/boys/[id]"
-                          as={`/categories/birthday/boys/${balloon._id}`}
+                          href="/categories/birthday/girls/[id]"
+                          as={`/categories/birthday/girls/${balloon._id}`}
                         >
                           <BalloonCard balloon={balloon} />
                         </Link>
@@ -229,4 +227,4 @@ const BirthDayBoy = ({ balloons }) => {
   );
 };
 
-export default BirthDayBoy;
+export default BirthDayGirls;

@@ -1,12 +1,20 @@
 import Head from "next/head";
 import Image from "next/image";
-import common from "../../../../styles/common.module.scss";
+import Balloon from "../../../../Interface/interface";
+import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import Novigation from "../../../../components/Navigation/Novigation";
 import ComeBackButton from "../../../../components/ComeBackButton/ComeBackButton";
-import s from "../../../../components/CardDescription/CardDescription.module.scss";
-import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../../styles/common.module.scss";
+import s from "../../../../components/CardDescription/CardDescription.module.scss";
+
+
+type Params = {
+	params: {
+		id: string
+	}
+}
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +23,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params ) => {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,21 +32,14 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
 
-// }
-
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, день народження, ідеї подарунка для іменинника, сюрприз, нюдові кульки, трендові оформлення, святковий настрій, індивідуальний напис, кольорова гама, кульки з гелієм, річниця"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, день народження, для жінки, для дівчини, для неї, для коханої, ідея для подарунку, трендові оформлення, незабутні враження, кульки з гелієм, річниця, чим порадувати іменинника"
         ></meta>
         <title>Весела витівка</title>
         <meta
@@ -50,10 +51,10 @@ const CardId = ({ balloon }) => {
       <main className={common.container}>
         <Novigation
           section="День народження"
-          category="Для хлопчика"
+          category="Для неї"
           composition="Композиція"
           linkSection="/categories/birthday"
-          linkCategory="/categories/birthday/boys"
+          linkCategory="/categories/birthday/she"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

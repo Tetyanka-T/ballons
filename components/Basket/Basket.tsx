@@ -3,19 +3,20 @@ import Router from "next/router";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import Link from "next/link";
-import { Cross } from "../../components/svg";
+import { Cross } from "../svg";
 import s from "./Basket.module.scss";
+import Cart from "../../Interface/interface"
 const Basket = () => {
   const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext);
 
-  const increaseQty = (cartItem) => {
+  const increaseQty = (cartItem: Cart) => {
     const newQty = cartItem?.quantity + 1;
     const item = { ...cartItem, quantity: newQty };
 
     addItemToCart(item);
   };
 
-  const decreaseQty = (cartItem) => {
+  const decreaseQty = (cartItem: Cart) => {
     const newQty = cartItem?.quantity - 1;
     const item = { ...cartItem, quantity: newQty };
 
@@ -25,7 +26,7 @@ const Basket = () => {
   };
 
   const amount = cart?.cartItems?.reduce(
-    (acc, item) => acc + item.quantity * item.price,
+    (acc: any, item: Cart) => acc + item.quantity * item.price,
     0
   );
   return (
@@ -38,7 +39,7 @@ const Basket = () => {
       ) : (
         <>
           <ul className={s.basket_list}>
-            {cart.cartItems.map((balloon) => (
+            {cart.cartItems.map((balloon: Cart) => (
               <li className={s.basket_list__item} key={balloon._id}>
                 <div className={s.basket_photo}>
                   <Image src={balloon.imgSrc} alt="" width={70} height={90} />

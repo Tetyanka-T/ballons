@@ -1,29 +1,30 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
+import Balloon from "../../../../Interface/interface";
+import { getBirthDayBalloons } from "../../../../lib/balloons";
+import { paginate } from "../../../../lib/paginate";
 import BalloonCard from "../../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
 import { NextPage, PrevPage, Sort } from "../../../../components/svg";
-import common from "../../../../styles/common.module.scss";
-import { getBirthDayBalloons } from "../../../../lib/balloons";
-import { paginate } from "../../../../lib/paginate";
 import FilterBD from "../../../../components/FilterGender/FilterBD";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../../styles/common.module.scss";
 import s from "../../../../components/BalloonCard/BalloonCard.module.scss";
 import fil from "../../../../components/FilterGender/Filter.module.scss";
 
+
 export const getStaticProps = async () => {
   const response = await getBirthDayBalloons();
-  const birthDayHeBalloons = response.filter((bal) => bal.grup === "Для нього");
+  const birthDayHeBalloons = response.filter((bal: Balloon) => bal.grup === "Для нього");
   return {
     props: { balloons: birthDayHeBalloons },
   };
 };
-const BirthDayHe = ({ balloons }) => {
+const BirthDayHe = ({ balloons }: {balloons: Balloon[]}) => {
   const router = useRouter();
 
   // set scroll restoration to manual
@@ -56,9 +57,8 @@ const BirthDayHe = ({ balloons }) => {
   }, []);
   const [page, SetPage] = useState(1);
   const pageSize = 24;
-  const [filteredBalloons, setFilteredBalloons] = useState([]);
+  const [filteredBalloons, setFilteredBalloons] = useState<any[]>([]);
   const [filter, setFilter] = useState(false);
-  const [sortered, setSortered] = useState([]);
   const [showSort, setShowSort] = useState(false);
 
   const onShowSort = () => {
@@ -131,13 +131,11 @@ const BirthDayHe = ({ balloons }) => {
   const paginatedBalloons = paginate(balloons, page, pageSize);
   const pagesCount = Math.ceil(balloons.length / pageSize);
   const sortPriceLow = () => {
-    const lowPrice = balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
-    setSortered(lowPrice);
+    balloons.sort((a, b) => (a.price > b.price ? 1 : -1));
     setShowSort(false);
   };
   const sortPriceHigh = () => {
-    const higePrice = balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
-    setSortered(higePrice);
+    balloons.sort((a, b) => (a.price < b.price ? 1 : -1));
     setShowSort(false);
   };
   return (
@@ -211,7 +209,7 @@ const BirthDayHe = ({ balloons }) => {
           <>
             {balloons && (
               <ul className={s.list}>
-                {paginatedBalloons.map((balloon) => (
+                {paginatedBalloons.map((balloon: Balloon) => (
                   <li key={balloon._id} className={s.card_item}>
                     <Link
                       href="/categories/birthday/he/[id]"

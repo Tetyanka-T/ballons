@@ -1,19 +1,18 @@
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect  } from "react";
 import { useRouter } from "next/router";
-import { Ballon, NextPage, PrevPage, Sort } from "../../../components/svg";
-import common from "../../../styles/common.module.scss";
+import { NextPage, PrevPage, Sort } from "../../../components/svg";
+import Balloon from "../../../Interface/interface";
 import BalloonCard from "../../../components/BalloonCard/BalloonCard";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
+import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import { getPhotozoneBalloons } from "../../../lib/balloons";
 import { paginate } from "../../../lib/paginate";
 import s from "../../../components/BalloonCard/BalloonCard.module.scss";
-import FavoriteButton from "../../../components/FavoriteBatton/FavoriteButton";
 import fil from "../../../components/FilterGender/Filter.module.scss";
-import Balloon from "../../../Interface/interface";
+import common from "../../../styles/common.module.scss";
 
 
 export const getStaticProps = async () => {

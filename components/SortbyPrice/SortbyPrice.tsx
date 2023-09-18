@@ -2,7 +2,12 @@ import { useState } from "react";
 import { Sort } from "../svg";
 import s from "./SortbyPrice.module.scss";
 
-const SortbyPrice = ({ sortLow, sortHigh, onClickSort }) => {
+const SortbyPrice = ({ sortLow, sortHigh, onClickSort } :
+  {
+    sortLow: Function,
+    sortHigh: Function,
+    onClickSort: Function
+  }) => {
   const [showSort, setShowSort] = useState(false);
 
   const onShowSort = () => {

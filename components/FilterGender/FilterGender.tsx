@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
@@ -9,6 +9,12 @@ export default function FilterGender({
   onChangeGirls,
   onChangeBoy,
   onClickFilter,
+}: {
+  onChangeWomen: Function,
+  onChangeMan: Function,
+  onChangeGirls: Function,
+  onChangeBoy: Function,
+  onClickFilter: Function
 }) {
   const [women, setWomen] = useState(false);
   const [man, setMan] = useState(false);
@@ -22,7 +28,7 @@ export default function FilterGender({
   const toggleFilter = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
   };
-  const handleChangeWomen = async (event) => {
+  const handleChangeWomen = async (event: ChangeEvent<HTMLInputElement>) => {
     setWomen(event.target.checked);
     onChangeWomen();
     setMan(false);
@@ -31,7 +37,7 @@ export default function FilterGender({
     onClickFilter();
     setShowFilter(false);
   };
-  const handleChangeMan = async (event) => {
+  const handleChangeMan = async (event: ChangeEvent<HTMLInputElement>) => {
     setMan(event.target.checked);
     onChangeMan();
     setWomen(false);
@@ -39,7 +45,7 @@ export default function FilterGender({
     setGirl(false);
     setShowFilter(false);
   };
-  const handleChangeGirl = async (event) => {
+  const handleChangeGirl = async (event: ChangeEvent<HTMLInputElement>) => {
     setGirl(event.target.checked);
     onChangeGirls();
     setMan(false);
@@ -47,7 +53,7 @@ export default function FilterGender({
     setWomen(false);
     setShowFilter(false);
   };
-  const handleChangeBoy = async (event) => {
+  const handleChangeBoy = async (event: ChangeEvent<HTMLInputElement>) => {
     setBoy(event.target.checked);
     onChangeBoy();
     setMan(false);

@@ -38,3 +38,15 @@ export default interface Order {
     statusFinish: boolean,
 }
 
+export default interface Cart {
+    id: string
+    name: string,
+    price: number,
+    code: string,
+    category: string,
+    description: string,
+    imgSrc: string
+    quantity: number,
+    priceAll: number,
+
+}

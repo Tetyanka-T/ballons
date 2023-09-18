@@ -1,7 +1,6 @@
-import { useState, useContext } from "react";
-import { Cross } from "../../components/svg";
+import { useState, useContext, ChangeEvent, FormEvent } from "react";
+import { Cross } from "../svg";
 import Image from "next/image";
-import * as yup from "yup";
 import TextField from "@mui/material/TextField";
 import TextareaAutosize from "@mui/base/TextareaAutosize";
 import FormControl from "@mui/material/FormControl";
@@ -12,6 +11,7 @@ import {
   Checkbox,
   FormGroup,
   FormControlLabel,
+  SelectChangeEvent 
 } from "@mui/material";
 import DatePicker, { registerLocale } from "react-datepicker";
 import uk from "date-fns/locale/uk";
@@ -22,45 +22,27 @@ import sss from "../Basket/Basket.module.scss";
 import common from "../../styles/common.module.scss";
 import OrderSuccess from "../OrderSuccess/OrderSuccess";
 import CartContext from "../../context/CartContext";
+import Cart from "../../Interface/interface"
 
-const validationSchema = yup.object().shape({
-  userName: yup.string().required("Введіть своє ім'я"),
-  userPhone: yup
-    .number()
-    .integer("Некоректний телефон")
-    .typeError()
-    .required("Введіть свій номер телефону"),
-  userEmail: yup
-    .string()
-    .email("Некоректний email")
-    .required("Введіть свій email"),
-  dateHoliday: yup.date().required(),
-  deliveryTime: yup.string().required("Оберіть бажаний час"),
-  payment: yup.string().required("Оберіть спосіб оплати"),
-  deliveryMethod: yup.string().required("Оберіть спосіб доставки"),
-  userAddress: yup.string().required("Вкажіть вашу адресу"),
-  comment: yup.string(),
-  callBack: yup.boolean(),
-});
 
 const OrderFormNew = () => {
   const { addItemToCart, deleteItemFromCart, cart, removeItemCart } =
     useContext(CartContext);
 
   const amount = cart?.cartItems?.reduce(
-    (acc, item) => acc + item.quantity * item.price,
+    (acc: any, item: Cart) => acc + item.quantity * item.price,
     0
   );
-  const increaseQty = (cartItem) => {
+  const increaseQty = (cartItem: Cart) => {
     const newQty = cartItem?.quantity + 1;
     const item = { ...cartItem, quantity: newQty };
 
-    if (newQty > Number(cartItem.stock)) return;
+    if (newQty > Number(cartItem)) return;
 
     addItemToCart(item);
   };
 
-  const decreaseQty = (cartItem) => {
+  const decreaseQty = (cartItem: Cart) => {
     const newQty = cartItem?.quantity - 1;
     const item = { ...cartItem, quantity: newQty };
     if (newQty <= 0) return;
@@ -82,24 +64,23 @@ const OrderFormNew = () => {
   const [waiteBack, setWaiteBack] = useState(false);
 
   registerLocale("uk", uk);
-  const handleChangeCheck = (event) => {
+  const handleChangeCheck = (event: ChangeEvent<HTMLInputElement> ) => {
     setCallBack(event.target.checked);
   };
 
   const deliveryDate = startDate.toISOString().slice(0, 10);
   const numberOrder = Date.now().toString();
 
-  const selectTime = (e) => {
+  const selectTime = (e: SelectChangeEvent ) => {
     SetDeliveryTime(e.target.value);
   };
-  const selectPayment = (e) => {
+  const selectPayment = (e: SelectChangeEvent ) => {
     SetPayment(e.target.value);
   };
-  const selectDelivery = (e) => {
+  const selectDelivery = (e: SelectChangeEvent ) => {
     SetDeliveryMethod(e.target.value);
   };
-
-  const handleChange = (e) => {
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement> ) => {
     const { name, value } = e.currentTarget;
 
     switch (name) {
@@ -108,7 +89,10 @@ const OrderFormNew = () => {
         break;
 
       case "userPhone":
-        SetUserPhone(value);
+        const limitChar = 10;
+        if (value.toString().length <= limitChar) {
+          SetUserPhone(value);
+        }
         break;
 
       case "userEmail":
@@ -141,18 +125,18 @@ const OrderFormNew = () => {
     callBack,
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent ) => {
     e.preventDefault();
     setDisabled(true);
     setWaiteBack(true);
-    const basketBalloons = cart.cartItems.map((b) => ({
+    const basketBalloons = cart.cartItems.map((b: Cart) => ({
       id: b.id,
       img: b.imgSrc,
       name: b.name,
       code: b.code,
       price: b.price,
       quantity: b.quantity,
-      price: b.quantity * b.price,
+      priceAll: b.quantity * b.price,
     }));
     const basket = {
       balloons: basketBalloons,
@@ -183,7 +167,6 @@ const OrderFormNew = () => {
       body: JSONdata,
     };
     const response = await fetch(link, options);
-
     setFormSuccess(true);
     removeItemCart();
   };
@@ -209,16 +192,18 @@ const OrderFormNew = () => {
               />
             </div>
             <div className={s.textField}>
+              <p className={s.textField_number}>+38</p>
               <TextField
                 id="userPhone"
                 name="userPhone"
-                type="tel"
+                type="number"
                 label="Номер телефону"
+                placeholder="0683501398"
                 value={userPhone}
                 className={s.textField}
                 onChange={handleChange}
                 required
-                pattern="[0-9]*"
+                fullWidth
               />
             </div>
             <div className={s.textField}>
@@ -231,18 +216,18 @@ const OrderFormNew = () => {
                 className={s.textField}
                 onChange={handleChange}
                 required
-                pattern="^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$"
               />
             </div>
 
             <div className={s.calendarColor}>
               <p className={s.orderForm_select_date}>Виберіть дату свята:</p>
               <DatePicker
+                id="date"
                 locale="uk"
                 dateFormat="dd.MM.yyyy"
                 minDate={new Date()}
                 selected={startDate}
-                onChange={(date) => setStartDate(date)}
+                onChange={(date: Date) => setStartDate(date)}
                 name="date"
                 disabledKeyboardNavigation
                 className={s.date}
@@ -477,7 +462,7 @@ const OrderFormNew = () => {
               <>
                 <h2 className={ss.order}>Ваше замовлення</h2>
                 <ul className={ss.basket_list}>
-                  {cart.cartItems.map((balloon) => (
+                  {cart.cartItems.map((balloon: Cart) => (
                     <li className={ss.basket_list__item} key={balloon._id}>
                       <div className={ss.basket_photo}>
                         <Image

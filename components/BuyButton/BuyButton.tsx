@@ -2,8 +2,9 @@ import { Basket } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import s from "./BuyButton.module.scss";
+import Balloon from "../../Interface/interface";
 
-function BuyButton({ balloon }) {
+function BuyButton({ balloon }: {balloon: Balloon}) {
   const { addItemToCart } = useContext(CartContext);
 
   const addToCartHandler = () => {

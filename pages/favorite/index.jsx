@@ -1,8 +1,8 @@
 import Head from "next/head";
-import common from "../../styles/common.module.scss";
 import Novigation from "../../components/Navigation/Novigation";
 import Favorite from "../../components/Favorite/Favorite";
 import NoFindComposition from "../../components/NoFindComposition/NoFindComposition";
+import common from "../../styles/common.module.scss";
 
 const FavoritePage = () => {
   return (

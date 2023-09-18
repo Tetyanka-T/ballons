@@ -1,14 +1,13 @@
 import Head from "next/head";
 import Image from "next/image";
-import common from "../../../../styles/common.module.scss";
+import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import Novigation from "../../../../components/Navigation/Novigation";
 import ComeBackButton from "../../../../components/ComeBackButton/ComeBackButton";
-import s from "../../../../components/CardDescription/CardDescription.module.scss";
-import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
 import Balloon from "../../../../Interface/interface";
-
+import common from "../../../../styles/common.module.scss";
+import s from "../../../../components/CardDescription/CardDescription.module.scss";
 type Params = {
 	params: {
 		id: string

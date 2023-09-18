@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Select } from "../svg";
 import s from "./CategoriesList.module.scss";
 
-const CategoriesList = ({ onClick }) => {
+const CategoriesList = ({ onClick }: {onClick: Function} ) => {
   const [baby, SetBaby] = useState(false);
   const [birthDay, SetBirthDay] = useState(false);
   const [thematics, SetThematics] = useState(false);

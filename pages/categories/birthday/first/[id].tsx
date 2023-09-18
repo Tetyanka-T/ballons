@@ -1,12 +1,19 @@
 import Head from "next/head";
 import Image from "next/image";
-import common from "../../../../styles/common.module.scss";
+import Balloon from "../../../../Interface/interface";
 import Novigation from "../../../../components/Navigation/Novigation";
 import ComeBackButton from "../../../../components/ComeBackButton/ComeBackButton";
-import s from "../../../../components/CardDescription/CardDescription.module.scss";
 import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import BuyButton from "../../../../components/BuyButton/BuyButton";
 import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
+import common from "../../../../styles/common.module.scss";
+import s from "../../../../components/CardDescription/CardDescription.module.scss";
+type Params = {
+	params: {
+		id: string
+	}
+}
+
 export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
@@ -15,7 +22,7 @@ export const getStaticPaths = async () => {
     fallback: false,
   };
 };
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : Params ) => {
   const balloon = await getBalloonById(params.id);
   return {
     props: {
@@ -24,21 +31,14 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-// interface Balloon {
-//   imgSrc: string;
-//   name: string;
-//   price: number;
-//   id: URL;
 
-// }
-
-const CardId = ({ balloon }) => {
+const CardId = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, день народження, для чоловіка, для нього, коханому, ідея для подарунку, зв'язка кульок з гелієм, річниця, святковий настрій, трендові оформлення"
+          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, перший день народження, для хлопчика, для дівчинки, кульки з гелієм, річниця, індивідуальний напис"
         ></meta>
         <title>Весела витівка</title>
         <meta
@@ -50,10 +50,10 @@ const CardId = ({ balloon }) => {
       <main className={common.container}>
         <Novigation
           section="День народження"
-          category="Для нього"
+          category="1-й День народження"
           composition="Композиція"
           linkSection="/categories/birthday"
-          linkCategory="/categories/birthday/he"
+          linkCategory="/categories/birthday/first"
         />
         <ComeBackButton />
         <div className={s.cardDescription_container}>

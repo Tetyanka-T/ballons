@@ -1,8 +1,9 @@
 import Image from "next/image";
 import ComeBackButton from "../ComeBackButton/ComeBackButton";
 import s from "./CardDescription.module.scss";
+import Balloon from "../../Interface/interface";
 
-const CardDescription = ({ balloon }) => {
+const CardDescription = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
       <ComeBackButton />

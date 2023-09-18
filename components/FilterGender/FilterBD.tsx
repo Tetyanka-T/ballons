@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
@@ -10,6 +10,12 @@ const FilterBD = ({
   onChangeFigures,
   onChangeBabls,
   onChangeBox,
+} : {onChangeNumbers: Function,
+  onClickFilter: Function,
+  onChangeGiant: Function,
+  onChangeFigures: Function,
+  onChangeBabls: Function,
+  onChangeBox: Function
 }) => {
   const [numbers, setNumbers] = useState(false);
   const [giant, setGiant] = useState(false);
@@ -25,7 +31,7 @@ const FilterBD = ({
   const toggleFilter = () => {
     showFilter ? setShowFilter(false) : setShowFilter(true);
   };
-  const handleChangeNumbers = async (event) => {
+  const handleChangeNumbers = async (event: ChangeEvent<HTMLInputElement> ) => {
     setNumbers(event.target.checked);
     onChangeNumbers();
     setGiant(false);
@@ -35,7 +41,7 @@ const FilterBD = ({
     onClickFilter();
     setShowFilter(false);
   };
-  const handleChangeGiant = async (event) => {
+  const handleChangeGiant = async (event: ChangeEvent<HTMLInputElement> ) => {
     setGiant(event.target.checked);
     onChangeGiant();
     setNumbers(false);
@@ -45,7 +51,7 @@ const FilterBD = ({
     onClickFilter();
     setShowFilter(false);
   };
-  const handleChangeFigures = async (event) => {
+  const handleChangeFigures = async (event: ChangeEvent<HTMLInputElement>) => {
     setFigures(event.target.checked);
     onChangeFigures();
     setNumbers(false);
@@ -55,7 +61,7 @@ const FilterBD = ({
     setShowFilter(false);
     onClickFilter();
   };
-  const handleBabls = async (event) => {
+  const handleBabls = async (event: ChangeEvent<HTMLInputElement>) => {
     setBabls(event.target.checked);
     onChangeBabls();
     setNumbers(false);
@@ -65,7 +71,7 @@ const FilterBD = ({
     setShowFilter(false);
     onClickFilter();
   };
-  const handleChangeBox = async (event) => {
+  const handleChangeBox = async (event: ChangeEvent<HTMLInputElement>) => {
     setBox(event.target.checked);
     onChangeBox();
     setNumbers(false);
