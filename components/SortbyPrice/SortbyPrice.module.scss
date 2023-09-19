@@ -4,9 +4,8 @@
     position: relative;
 }
 .sort_list {
-position: absolute;
-
-background-color: $background-color-second;
+    position: absolute;
+    background-color: $background-color-second;
     padding: 10px;
     top: 33px;
     right: 0px;
@@ -24,4 +23,5 @@ background-color: $background-color-second;
 .sort_button {
     border: 1px solid $accent-color;
     padding: 5px;
+ 
 }

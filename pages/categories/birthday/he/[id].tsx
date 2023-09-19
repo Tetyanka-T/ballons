@@ -1,13 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
+import CardDescription from "../../../../components/CardDescription/CardDescription";
 import Balloon from "../../../../Interface/interface";
 import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import Novigation from "../../../../components/Navigation/Novigation";
-import ComeBackButton from "../../../../components/ComeBackButton/ComeBackButton";
-import BuyButton from "../../../../components/BuyButton/BuyButton";
-import FavoriteButton from "../../../../components/FavoriteBatton/FavoriteButton";
 import common from "../../../../styles/common.module.scss";
-import s from "../../../../components/CardDescription/CardDescription.module.scss";
+
+
 type Params = {
 	params: {
 		id: string
@@ -34,6 +32,7 @@ export const getStaticProps = async ({ params } : Params ) => {
 
 
 const CardId = ({ balloon }: {balloon: Balloon}) => {
+  
   return (
     <>
       <Head>
@@ -50,51 +49,13 @@ const CardId = ({ balloon }: {balloon: Balloon}) => {
       </Head>
       <main className={common.container}>
         <Novigation
-          section="День народження"
-          category="Для нього"
-          composition="Композиція"
+          section={balloon.category}
+          category={balloon.grup}
+          composition={balloon.name}
           linkSection="/categories/birthday"
           linkCategory="/categories/birthday/he"
         />
-        <ComeBackButton />
-        <div className={s.cardDescription_container}>
-          <div className={s.cardDescription_photo_container}>
-            <Image
-              src={balloon.imgSrc}
-              alt=""
-              width={200}
-              height={100}
-              className={s.cardDescription_image}
-            />
-            <div className={s.transparent}></div>
-          </div>
-
-          <div>
-            <div className={s.cardDescription_fav_container}>
-              <h3 className={s.cardDescription_title}>{balloon.name}</h3>
-              <div className={s.cardDescription_button_fav}>
-                <FavoriteButton balloon={balloon} />
-              </div>
-            </div>
-
-            <p className={s.cardDescription_article}>арт.№ {balloon.code}</p>
-
-            <p className={s.cardDescription_descriptionComposition}>
-              {balloon.description}
-            </p>
-
-            <div className={s.cardDescription_price_container}>
-              <p className={s.cardDescription_price}>{balloon.price} грн.</p>
-              <div className={s.cardDescription_button_buy}>
-                <BuyButton balloon={balloon} />
-              </div>
-            </div>
-            <p className={s.cardDescription_inform}>
-              *Просимо звернути увагу: колір товару може відрізнятися в
-              залежності від освітлення та налаштувань Вашого екрану.
-            </p>
-          </div>
-        </div>
+        <CardDescription balloon={balloon}/>
       </main>
     </>
   );

@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import common from '../styles/common.module.scss'
-
 import { ThemeProvider } from "@emotion/react"
 import { createTheme } from "@mui/material/styles"
 import type { AppProps } from 'next/app'
@@ -24,24 +23,20 @@ const theme = createTheme({
 const App = ({ Component, pageProps }: AppProps) => {
  
   return (
-<div className={inter.className}>
-  <CartProvider>
-  <ThemeProvider theme={theme}>
-  <Header/>
-  <div className={common.container}>
-     
-      
-     <div className={common.section}>
-     <CategoriesListDesktop />
-     </div>
-     </div>
- <Component {...pageProps} />
- <Footer/>
-  </ThemeProvider>
-  
-  </CartProvider>
- 
-  </div>
+    <div className={inter.className}>
+       <CartProvider>
+        <ThemeProvider theme={theme}>
+          <Header/>
+          <div className={common.container}>
+            <div className={common.section}>
+              <CategoriesListDesktop />
+            </div>
+          </div> 
+          <Component {...pageProps} />
+          <Footer/>
+        </ThemeProvider>
+      </CartProvider>
+    </div>
   )
 }
 export default App;

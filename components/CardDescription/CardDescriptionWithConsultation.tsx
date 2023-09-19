@@ -1,15 +1,13 @@
 import Image from "next/image";
-import ComeBackButton from "../ComeBackButton/ComeBackButton";
-;
-import BuyButton from "../BuyButton/BuyButton";
-import FavoriteButton from "../FavoriteBatton/FavoriteButton";
-import s from "./CardDescription.module.scss";
 import Balloon from "../../Interface/interface";
+import FavoriteButton from "../FavoriteBatton/FavoriteButton";
+import ComeBackButton from "../ComeBackButton/ComeBackButton";
+import s from "../CardDescription/CardDescription.module.scss";
 
-const CardDescription = ({ balloon }: {balloon: Balloon}) => {
+const CardDescriptionWithConsultation = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
-          <ComeBackButton />
+        <ComeBackButton />
         <div className={s.cardDescription_container}>
           <div className={s.cardDescription_photo_container}>
             <Image
@@ -39,7 +37,12 @@ const CardDescription = ({ balloon }: {balloon: Balloon}) => {
             <div className={s.cardDescription_price_container}>
               <p className={s.cardDescription_price}>{balloon.price} грн.</p>
               <div className={s.cardDescription_button_buy}>
-                <BuyButton balloon={balloon} />
+                <a
+                  href="tel:+380968118244"
+                  className={s.list_button_consultation}
+                >
+                  Отримати консультацію
+                </a>
               </div>
             </div>
             <p className={s.cardDescription_inform}>
@@ -49,7 +52,7 @@ const CardDescription = ({ balloon }: {balloon: Balloon}) => {
           </div>
         </div>
     </>
-  );
-};
+  )
+}
 
-export default CardDescription;
+export default CardDescriptionWithConsultation
