@@ -12,6 +12,7 @@ export const getStaticProps = async () => {
   const response = await getBabyBalloons();
   return {
     props: { balloons: response },
+   
   };
 };
 

@@ -12,6 +12,7 @@ export const getStaticProps = async () => {
   const birthDayHeBalloons = response.filter((bal: Balloon) => bal.grup === "Для нього");
   return {
     props: { balloons: birthDayHeBalloons },
+  
   };
 };
 const BirthDayHe = ({ balloons }: {balloons: Balloon[]}) => {
