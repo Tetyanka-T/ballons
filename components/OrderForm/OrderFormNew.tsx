@@ -1,19 +1,19 @@
 import { useState, useContext, ChangeEvent, FormEvent } from "react";
 import { Cross } from "../svg";
 import Image from "next/image";
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
 // import TextareaAutosize from "@mui/base/TextareaAutosize";
-import TextareaAutosize from "@mui/material/TextareaAutosize"
-import FormControl from "@mui/material/FormControl";
-import {
-  InputLabel,
-  Select,
-  MenuItem,
-  Checkbox,
-  FormGroup,
-  FormControlLabel,
-  SelectChangeEvent 
-} from "@mui/material";
+
+// import FormControl from "@mui/material/FormControl";
+// import {
+//   InputLabel,
+//   Select,
+//   MenuItem,
+//   Checkbox,
+//   FormGroup,
+//   FormControlLabel,
+//   SelectChangeEvent 
+// } from "@mui/material";
 import DatePicker, { registerLocale } from "react-datepicker";
 import uk from "date-fns/locale/uk";
 import "react-datepicker/dist/react-datepicker.css";
@@ -65,6 +65,7 @@ const OrderFormNew = () => {
   const [waiteBack, setWaiteBack] = useState(false);
 
   registerLocale("uk", uk);
+
   const handleChangeCheck = (event: ChangeEvent<HTMLInputElement> ) => {
     setCallBack(event.target.checked);
   };
@@ -72,16 +73,16 @@ const OrderFormNew = () => {
   const deliveryDate = startDate.toISOString().slice(0, 10);
   const numberOrder = Date.now().toString();
 
-  const selectTime = (e: SelectChangeEvent ) => {
+  const selectTime = (e: ChangeEvent<HTMLSelectElement> ) => {
     SetDeliveryTime(e.target.value);
   };
-  const selectPayment = (e: SelectChangeEvent ) => {
+  const selectPayment = (e: ChangeEvent<HTMLSelectElement> ) => {
     SetPayment(e.target.value);
   };
-  const selectDelivery = (e: SelectChangeEvent ) => {
+  const selectDelivery = (e: ChangeEvent<HTMLSelectElement> ) => {
     SetDeliveryMethod(e.target.value);
   };
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement> ) => {
+  const handleChange = (e: FormEvent<HTMLTextAreaElement | HTMLInputElement> ) => {
     const { name, value } = e.currentTarget;
 
     switch (name) {
@@ -180,45 +181,46 @@ const OrderFormNew = () => {
         <>
           <h1 className={common.section_title}>Оформлення замовлення</h1>
           <form onSubmit={handleSubmit} className={s.orderForm}>
-            <div className={s.textField}>
-              <TextField
+           
+              <label id="userName">Ім&#39;я
+                <input
                 id="userName"
                 name="userName"
                 type="text"
-                label="Ім'я"
                 value={userName}
                 className={s.textField}
-                onChange={handleChange}
+                onChange={(e)=> SetUserName(e.target.value)}
                 required
               />
-            </div>
-            <div className={s.textField}>
-              <p className={s.textField_number}>+38</p>
-              <TextField
+            </label>
+           
+           
+            <label id="userPhone">Номер телефону
+              <input
                 id="userPhone"
                 name="userPhone"
                 type="number"
-                label="Номер телефону"
-                placeholder="0683501398"
+                placeholder="0971233366"
                 value={userPhone}
                 className={s.textField}
                 onChange={handleChange}
                 required
-                fullWidth
               />
-            </div>
-            <div className={s.textField}>
-              <TextField
+            </label>
+          
+              <label id="userEmail">Email
+              <input
                 id="userEmail"
                 name="userEmail"
-                label="Email"
                 type="email"
                 value={userEmail}
                 className={s.textField}
                 onChange={handleChange}
                 required
               />
-            </div>
+              </label>
+             
+         
 
             <div className={s.calendarColor}>
               <p className={s.orderForm_select_date}>Виберіть дату свята:</p>
@@ -235,107 +237,68 @@ const OrderFormNew = () => {
                 placeholderText="Виберіть дату свята:"
               />
             </div>
-            <FormControl>
-              <InputLabel id="payment">Спосіб оплати</InputLabel>
-              <Select
-                labelId="payment"
-                id="payment"
-                name="payment"
-                value={payment}
-                label="Спосіб оплати"
-                onChange={selectPayment}
-                required
-                className={s.orderForm_select}
-                sx={{
-                  ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                    {
-                      padding: "16px 0px 16px 10px",
-                    },
-                  ".MuiSvgIcon-root ": {
-                    fill: "#FFA500 !important",
-                  },
-                }}
-              >
-                <MenuItem value="100%">100% на карту МоноБанку</MenuItem>
-              </Select>
-            </FormControl>
+           
+              <label id="payment">Спосіб оплати
+              <select
+               id="payment"
+               name="payment"
+               value={payment}
+               onChange={selectPayment}
+               required
+               className={s.textField}
+             >
+               <option></option>
+               <option value="100%">100% на карту МоноБанку</option>
+             </select>
 
-            <FormControl>
-              <InputLabel id="deliveryMethod" className={s.InputLabel}>
-                Спосіб доставки
-              </InputLabel>
-              <Select
-                labelId="deliveryMethod"
-                id="deliveryMethod"
-                name="deliveryMethod"
-                value={deliveryMethod}
-                label="Спосіб доставки"
-                onChange={selectDelivery}
-                required
-                className={s.orderForm_select}
-                sx={{
-                  ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                    {
-                      padding: "16px 0px 16px 10px",
-                    },
-                  ".MuiSvgIcon-root ": {
-                    fill: "#FFA500 !important",
-                  },
-                }}
-              >
-                <MenuItem value="Самовивіз з магазину">
-                  <span>
-                    Самовивіз з магазину
-                    <br />
-                    <span className={s.orderForm_select_delivery}>
-                      м.Кривий Ріг, просп. Металургів, б.20
-                    </span>
-                  </span>
-                </MenuItem>
-                <MenuItem value="Доставка кур'єр">
-                  Доставка кур&apos;єром
-                </MenuItem>
-              </Select>
-            </FormControl>
+              </label>
+       
+
+              <label id="deliveryMethod">Спосіб доставки </label>
+              <select
+              id="deliveryMethod"
+              name="deliveryMethod"
+              value={deliveryMethod}
+              onChange={selectDelivery}
+              required
+              className={s.orderForm_select}
+         
+            >
+              <option value="Самовивіз з магазину" className={s.option}>
+                <span>Самовивіз з магазину<br/></span>
+                <span>м.Кривий Ріг, просп. Металургів, б.20</span> 
+              </option>
+              <option value="Доставка кур'єр">
+                Доставка кур&apos;єром
+              </option>
+            </select>
+      
             {deliveryMethod === "Самовивіз з магазину" && (
               <>
                 <p className={s.orderForm_timeInfo}>
                   Важливо! На опрацювання та підготовку ваших замовлень потрібен
                   деякий час, тому плануйте ваше свято заздалегідь.
                 </p>
-                <FormControl>
-                  <InputLabel id="deliveryTime">
-                    Виберіть час, коли бажаєте забрати композицію
-                  </InputLabel>
-                  <Select
-                    labelId="deliveryTime"
-                    id="deliveryTime"
-                    name="deliveryTime"
-                    value={deliveryTime}
-                    label="Виберіть час, коли бажаєте забрати композицію"
-                    onChange={selectTime}
-                    required
-                    className={s.orderForm_select}
-                    sx={{
-                      ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                        {
-                          padding: "16px 0px 16px 10px",
-                        },
-                      ".MuiSvgIcon-root ": {
-                        fill: "#FFA500 !important",
-                      },
-                    }}
-                  >
-                    <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
-                    <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
-                    <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
-                    <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
-                    <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
-                    <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
-                    <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
-                    <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
-                  </Select>
-                </FormControl>
+             
+                  <label  id="deliveryTime">Виберіть час, коли бажаєте забрати композицію</label>
+                  <select
+                   id="deliveryTime"
+                   name="deliveryTime"
+                   value={deliveryTime}
+                   onChange={selectTime}
+                   required
+                   className={s.textField}
+                 >
+                  <option></option>
+                   <option value="09:00-10:00">09:00-10:00</option>
+                   <option value="10:00-11:00">10:00-11:00</option>
+                   <option value="11:00-12:00">11:00-12:00</option>
+                   <option value="12:00-13:00">12:00-13:00</option>
+                   <option value="13:00-14:00">13:00-14:00</option>
+                   <option value="14:00-15:00">14:00-15:00</option>
+                   <option value="15:00-16:00">15:00-16:00</option>
+                   <option value="16:00-17:00">16:00-17:00</option>
+                 </select>
               </>
             )}
             {deliveryMethod === "Доставка кур'єр" && (
@@ -344,44 +307,31 @@ const OrderFormNew = () => {
                   Важливо! На опрацювання та підготовку ваших замовлень потрібен
                   деякий час, тому плануйте ваше свято заздалегідь.
                 </p>
-                <FormControl>
-                  <InputLabel id="deliveryTime">
-                    Виберіть час доставки
-                  </InputLabel>
-                  <Select
-                    labelId="deliveryTime"
-                    id="deliveryTime"
-                    value={deliveryTime}
-                    label="Виберіть час доставки"
-                    onChange={selectTime}
-                    required
-                    className={s.orderForm_select}
-                    sx={{
-                      ".MuiSelect-select.MuiSelect-outlined.MuiInputBase-input.MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input":
-                        {
-                          padding: "16px 0px 16px 10px",
-                        },
-                      ".MuiSvgIcon-root ": {
-                        fill: "#FFA500 !important",
-                      },
-                    }}
-                  >
-                    <MenuItem value="06:00-07:00">06:00-07:00</MenuItem>
-                    <MenuItem value="07:00-08:00">07:00-08:00</MenuItem>
-                    <MenuItem value="08:00-09:00">08:00-09:00</MenuItem>
-                    <MenuItem value="09:00-10:00">09:00-10:00</MenuItem>
-                    <MenuItem value="10:00-11:00">10:00-11:00</MenuItem>
-                    <MenuItem value="11:00-12:00">11:00-12:00</MenuItem>
-                    <MenuItem value="12:00-13:00">12:00-13:00</MenuItem>
-                    <MenuItem value="13:00-14:00">13:00-14:00</MenuItem>
-                    <MenuItem value="14:00-15:00">14:00-15:00</MenuItem>
-                    <MenuItem value="15:00-16:00">15:00-16:00</MenuItem>
-                    <MenuItem value="16:00-17:00">16:00-17:00</MenuItem>
-                    <MenuItem value="17:00-18:00">17:00-18:00</MenuItem>
-                    <MenuItem value="18:00-19:00">18:00-19:00</MenuItem>
-                    <MenuItem value="19:00-20:00">19:00-20:00</MenuItem>
-                  </Select>
-                </FormControl>
+                <label id="deliveryTimeHome">Виберіть час доставки</label>
+                <select
+                id="deliveryTime"
+                value={deliveryTime}
+                onChange={selectTime}
+                required
+                className={s.textField}
+              >
+                <option></option>
+                <option value="06:00-07:00">06:00-07:00</option>
+                <option value="07:00-08:00">07:00-08:00</option>
+                <option value="08:00-09:00">08:00-09:00</option>
+                <option value="09:00-10:00">09:00-10:00</option>
+                <option value="10:00-11:00">10:00-11:00</option>
+                <option value="11:00-12:00">11:00-12:00</option>
+                <option value="12:00-13:00">12:00-13:00</option>
+                <option value="13:00-14:00">13:00-14:00</option>
+                <option value="14:00-15:00">14:00-15:00</option>
+                <option value="15:00-16:00">15:00-16:00</option>
+                <option value="16:00-17:00">16:00-17:00</option>
+                <option value="17:00-18:00">17:00-18:00</option>
+                <option value="18:00-19:00">18:00-19:00</option>
+                <option value="19:00-20:00">19:00-20:00</option>
+              </select>
+
                 <ul className={s.orderForm_delivery_price_list}>
                   Орієнтовна ціна доставки
                   <li className={s.orderForm_delivery_price_item}>
@@ -406,22 +356,22 @@ const OrderFormNew = () => {
                     Тернівський район: 500-1000 грн
                   </li>
                 </ul>
-                <div className={s.textField}>
-                  <TextField
+                  <label id="userAddress">Адреса
+                  <input
                     name="userAddress"
                     id="userAddress"
-                    label="Адреса"
+                
                     placeholder="Введіть вулицю, будинок, квартиру"
                     value={userAddress}
                     className={s.textField}
                     required
                     onChange={handleChange}
                   />
-                </div>
+                  </label>
+               
               </>
             )}
-            <TextareaAutosize
-              maxRows={5}
+            <textarea
               id="comment"
               name="comment"
               aria-label="comment on the order"
@@ -439,24 +389,16 @@ const OrderFormNew = () => {
                 lineHeight: 1.2,
               }}
             />
-            <FormGroup className={s.orderForm_chekbox}>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    checked={callBack}
-                    onChange={handleChangeCheck}
-                    className={s.orderForm_chekbox_lable}
-                    inputProps={{ "aria-label": "controlled" }}
-                    sx={{
-                      color: "#FFA500",
-                    }}
-                  />
-                }
-                label="Мені можна не телефонувати з приводу замовлення"
+            <input type="checkbox" checked={callBack}
+              onChange={handleChangeCheck}
+              className={s.orderForm_checkbox_input}
               />
-            </FormGroup>
+  
+            <label className={s.orderForm_checkbox_lable}>Мені можна не телефонувати з приводу замовлення</label>
+          
+           
             {callBack && (
-              <p>Вам прийде повідомлення з реквізитами для оплати</p>
+              <p className={s.callBack_message}>Вам прийде повідомлення з реквізитами для оплати</p>
             )}
 
             {cart?.cartItems && (

@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import { Checkbox, FormGroup, FormControlLabel } from "@mui/material";
+
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
 
@@ -86,73 +86,29 @@ const FilterBD = ({
         <FilterIcon />
       </button>
       {showFilter && (
-        <FormGroup className={s.filter_chekgroup}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={numbers}
-                onChange={handleChangeNumbers}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="фольговані цифри"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={giant}
-                onChange={handleChangeGiant}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="гігант"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={figures}
-                onChange={handleChangeFigures}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="фольговані фігури"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={babls}
-                onChange={handleBabls}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="баблс"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={box}
-                onChange={handleChangeBox}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="коробка"
-          />
-        </FormGroup>
+        <div className={s.filter_chekgroup}>
+          <div>
+            <input type="checkbox" checked={numbers}  onChange={handleChangeNumbers} className={s.orderForm_checkbox_input}/>
+            <label className={s.orderForm_checkbox_lable}>фольговані цифри</label>
+          </div>
+          
+         <div>
+          <input type="checkbox" checked={giant} onChange={handleChangeGiant} className={s.orderForm_checkbox_input}/>
+          <label className={s.orderForm_checkbox_lable}>гігант</label>
+         </div>
+         <div>
+            <input type="checkbox" checked={figures} onChange={handleChangeFigures} className={s.orderForm_checkbox_input} />
+            <label className={s.orderForm_checkbox_lable}>фольговані фігури</label>
+         </div>
+         <div>
+            <input type="checkbox" checked={babls} onChange={handleBabls} className={s.orderForm_checkbox_input}/>
+            <label className={s.orderForm_checkbox_lable}>баблс</label>
+         </div>
+         <div>
+            <input type="checkbox" checked={box} onChange={handleChangeBox} className={s.orderForm_checkbox_input}/>
+            <label className={s.orderForm_checkbox_lable}>коробка</label>
+         </div>
+        </div>
       )}
     </div>
   );

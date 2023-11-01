@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Link from "next/link";
-import { TextField, Alert } from "@mui/material";
 import BalloonCard from "../BalloonCard/BalloonCard";
 import FavoriteButton from "../FavoriteBatton/FavoriteButton";
 import BuyButton from "../BuyButton/BuyButton";
@@ -28,7 +27,7 @@ const SearchInput = () => {
   const pagesCount = Math.ceil(results.length / pageSize);
   const searchEndpoint = (query) =>
     `https://backend-balloons.netlify.app/api/search/${query}`;
-    // `https://balloons-shop.onrender.com/api/search/${query}`;
+  // `https://balloons-shop.onrender.com/api/search/${query}`;
 
   const onChange = (e) => {
     setQuery(e.target.value);
@@ -53,7 +52,7 @@ const SearchInput = () => {
   return (
     <>
       <form className={s.search_form} onSubmit={handleSubmit}>
-        <TextField
+        <input
           autoFocus
           className={s.searchForm_input}
           id="searchBalloon"

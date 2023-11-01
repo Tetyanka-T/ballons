@@ -12,24 +12,17 @@
 
 .textField {
   margin-bottom: 15px;
+  margin-top: 5px;
   width: 280px;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.02;
-  color: $text-color;
-  display: flex;
-}
- .textField_number {
+  padding: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.02;
   color: $text-color;
   border: 1px solid rgba(0, 0, 0, 0.23);
   border-radius: 5px;
-  padding: 20px 5px 0 0;
-  text-align: center;
-  height: 56px;
 }
+
 .orderForm_container_address {
   display: flex;
   margin-bottom: 20px;
@@ -72,20 +65,24 @@
   margin-bottom: 20px;
 }
 .orderForm_select {
-  margin-bottom: 10px;
-  display: block;
+  margin-bottom: 15px;
+  margin-top: 5px;
   width: 280px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: $text-color;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+  }
 
-    & input {
-      width: 100%;
-      
-    }
-}
 .orderForm_select_adress {
     margin-left: 10px;
 }
 .orderForm_select_delivery {
   font-size: 12px;
+  display: block;
 }
 .calendarColor {
   display: flex;
@@ -127,10 +124,24 @@
 .orderForm_chekbox {
   margin-bottom: 15px;
 }
-.orderForm_chekbox_lable {
+.orderForm_checkbox_lable {
   font-size: 14px;
+  font-weight: 500;
+  line-height: 1.02;
+  color: $text-color;
+  margin-left: 5px;
+  
+}
+.orderForm_checkbox_input {
+  accent-color: $accent-color;
+  color: #ffffff !important;
+}
+.callBack_message {
+  margin-top: 20px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.02;
+  color: $text-color;
 }
 .orderForm_delivery_price_list {
   font-size: 14px;
@@ -153,7 +164,7 @@
  }
 }
 .orderForm_timeInfo {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 .orderForm_delivery_price_item {
   display: none;

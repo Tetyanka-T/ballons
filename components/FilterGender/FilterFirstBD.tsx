@@ -1,5 +1,5 @@
 import { useState, ChangeEvent } from "react";
-import { Checkbox, FormGroup, FormControlLabel } from "@mui/material";
+
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
 
@@ -38,34 +38,17 @@ const FilterFirstBD = ({ onChangeGirls, onChangeBoys, onClickFilter }: {
         <FilterIcon />
       </button>
       {showFilter && (
-        <FormGroup className={s.filter_chekgroup}>
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={girl}
-                onChange={handleChangeGirl}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="дівчатам"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox
-                checked={boy}
-                onChange={handleChangeBoy}
-                inputProps={{ "aria-label": "controlled" }}
-                sx={{
-                  color: "#FFA500",
-                }}
-              />
-            }
-            label="хлопчикам"
-          />
-        </FormGroup>
+        <div className={s.filter_chekgroup}>
+          <div>
+            <input type="checkbox" checked={girl} onChange={handleChangeGirl} className={s.orderForm_checkbox_input}/>
+            <label className={s.orderForm_checkbox_lable}>дівчатам</label>
+          </div>
+          
+         <div>
+          <input type="checkbox" checked={boy} onChange={handleChangeBoy} className={s.orderForm_checkbox_input}/>
+          <label className={s.orderForm_checkbox_lable}>хлопчикам</label>
+         </div>
+        </div>
       )}
     </div>
   );
