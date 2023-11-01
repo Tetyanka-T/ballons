@@ -251,9 +251,9 @@ const OrderFormNew = () => {
               className={s.orderForm_select}
          
             >
+              <option></option>
               <option value="Самовивіз з магазину" className={s.option}>
-                <span>Самовивіз з магазину<br/></span>
-                <span>м.Кривий Ріг, просп. Металургів, б.20</span> 
+              Самовивіз з магазину
               </option>
               <option value="Доставка кур'єр">
                 Доставка кур&apos;єром
