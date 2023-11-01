@@ -3,7 +3,7 @@ import common from "../styles/common.module.scss"
 import { ThemeProvider } from "@emotion/react"
 import { createTheme } from "@mui/material/styles"
 import type { AppProps } from 'next/app'
-import { Inter } from '@next/font/google'
+import { Inter } from 'next/font/google'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
