@@ -2,7 +2,8 @@ import { useState, useContext, ChangeEvent, FormEvent } from "react";
 import { Cross } from "../svg";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
-import TextareaAutosize from "@mui/base/TextareaAutosize";
+// import TextareaAutosize from "@mui/base/TextareaAutosize";
+import TextareaAutosize from "@mui/material/TextareaAutosize"
 import FormControl from "@mui/material/FormControl";
 import {
   InputLabel,

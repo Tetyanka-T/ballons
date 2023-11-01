@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import common from '../styles/common.module.scss'
+import common from "../styles/common.module.scss"
 import { ThemeProvider } from "@emotion/react"
 import { createTheme } from "@mui/material/styles"
 import type { AppProps } from 'next/app'
