@@ -1,5 +1,5 @@
+"use client"
 import { useState, ChangeEvent } from "react";
-
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
 

@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import Router from "next/router";
 import { useContext } from "react";

@@ -1,3 +1,5 @@
+"use client"
+
 import { Basket } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";

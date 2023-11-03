@@ -1,6 +1,5 @@
 import Image from "next/image";
 import ComeBackButton from "../ComeBackButton/ComeBackButton";
-;
 import BuyButton from "../BuyButton/BuyButton";
 import FavoriteButton from "../FavoriteBatton/FavoriteButton";
 import s from "./CardDescription.module.scss";
@@ -9,7 +8,7 @@ import Balloon from "../../Interface/interface";
 const CardDescription = ({ balloon }: {balloon: Balloon}) => {
   return (
     <>
-          <ComeBackButton />
+        <ComeBackButton />
         <div className={s.cardDescription_container}>
           <div className={s.cardDescription_photo_container}>
             <Image

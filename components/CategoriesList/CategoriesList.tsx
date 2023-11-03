@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
@@ -95,10 +97,10 @@ const CategoriesList = ({ onClick }: {onClick: Function} ) => {
                   Перший День народження
                 </Link>
               </li>
-              <li className={s.categories_listBirthDay__item}>
+              <li className={s.categories_listBirthDay__item} onClick={() => onClick()}>
                 <Link
                   href="/categories/birthday/girls"
-                  onClick={() => onClick()}
+                  
                 >
                   Для дівчинки
                 </Link>

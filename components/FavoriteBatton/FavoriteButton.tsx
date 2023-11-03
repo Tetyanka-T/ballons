@@ -1,3 +1,5 @@
+"use client"
+
 import { FavoriteContour, FavoriteSelect } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";

@@ -18,7 +18,8 @@ const inter = Inter({
 const App = ({ Component, pageProps }: AppProps) => {
  
   return (
-    <div className={inter.className}>
+
+ <div className={inter.className}>
        <CartProvider>
           <Header/>
           <div className={common.container}>

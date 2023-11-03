@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { Call, Viber, Telegram, Instagram2 } from "../svg";
 import s from "./NoFindComposition.module.scss";

@@ -1,3 +1,5 @@
+"use client"
+
 import { useState, useContext, ChangeEvent, FormEvent } from "react";
 import { Cross } from "../svg";
 import Image from "next/image";
