@@ -11,6 +11,7 @@ export const getStaticProps = async () => {
   const response = await getPhotozoneBalloons();
   return {
     props: { balloons: response },
+    revalidate: 3600
   };
 };
 
