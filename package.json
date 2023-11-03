@@ -22,7 +22,6 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
-    "@types/next": "^9.0.0",
     "@types/node": "18.11.7",
     "@types/react": "18.0.23",
     "@types/react-datepicker": "^4.15.0",
