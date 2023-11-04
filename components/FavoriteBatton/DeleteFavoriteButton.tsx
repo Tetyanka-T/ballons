@@ -1,5 +1,3 @@
-"use client"
-
 import { FavoriteSelect } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
@@ -15,6 +13,7 @@ const DeleteFavoriteButton = ({ balloon } : {balloon: Balloon}) => {
       <button
         className={s.cardDescription_button__deletefavorite}
         onClick={() => deleteItemFromFavorite(balloon.id)}
+        aria-label="видалити композицію із списку улюблених"
       >
         <FavoriteSelect className={s.cardDescription_button__icon} />
       </button>

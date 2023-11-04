@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import { Select } from "../svg";
@@ -46,27 +44,48 @@ const CategoriesListDesktop = () => {
         <Link href="/categories">Дивитись всі композиції</Link>
       </li> */}
       <li className={s.categories_list__item}>
-        <Link href="/categories/gender-party">Gender party</Link>
+        <Link
+          href="/categories/gender-party"
+          aria-label="перейти до розділу Гендер пати"
+        >
+          Gender party
+        </Link>
       </li>
       <li className={s.categories_list__item}>
-        <button onClick={() => onShowBaby()} className={s.button_select}>
+        <button
+          onClick={() => onShowBaby()}
+          className={s.button_select}
+          aria-label="відкрити підрозділи розділу Виписка з пологового будинку"
+        >
           Виписка з пологового будинку
           <Select className={s.button_baby__icon} />
         </button>
         {baby && (
           <ul className={s.categories_listBaby}>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby" onClick={() => SetBaby(false)}>
+              <Link
+                href="/categories/baby"
+                onClick={() => SetBaby(false)}
+                aria-label="перейти до розділу Виписка з пологового будинку"
+              >
                 Дивитись все
               </Link>
             </li>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby/girl" onClick={() => SetBaby(false)}>
+              <Link
+                href="/categories/baby/girl"
+                onClick={() => SetBaby(false)}
+                aria-label="перейти до розділу Виписка з пологового будинку для дівчинки"
+              >
                 Для дівчинки
               </Link>
             </li>
             <li className={s.categories_listBaby__item}>
-              <Link href="/categories/baby/boy" onClick={() => SetBaby(false)}>
+              <Link
+                href="/categories/baby/boy"
+                onClick={() => SetBaby(false)}
+                aria-label="перейти до розділу Виписка з пологового будинку для хлопчика"
+              >
                 Для хлопчика
               </Link>
             </li>
@@ -74,7 +93,11 @@ const CategoriesListDesktop = () => {
         )}
       </li>
       <li className={s.categories_list__item}>
-        <button onClick={() => onShowBirthDays()} className={s.button_select}>
+        <button
+          onClick={() => onShowBirthDays()}
+          className={s.button_select}
+          aria-label="перейти до підрозділів розділу День народження"
+        >
           День народження
           <Select className={s.button_birthDay__icon} />
         </button>
@@ -84,13 +107,21 @@ const CategoriesListDesktop = () => {
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday">Дивитись все</Link>
+              <Link
+                href="/categories/birthday"
+                aria-label="перейти до розділу День народження"
+              >
+                Дивитись все
+              </Link>
             </li>
             <li
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday/first">
+              <Link
+                href="/categories/birthday/first"
+                aria-label="перейти до розділу Перший день народження"
+              >
                 Перший День народження
               </Link>
             </li>
@@ -98,31 +129,56 @@ const CategoriesListDesktop = () => {
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday/girls">Для дівчинки</Link>
+              <Link
+                href="/categories/birthday/girls"
+                aria-label="перейти до розділу День народження для дівчинки"
+              >
+                Для дівчинки
+              </Link>
             </li>
             <li
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday/boys">Для хлопчика</Link>
+              <Link
+                href="/categories/birthday/boys"
+                aria-label="перейти до розділу День народження для хлопчика"
+              >
+                Для хлопчика
+              </Link>
             </li>
             <li
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday/she">Для неї</Link>
+              <Link
+                href="/categories/birthday/she"
+                aria-label="перейти до розділу День народження для неї"
+              >
+                Для неї
+              </Link>
             </li>
             <li
               className={s.categories_listBirthDay__item}
               onClick={() => SetBirthDay(false)}
             >
-              <Link href="/categories/birthday/he">Для нього</Link>
+              <Link
+                href="/categories/birthday/he"
+                aria-label="перейти до розділу День народження для нього"
+              >
+                Для нього
+              </Link>
             </li>
           </ul>
         )}
       </li>
       <li className={s.categories_list__item}>
-        <Link href="/categories/photozone">Фотозони</Link>
+        <Link
+          href="/categories/photozone"
+          aria-label="перейти до розділу Фотозони"
+        >
+          Фотозони
+        </Link>
       </li>
       {/* <li className={s.categories_list__item}>
         <button onClick={() => onShowThematics()} className={s.button_select}>
@@ -173,7 +229,9 @@ const CategoriesListDesktop = () => {
         )}
       </li> */}
       <li className={s.categories_list__item}>
-        <Link href="/categories/facades">Оформлення фасадів</Link>
+        <Link href="/categories/facades" aria-label="перейти до розділу Фасади">
+          Оформлення фасадів
+        </Link>
       </li>
     </ul>
   );

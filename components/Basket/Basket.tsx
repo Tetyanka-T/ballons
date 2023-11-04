@@ -1,4 +1,3 @@
-"use client"
 
 import Image from "next/image";
 import Router from "next/router";
@@ -8,6 +7,8 @@ import Link from "next/link";
 import { Cross } from "../svg";
 import s from "./Basket.module.scss";
 import Cart from "../../Interface/interface"
+
+
 const Basket = () => {
   const { addItemToCart, deleteItemFromCart, cart } = useContext(CartContext);
 
@@ -44,7 +45,7 @@ const Basket = () => {
             {cart.cartItems.map((balloon: Cart) => (
               <li className={s.basket_list__item} key={balloon._id}>
                 <div className={s.basket_photo}>
-                  <Image src={balloon.imgSrc} alt="" width={70} height={90} />
+                  <Image src={balloon.imgSrc} alt="фото композиції у кошику" width={70} height={90} />
                 </div>
 
                 <div className={s.basket_list__item__product}>
@@ -57,7 +58,7 @@ const Basket = () => {
                   <div className={s.basket_couter}>
                     <ul className={s.basket_couter__list}>
                       <li className={s.basket_couter__list__item}>
-                        <button
+                        <button aria-label="видалити одиницю композиції"
                           className={s.basket_couter__list__item_button}
                           onClick={() => decreaseQty(balloon)}
                         >
@@ -71,6 +72,7 @@ const Basket = () => {
                         <button
                           className={s.basket_couter__list__item_button}
                           onClick={() => increaseQty(balloon)}
+                          aria-label="додати одиницю композиції"
                         >
                           +
                         </button>
@@ -79,6 +81,7 @@ const Basket = () => {
                         <button
                           onClick={() => deleteItemFromCart(balloon.id)}
                           className={s.basket_couter__list__item_button_cross}
+                          aria-label="видалити композицію з кошика"
                         >
                           <Cross
                             className={s.basket_couter__list__item_button__icon}
@@ -108,7 +111,7 @@ const Basket = () => {
               Продовжити покупки
             </button>
             <button className={s.basket_order_button}>
-              <Link href="/order">Оформити замовлення</Link>
+              <Link href="/order" aria-label="перейти до Оформлення замовлення">Оформити замовлення</Link>
             </button>
           </div>
         </>

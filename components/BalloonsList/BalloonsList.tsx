@@ -1,7 +1,5 @@
-'use client'
-
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { paginate } from "../../lib/paginate";
 import {RouterComeBack} from "../../lib/router";
@@ -51,7 +49,7 @@ const BalloonsList = ({ balloons }: {balloons: Balloon[]}) => {
     return (
         <>
          <div className={fil.sort_button}>
-            <button onClick={() => onShowSort()}>
+            <button onClick={() => onShowSort()} type="button" aria-label="сортування за ціною">
                 <Sort />
             </button>
           {showSort && (
@@ -68,6 +66,7 @@ const BalloonsList = ({ balloons }: {balloons: Balloon[]}) => {
                 <Link
                   href={`${router.pathname}/[id]`}
                   as={`${router.pathname}/${balloon._id}`}
+                  aria-label="посилання на сторінку з детальним описом композиції"
                 >
                   <BalloonCard balloon={balloon} />
                 </Link>
@@ -81,19 +80,19 @@ const BalloonsList = ({ balloons }: {balloons: Balloon[]}) => {
             ))}
           </ul>
         )}
-        <div className={common.button_pagenext}>
-          {page > 1 && (
-            <button type="button" onClick={() => fetchPrevPage()}>
-              <PrevPage />
-            </button>
-          )}
+   <div className={common.button_pagenext}>
+        {page > 1 && (
+          <button type="button" onClick={() => fetchPrevPage()} aria-label="повернутися на попердню сторінку">
+            <PrevPage />
+          </button>
+        )}
 
-          {page < pagesCount && (
-            <button type="button" onClick={() => fetchNextPage()}>
-              <NextPage />
-            </button>
-          )}
-        </div>
+        {page < pagesCount && (
+          <button type="button" onClick={() => fetchNextPage()} aria-label="перейти на наступну сторінку">
+            <NextPage />
+          </button>
+        )}
+      </div>
         </>
     )
 }

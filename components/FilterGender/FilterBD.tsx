@@ -1,4 +1,3 @@
-"use client"
 import { useState, ChangeEvent } from "react";
 import { FilterIcon } from "../svg";
 import s from "./Filter.module.scss";
@@ -82,7 +81,7 @@ const FilterBD = ({
   };
   return (
     <div className={s.filter_container}>
-      <button onClick={() => onShowFilter()}>
+      <button onClick={() => onShowFilter()} aria-label="фільтрація композицій">
         <FilterIcon />
       </button>
       {showFilter && (

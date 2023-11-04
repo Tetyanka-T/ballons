@@ -13,7 +13,7 @@ const CardDescription = ({ balloon }: {balloon: Balloon}) => {
           <div className={s.cardDescription_photo_container}>
             <Image
               src={balloon.imgSrc}
-              alt=""
+              alt="photo composition"
               width={200}
               height={100}
               className={s.cardDescription_image}

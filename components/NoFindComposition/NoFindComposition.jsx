@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import { Call, Viber, Telegram, Instagram2 } from "../svg";
 import s from "./NoFindComposition.module.scss";
@@ -20,7 +19,11 @@ const NoFindComposition = () => {
         Якщо Ви не знайшли композицію на нашому сайті, яка Вам припала до душі,
         ми можемо зібрати будь-яку за Вашим побажанням та бюджетом.
       </p>
-      <button className={s.find_button} onClick={() => onShowPhone()}>
+      <button
+        className={s.find_button}
+        onClick={() => onShowPhone()}
+        aria-label="показати всі контакти"
+      >
         Зв&apos;яжіться з нами
       </button>
       {showPhone && (
@@ -29,20 +32,40 @@ const NoFindComposition = () => {
             <Call className={s.find_list__item__call} />
             <ul className={s.find_list__item__call__list}>
               <li>
-                <a href="tel:+380968118244">+380968118244</a>
+                <a
+                  href="tel:+380968118244"
+                  aria-label="здійснити дзвінок консультанту"
+                >
+                  +380968118244
+                </a>
               </li>
               <li>
-                <a href="tel:+380732036144">+380732036144</a>
+                <a
+                  href="tel:+380732036144"
+                  aria-label="здійснити дзвінок консультанту"
+                >
+                  +380732036144
+                </a>
               </li>
             </ul>
           </li>
           <li className={s.find_list__item}>
             <Viber className={s.find_list__item__call} />
-            <a href="viber://chat?number=%2B380968118244">Посилання на Viber</a>
+            <a
+              href="viber://chat?number=%2B380968118244"
+              aria-label="перейти до спілкування в вайбері з магазином"
+            >
+              Посилання на Viber
+            </a>
           </li>
           <li className={s.find_list__item}>
             <Telegram className={s.find_list__item__call} />
-            <a href="https://t.me/+380968118244">Посилання на Telegram</a>
+            <a
+              href="https://t.me/+380968118244"
+              aria-label="перейти до спілкування в телеграм з магазином"
+            >
+              Посилання на Telegram
+            </a>
           </li>
           <li className={s.find_list__item}>
             <Instagram2 className={s.find_list__item__call} />
@@ -50,6 +73,7 @@ const NoFindComposition = () => {
               href="https://www.instagram.com/veselavutivka/?igshid=13ixk4qj193va"
               target="_blank"
               rel="noreferrer"
+              aria-label="перейти до сторінки інстаграм Весела витівка"
             >
               Посилання на Instagram
             </a>
@@ -58,19 +82,29 @@ const NoFindComposition = () => {
       )}
       <ul className={s.footer_list}>
         <li className={s.footer_list__item}>
-          <Link href="/contacts">Контакти</Link>
+          <Link href="/contacts" aria-label="перейти до розділу Контакти">
+            Контакти
+          </Link>
         </li>
         <li className={s.footer_list__item}>
-          <Link href="/payment-delivery">Оплата і доставка</Link>
+          <Link
+            href="/payment-delivery"
+            aria-label="перейти до розділу Оплата і доставка"
+          >
+            Оплата і доставка
+          </Link>
         </li>
         <li className={s.footer_list__item}>
-          <Link href="/about-us">Про нас</Link>
+          <Link href="/about-us" aria-label="перейти до розділу Про нас">
+            Про нас
+          </Link>
         </li>
         <li className={s.footer_list__item}>
           <a
             href="https://www.instagram.com/veselavutivka/?igshid=13ixk4qj193va"
             target="_blank"
             rel="noreferrer"
+            aria-label="перейти до сторінки інстаграм Весела Витівка"
           >
             Підписатися
           </a>

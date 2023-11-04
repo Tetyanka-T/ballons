@@ -13,7 +13,7 @@ const BalloonCard = ({ balloon }: {balloon: Balloon}) => {
           width={200}
           height={300}
           className={s.img}
-          loading="lazy"
+          priority={true}
           // fill={true}
         />
         <div className={s.transparent}></div>

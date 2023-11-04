@@ -1,5 +1,3 @@
-"use client";
-
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
 import BalloonCard from "../BalloonCard/BalloonCard";
@@ -33,6 +31,7 @@ const Favorite = () => {
                     <a
                       href="tel:+380968118244"
                       className={s.list_button_consultation}
+                      aria-label="здійснити дзвінок консультанту"
                     >
                       Отримати консультацію
                     </a>
@@ -45,6 +44,7 @@ const Favorite = () => {
                     <button
                       className={ss.button_buy}
                       onClick={() => addItemToCart(balloon)}
+                      aria-label="додати до кошика"
                     >
                       <span>Купити</span>
                       <Basket className={ss.card_basket__button__icon} />

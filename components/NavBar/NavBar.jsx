@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useContext } from "react";
@@ -25,7 +24,11 @@ const NavigatorBar = () => {
   return (
     <div className={s.header_nav}>
       <div className={s.header_logo}>
-        <button onClick={() => onShowMenu()} className={s.showMenu}>
+        <button
+          onClick={() => onShowMenu()}
+          className={s.showMenu}
+          aria-label="відкрити мобільне меню"
+        >
           {!showMenu && <Menu />}
         </button>
         {!showMenu && (
@@ -39,7 +42,11 @@ const NavigatorBar = () => {
 
       <div className={showMenu ? "active" : "mobile_background"}>
         <div className={showMenu ? "activeContent" : "mobilemenu_content"}>
-          <span className={s.showMenu_cansel} onClick={() => onShowMenu()}>
+          <span
+            className={s.showMenu_cansel}
+            onClick={() => onShowMenu()}
+            aria-label="закрити мобільне меню"
+          >
             Закрити
           </span>
           <CategoriesList onClick={onShowMenu} />
@@ -50,21 +57,30 @@ const NavigatorBar = () => {
         <>
           <ul className={s.header_user__list}>
             <li className={s.header_user__item}>
-              <Link href="/search">
-                <button>
-                  <Search className={s.header_icon} />
-                </button>
+              <Link
+                href="/search"
+                aria-label="сторінка пошуку композицій за назвою"
+              >
+                <Search className={s.header_icon} />
               </Link>
             </li>
             <li className={s.header_user__item}>
-              <Link href="/favorite" className={s.header_icon_count}>
+              <Link
+                href="/favorite"
+                className={s.header_icon_count}
+                aria-label="сторінка улюблених композицій користувача"
+              >
                 <FavoriteContour className={s.header_icon} />
 
                 <p className={s.basket_count}>{favoriteItems?.length || 0}</p>
               </Link>
             </li>
             <li className={s.header_user__item}>
-              <Link href="/basket" className={s.header_icon_count}>
+              <Link
+                href="/basket"
+                className={s.header_icon_count}
+                aria-label="кошик покупок"
+              >
                 <Basket className={s.header_icon} />
                 <p className={s.basket_count}>{cartItems?.length || 0}</p>
               </Link>

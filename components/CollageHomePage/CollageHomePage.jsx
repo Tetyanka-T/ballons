@@ -12,7 +12,7 @@ const CollageHomePage = () => {
           <li key={img.id} className={s.imageList_item}>
             <Image
               src={img.src}
-              alt=""
+              alt="композиції із замовниками"
               width={280}
               height={220}
               priority={true}

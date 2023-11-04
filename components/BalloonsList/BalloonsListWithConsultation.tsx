@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -50,7 +48,7 @@ const BalloonsListWithConsultation = ({ balloons }: {balloons: Balloon[]}) => {
     <>
     <div className={fil.button_filter_container}>
       <div className={fil.sort_container}>
-        <button onClick={() => onShowSort()}>
+        <button onClick={() => onShowSort()} aria-label="сортування за ціною">
           <Sort />
         </button>
         {showSort && (
@@ -80,6 +78,7 @@ const BalloonsListWithConsultation = ({ balloons }: {balloons: Balloon[]}) => {
                 <a
                   href="tel:+380968118244"
                   className={s.list_button_consultation}
+                  aria-label="здійснити дзвінок консультанту"
                 >
                   Отримати консультацію
                 </a>
@@ -90,13 +89,13 @@ const BalloonsListWithConsultation = ({ balloons }: {balloons: Balloon[]}) => {
       )}
       <div className={common.button_pagenext}>
         {page > 1 && (
-          <button type="button" onClick={() => fetchPrevPage()}>
+          <button type="button" onClick={() => fetchPrevPage()} aria-label="повернутися на попердню сторінку">
             <PrevPage />
           </button>
         )}
 
         {page < pagesCount && (
-          <button type="button" onClick={() => fetchNextPage()}>
+          <button type="button" onClick={() => fetchNextPage()} aria-label="перейти на наступну сторінку">
             <NextPage />
           </button>
         )}

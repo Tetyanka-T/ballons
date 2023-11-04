@@ -1,5 +1,3 @@
-"use client"
-
 import { FavoriteContour, FavoriteSelect } from "../svg";
 import { useContext } from "react";
 import CartContext from "../../context/CartContext";
@@ -25,6 +23,7 @@ const FavoriteButton = ({ balloon }: {balloon: Balloon}) => {
       <button
         className={s.cardDescription_button__favorite}
         onClick={addToFavoriteHandler}
+        aria-label="додати композицію до списку улюблених"
       >
         <FavoriteContour className={s.cardDescription_button__icon} />
         <FavoriteSelect className={s.cardDescription_button__icon__select} />

@@ -20,7 +20,7 @@ function BuyButton({ balloon }: {balloon: Balloon}) {
     });
   };
   return (
-    <button className={s.button_buy} onClick={addToCartHandler}>
+    <button className={s.button_buy} onClick={addToCartHandler} aria-label="покласти в кошик композицію">
       Купити
       <Basket className={s.card_basket__button__icon} />
     </button>

@@ -17,7 +17,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths, 
-    fallback: false
+    fallback: 'blocking'
   };
 };
 export const getStaticProps = async ({ params } : Params) => {
@@ -27,11 +27,13 @@ export const getStaticProps = async ({ params } : Params) => {
     props: {
       balloon: balloon,
     },
+    revalidate: 3600
   };
 };
 
 
 const CardId = ({ balloon }: {balloon: Balloon}) => {
+
   return (
     <>
       <Head>

@@ -1,5 +1,3 @@
-"use client"
-
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
@@ -74,7 +72,7 @@ const BalloonsListFirstBD = ({ balloons }: {balloons: Balloon[]} ) => {
             onClickFilter={() => setFilter(true)}
           />
           <div className={fil.sort_container}>
-            <button onClick={() => onShowSort()}>
+            <button onClick={() => onShowSort()} aria-label="сортування за ціною">
               <Sort />
             </button>
             {showSort && (
@@ -127,19 +125,19 @@ const BalloonsListFirstBD = ({ balloons }: {balloons: Balloon[]} ) => {
                 ))}
               </ul>
             )}
-            <div className={common.button_pagenext}>
-              {page > 1 && (
-                <button type="button" onClick={() => fetchPrevPage()}>
-                  <PrevPage />
-                </button>
-              )}
+          <div className={common.button_pagenext}>
+        {page > 1 && (
+          <button type="button" onClick={() => fetchPrevPage()} aria-label="повернутися на попердню сторінку">
+            <PrevPage />
+          </button>
+        )}
 
-              {page < pagesCount && (
-                <button type="button" onClick={() => fetchNextPage()}>
-                  <NextPage />
-                </button>
-              )}
-            </div>
+        {page < pagesCount && (
+          <button type="button" onClick={() => fetchNextPage()} aria-label="перейти на наступну сторінку">
+            <NextPage />
+          </button>
+        )}
+      </div>
           </>
         )}
     </>

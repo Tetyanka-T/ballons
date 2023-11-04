@@ -1,4 +1,3 @@
-"use client"
 import { useState } from "react";
 import { Sort } from "../svg";
 import s from "./SortbyPrice.module.scss";

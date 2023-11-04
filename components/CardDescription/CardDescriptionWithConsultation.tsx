@@ -12,7 +12,7 @@ const CardDescriptionWithConsultation = ({ balloon }: {balloon: Balloon}) => {
           <div className={s.cardDescription_photo_container}>
             <Image
               src={balloon.imgSrc}
-              alt=""
+              alt="photo composition"
               width={200}
               height={100}
               className={s.cardDescription_image}
@@ -40,6 +40,7 @@ const CardDescriptionWithConsultation = ({ balloon }: {balloon: Balloon}) => {
                 <a
                   href="tel:+380968118244"
                   className={s.list_button_consultation}
+                  aria-label="здійснити дзвінок консультанту"
                 >
                   Отримати консультацію
                 </a>

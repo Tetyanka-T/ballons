@@ -1,6 +1,4 @@
-"use client"
 import Link from "next/link";
-
 import { Home, NextPage } from "../svg";
 import s from "./Novigation.module.scss";
 
@@ -17,7 +15,7 @@ const Novigation = (propsIn: Props) => {
   return (
     <ul className={s.categories_list}>
       <li>
-        <Link href="/">
+        <Link href="/" aria-label="перейти на головну сторінку">
         <Home />
         </Link>
       </li>
@@ -25,8 +23,9 @@ const Novigation = (propsIn: Props) => {
         <NextPage />
       </li>
       <li>
-        <a href={novigator.linkSection}>
+        <a href={novigator.linkSection} aria-label="повернутися до основного розділу">
         {novigator.section}
+        
         </a>
       </li>
       {novigator.category && (
@@ -35,7 +34,7 @@ const Novigation = (propsIn: Props) => {
       </li>
       )}
            <li>
-        <a href={novigator.linkCategory}>
+        <a href={novigator.linkCategory} aria-label="перейти до розділу підрозділу">
         {novigator.category}
         </a>
       </li>

@@ -18,16 +18,18 @@ export const getStaticPaths = async () => {
   const paths = await getAllBalloonsIds();
 
   return {
-    paths,
-    fallback: false,
+    paths, 
+    fallback: 'blocking'
   };
 };
-export const getStaticProps = async ({ params } : Params ) => {
+export const getStaticProps = async ({ params } : Params) => {
   const balloon = await getBalloonById(params.id);
+
   return {
     props: {
       balloon: balloon,
     },
+    revalidate: 3600
   };
 };
 

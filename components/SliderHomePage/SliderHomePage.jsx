@@ -39,6 +39,7 @@ const SliderHomePage = () => {
                   alt="composition of balloons"
                   width={280}
                   height={220}
+                  priority={true}
                 />
               </SwiperSlide>
               <div className={s.transparent}></div>
@@ -68,6 +69,7 @@ const SliderHomePage = () => {
                 alt="composition of balloons"
                 width={280}
                 height={200}
+                priority={true}
               />
               <div className={s.transparent}></div>
             </SwiperSlide>
@@ -102,6 +104,7 @@ const SliderHomePage = () => {
                   alt="composition of balloons"
                   width={300}
                   height={220}
+                  priority={true}
                 />
               </SwiperSlide>
               <div className={s.transparent}></div>
