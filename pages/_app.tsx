@@ -19,7 +19,7 @@ const App = ({ Component, pageProps }: AppProps) => {
  
   return (
 
- <div className={inter.className} lang='ua'>
+ <div className={inter.className} lang='uk'>
        <CartProvider>
           <Header/>
           <div className={common.container}>
