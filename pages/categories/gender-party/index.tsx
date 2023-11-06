@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
   const response = await getGenderBalloons();
   return {
     props: { balloons: response },
-    revalidate: 3600
+    revalidate: 604800
   };
 };
 

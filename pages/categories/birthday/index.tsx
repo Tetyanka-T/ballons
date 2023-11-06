@@ -11,6 +11,7 @@ export const getStaticProps = async () => {
 
   return {
     props: { balloons: response },
+    revalidate: 604800
    
   };
 };

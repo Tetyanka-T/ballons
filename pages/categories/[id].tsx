@@ -29,7 +29,7 @@ export const getStaticProps = async ({ params } : Params) => {
     props: {
       balloon: balloon,
     },
-    revalidate: 3600
+    revalidate: 604800
   };
 };
 

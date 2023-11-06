@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
   const birthDayHeBalloons = response.filter((bal: Balloon) => bal.grup === "Для нього");
   return {
     props: { balloons: birthDayHeBalloons },
-    revalidate: 3600
+    revalidate: 604800
   
   };
 };

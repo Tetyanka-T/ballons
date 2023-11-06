@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
   );
   return {
     props: { balloons: birthDayFirstBalloons },
-    revalidate: 3600
+    revalidate: 604800
 
   };
 };
