@@ -32,7 +32,7 @@ const BirthDayGirls = ({ balloons }: {balloons: Balloon[]}) => {
           name="description"
           content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
-        <link rel="icon" href="/balloon.svg" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <main className={common.container}>

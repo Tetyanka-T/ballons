@@ -1,0 +1,39 @@
+.button_buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  border: 1px solid #FFA500;
+  width: 100px;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  margin-right: 20px;
+}
+.button_buy:hover, .button_buy:focus {
+  background-color: #FFA500;
+}
+.button_buy:hover svg, .button_buy:focus svg {
+  fill: #708090;
+}
+
+.card_basket__button__icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  fill: #FFA500;
+}
+
+@media screen and (min-width: 400px) {
+  .button_buy {
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .button_buy span {
+    display: block;
+  }
+}

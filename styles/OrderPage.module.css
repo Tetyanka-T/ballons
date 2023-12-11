@@ -1,0 +1,124 @@
+.container {
+  margin: 0 auto;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding-right: 75px;
+    padding-left: 75px;
+  }
+}
+
+.section_title {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  color: #696969;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.section {
+  padding: 100px 0 20px 0;
+}
+
+.button_pagenext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.button_pagenext button {
+  width: 60px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #FFA500;
+}
+.button_pagenext button:first-child {
+  margin-right: 10px;
+}
+.button_pagenext svg {
+  fill: #708090;
+}
+
+.order {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.02;
+  color: #696969;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.basket_list {
+  color: #696969;
+  margin: 0 auto;
+}
+
+.basket_list__item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #708090;
+  padding: 6px 0 6px 0;
+}
+
+.basket_photo {
+  width: 80px;
+  height: 90px;
+}
+.basket_photo img {
+  height: 100%;
+}
+
+.basket_list__item__product {
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.basket_list__item__product__title {
+  text-align: left;
+  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 15px;
+}
+
+.basket_list__item__product__art {
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.basket_couter {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #696969;
+}
+
+@media screen and (min-width: 768px) {
+  .basket_list {
+    width: 400px;
+  }
+}

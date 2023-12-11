@@ -1,0 +1,150 @@
+.header_nav {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  width: 330px;
+  top: 30px;
+  left: 0px;
+  padding: 0px 20px 0px 20px;
+  background-color: #F5F5F5;
+  box-shadow: 0px 1px 3px #FFA500, 0px 1px 1px #FFA500, 0px 2px 1px #FFA500;
+}
+
+.logo {
+  overflow: hidden;
+  margin: 10px 0 0 10px;
+  width: 100px;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.showMenu {
+  display: block;
+}
+
+.showMenu_cansel {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 200;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #FFA500;
+  padding: 5px;
+  width: 330px;
+  height: 30px;
+  background-color: #696969;
+  text-align: center;
+}
+
+.header_logo {
+  display: flex;
+}
+
+.header_user__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.header_user__list .header_user__item:last-child {
+  margin-right: 0;
+}
+
+.header_user__item {
+  margin-right: 10px;
+}
+
+.header_icon {
+  width: 20px;
+  height: 20px;
+  fill: #FFA500;
+}
+
+.header_nav__modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: #fff;
+  border: 2px solid #FFA500;
+  box-shadow: 24;
+  padding: 50px 30px 50px 30px;
+}
+
+.header_icon_count {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  fill: #FFA500;
+}
+
+.basket_count, .favorite_count {
+  position: absolute;
+  bottom: -10px;
+  left: 15px;
+  border-radius: 50px;
+  background-color: #FFA500;
+  padding: 5px;
+  color: #708090;
+  font-size: 10px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_user__list_container {
+  position: relative;
+}
+
+@media screen and (min-width: 330px) {
+  .header_nav {
+    width: 100vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .showMenu_cansel {
+    width: 600px;
+  }
+  .header_user__list {
+    margin-left: 300px;
+  }
+  .header_user__item {
+    margin-right: 20px;
+  }
+  .header_nav__modal {
+    width: 500px;
+    padding: 70px 120px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header_nav {
+    padding: 0 70px 0 70px;
+  }
+  .showMenu {
+    display: none;
+  }
+  .header_logo {
+    margin-left: 0;
+  }
+  .header_logo img {
+    width: 100%;
+  }
+  .logo {
+    margin-left: 0;
+  }
+  .header_nav__modal {
+    width: 600px;
+    padding: 80px;
+  }
+}

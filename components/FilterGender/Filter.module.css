@@ -1,0 +1,86 @@
+.filter_container {
+  position: relative;
+  margin-right: 15px;
+}
+
+.filter_chekgroup {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #F5F5F5;
+  padding: 10px;
+  top: 33px;
+  right: -37px;
+  z-index: 20;
+  width: 220px;
+}
+.filter_chekgroup div {
+  margin-bottom: 10px;
+}
+
+.orderForm_checkbox_lable {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.02;
+  color: #696969;
+  margin-left: 5px;
+}
+
+.orderForm_checkbox_input {
+  accent-color: #FFA500;
+  color: #ffffff !important;
+}
+
+.button_filter_container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.sort_container {
+  position: relative;
+}
+
+.sort_list {
+  position: absolute;
+  background-color: #F5F5F5;
+  padding: 10px;
+  top: 33px;
+  right: 0px;
+  z-index: 20;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+.sort_list li {
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.sort_button {
+  width: 20px;
+  margin-left: 260px;
+  position: relative;
+}
+
+@media screen and (min-width: 450px) {
+  .sort_button {
+    margin-left: 390px;
+  }
+}
+@media screen and (min-width: 650px) {
+  .sort_button {
+    margin-left: 590px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .sort_button {
+    margin-left: 690px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .sort_button {
+    margin-left: 1030px;
+  }
+}

@@ -13,7 +13,7 @@ const FavoritePage = () => {
           name="description"
           content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.png" />
       </Head>
 
       <main className={common.container}>

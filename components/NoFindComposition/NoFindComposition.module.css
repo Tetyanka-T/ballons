@@ -1,0 +1,132 @@
+.find {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 50px 20px;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../public/background-grey.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 330px;
+  margin-top: 30px;
+}
+
+.find_text {
+  font-size: 16px;
+  text-align: left;
+  width: 280px;
+  margin: 0 auto;
+}
+
+.find_button {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.find_list {
+  margin: 0 auto;
+  width: 145px;
+  text-align: left;
+}
+
+.find_list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.find_list__item .find_list__item__call {
+  margin-right: 10px;
+}
+
+.footer_list {
+  margin-top: 60px;
+  color: #FFA500;
+}
+.footer_list .footer_list__item:last-child {
+  margin-bottom: 0;
+}
+
+.footer_list__item {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.footer_list__item svg {
+  fill: #FFA500;
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+}
+
+@media screen and (min-width: 330px) {
+  .find {
+    width: 100vw;
+  }
+}
+@media screen and (min-width: 768px) {
+  .find {
+    padding: 90px 20px 90px 40px;
+  }
+  .find_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 750px;
+  }
+  .find_list .find_list__item {
+    margin-right: 15px;
+    margin-top: 0;
+  }
+  .find_list .find_list__item:last-child {
+    margin-right: 0;
+  }
+  .find_text {
+    width: 350px;
+    font-size: 18px;
+  }
+  .find_button {
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  .footer_list {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .find {
+    padding: 180px 20px 200px 75px;
+    background-size: cover;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../public/background_desktop.jpg);
+  }
+  .find_text {
+    width: 450px;
+    font-size: 18px;
+  }
+  .find_list {
+    margin-top: 80px;
+  }
+  .find_list .find_list__item {
+    margin-right: 25px;
+  }
+  .footer_list {
+    font-size: 18px;
+    margin-top: 120px;
+  }
+  .footer_list .footer_list__item {
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .find {
+    padding: 250px 20px 250px 75px;
+  }
+}

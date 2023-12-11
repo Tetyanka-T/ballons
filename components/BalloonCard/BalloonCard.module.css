@@ -1,0 +1,182 @@
+.list {
+  margin: 10px 0 10px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+.card_item {
+  color: #696969;
+  position: relative;
+}
+
+.list_button_favorite_category {
+  position: absolute;
+  bottom: 85px;
+  right: 15px;
+}
+
+.list_button_favorite {
+  position: absolute;
+  top: 245px;
+  right: 15px;
+}
+
+.list_button_favorite_design {
+  position: absolute;
+  bottom: 85px;
+  right: 15px;
+}
+
+.list_button_basket {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 20px 0;
+}
+
+.list_button_consultation {
+  color: #696969;
+  font-size: 14px;
+  font-weight: 400;
+  width: 140px;
+  text-align: center;
+  line-height: 1.2;
+  border: 1px solid #FFA500;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.img_container {
+  position: relative;
+  overflow: hidden;
+  height: 195px;
+}
+.img_container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.transparent {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card_title {
+  margin: 10px 0 5px 0px;
+  width: 130px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card_code {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.card_price {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+@media screen and (min-width: 400px) {
+  .img_container {
+    height: 250px;
+  }
+  .card_title {
+    width: 160px;
+  }
+  .list_button_consultation {
+    width: 185px;
+  }
+  .list_button_favorite_design {
+    bottom: 70px;
+  }
+  .list_button_favorite_category {
+    bottom: 70px;
+  }
+  .list_button_favorite {
+    top: 295px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .list_button_favorite_category {
+    bottom: 85px;
+  }
+  .list_button_consultation {
+    width: 150px;
+  }
+  .list_button_favorite_design {
+    bottom: 85px;
+  }
+  .img_container {
+    height: 320px;
+  }
+  .list_button_favorite {
+    top: 365px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .img_container {
+    height: 280px;
+  }
+  .list_button_consultation {
+    width: 170px;
+  }
+  .list_button_favorite {
+    top: 325px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .card_title {
+    font-size: 16px;
+    width: 220x;
+  }
+  .img_container {
+    height: 300px;
+  }
+  .list_button_consultation {
+    width: 200px;
+  }
+  .list_button_favorite_design {
+    bottom: 70px;
+  }
+  .list_button_favorite_category {
+    bottom: 65px;
+  }
+  .list_button_favorite {
+    top: 350px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .card_title {
+    width: 250px;
+    font-size: 18px;
+  }
+  .img_container {
+    height: 350px;
+  }
+  .list_button_favorite {
+    top: 405px;
+  }
+}

@@ -1,0 +1,45 @@
+.swiper {
+  margin-top: 30px;
+}
+
+.swiperSlider {
+  position: relative;
+}
+
+.transparent {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slider_tab {
+  display: none;
+}
+
+.swiper_container__desc {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .slider_tab {
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  .swiper_mobile {
+    display: none;
+  }
+  .title_mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .slider_tab {
+    display: none;
+  }
+  .swiper_container__desc {
+    display: block;
+  }
+}

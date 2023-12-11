@@ -1,0 +1,19 @@
+.galleryButton_comeBack {
+  background: #F5F5F5;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 30px 0;
+}
+.galleryButton_comeBack svg {
+  fill: #FFA500;
+}
+.galleryButton_comeBack:focus, .galleryButton_comeBack:hover {
+  background-color: #FFA500;
+}
+.galleryButton_comeBack:focus svg, .galleryButton_comeBack:hover svg {
+  fill: #fff;
+}

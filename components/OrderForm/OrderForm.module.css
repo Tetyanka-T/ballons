@@ -1,0 +1,207 @@
+.orderForm {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  display: block;
+  margin: 0 auto;
+  width: 280px;
+}
+
+.textField {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  width: 280px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}
+
+.orderForm_container_address {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.textField_address {
+  width: 130px;
+}
+
+.orderForm_comment {
+  width: 280px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+}
+
+.orderForm_button {
+  background: #ffffff;
+  box-shadow: 0px 1px 3px #FFA500, 0px 1px 1px #FFA500, 0px 2px 1px #FFA500;
+  border-radius: 4px 4px 4px 4px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  width: 220px;
+  margin: 20px 0 20px 20px;
+}
+.orderForm_button:hover, .orderForm_button:focus {
+  background-color: #FFA500;
+}
+
+.text_waite_back {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.orderForm_select {
+  margin-bottom: 15px;
+  margin-top: 5px;
+  width: 280px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
+}
+
+.orderForm_select_adress {
+  margin-left: 10px;
+}
+
+.orderForm_select_delivery {
+  font-size: 12px;
+  display: block;
+}
+
+.calendarColor {
+  display: flex;
+  align-items: center;
+}
+
+.date {
+  font-weight: 600 !important;
+  width: 90px;
+  padding: 8px;
+  margin-bottom: 10px;
+  color: #FFA500 !important;
+}
+
+.orderForm_select_date {
+  margin-bottom: 15px;
+  margin-right: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.02;
+  color: #696969;
+}
+
+.calendarColor :global .react-datepicker__day--selected {
+  background-color: #FFA500;
+}
+
+.calendarColor :global .react-datepicker__day--keyboard-selected {
+  background-color: #FFA500;
+}
+
+.calendarColor :global .react-datepicker-popper {
+  z-index: 200;
+}
+
+.calendarColor :global .react-datepicker-wrapper {
+  width: 0;
+}
+
+.calendarColor :global .react-datepicker__triangle {
+  left: 10px;
+}
+
+.orderForm_chekbox {
+  margin-bottom: 15px;
+}
+
+.orderForm_checkbox_lable {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.02;
+  color: #696969;
+  margin-left: 5px;
+}
+
+.orderForm_checkbox_input {
+  accent-color: #FFA500;
+  color: #ffffff !important;
+}
+
+.callBack_message {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.02;
+  color: #696969;
+}
+
+.orderForm_delivery_price_list {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.02;
+  color: #696969;
+  border-bottom: 1px solid #696969;
+  margin-bottom: 20px;
+  width: 190px;
+}
+.orderForm_delivery_price_list:focus, .orderForm_delivery_price_list:hover {
+  border-bottom: none;
+}
+.orderForm_delivery_price_list:focus .orderForm_delivery_price_item, .orderForm_delivery_price_list:hover .orderForm_delivery_price_item {
+  display: block;
+  margin-top: 10px;
+  font-weight: 400;
+  width: 290px;
+}
+
+.orderForm_timeInfo {
+  margin: 20px 0;
+}
+
+.orderForm_delivery_price_item {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .orderForm {
+    width: 500px;
+  }
+  .textField {
+    margin-bottom: 20px;
+    width: 500px;
+  }
+  .orderForm_container_address {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  .textField_address {
+    width: 150px;
+  }
+  .orderForm_comment {
+    width: 500px;
+  }
+  .orderForm_select {
+    margin-bottom: 20px;
+    width: 500px;
+  }
+  .orderForm_button {
+    margin-left: 150px;
+  }
+}

@@ -1,0 +1,85 @@
+.categories_list {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .categories_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #696969;
+    padding-top: 60px;
+  }
+  .categories_list__item {
+    margin-right: 25px;
+    margin-top: 0;
+    text-align: center;
+    position: relative;
+  }
+  .categories_list__item:hover, .categories_list__item:focus {
+    color: #FFA500;
+  }
+  .categories_list__item:hover ul, .categories_list__item:focus ul {
+    color: #696969;
+  }
+  .categories_list__item svg {
+    margin-right: 2px;
+  }
+  .button_select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #696969;
+  }
+  .button_select:hover, .button_select:focus {
+    color: #FFA500;
+  }
+  .button_select svg {
+    width: 15px;
+    height: 15px;
+    margin-left: 10px;
+  }
+  .categories_list .categories_list__item:last-child {
+    margin-right: 0;
+  }
+  .categories_listBaby, .categories_listBirthDay, .categories_listThematics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1053px;
+    position: absolute;
+    top: 60px;
+    left: -163px;
+    padding: 30px;
+    background-color: #F5F5F5;
+    opacity: 1;
+    z-index: 200;
+    margin: 0 auto;
+  }
+  .categories_listBaby li, .categories_listBirthDay li, .categories_listThematics li {
+    margin-right: 40px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .categories_listBaby li:last-child, .categories_listBirthDay li:last-child, .categories_listThematics li:last-child {
+    margin-right: 0;
+  }
+  .categories_listBaby li:hover, .categories_listBaby li:focus, .categories_listBirthDay li:hover, .categories_listBirthDay li:focus, .categories_listThematics li:hover, .categories_listThematics li:focus {
+    color: #FFA500;
+  }
+  .categories_listBirthDay {
+    left: -493px;
+  }
+  .categories_listThematics {
+    left: -756px;
+  }
+}

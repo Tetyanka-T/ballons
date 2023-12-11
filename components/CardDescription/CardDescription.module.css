@@ -1,0 +1,128 @@
+.list_button_consultation {
+  color: #696969;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  border: 1px solid #FFA500;
+  border-radius: 20px;
+  padding: 8px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .cardDescription_container {
+    width: 280px;
+    margin: 0 auto;
+  }
+}
+.transparent {
+  position: absolute;
+  top: 0;
+  height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cardDescription_container {
+  position: relative;
+  color: #696969;
+  padding-bottom: 15px;
+  margin-top: 20px;
+}
+
+.cardDescription_photo_container {
+  width: 280px;
+}
+.cardDescription_photo_container img {
+  width: 100%;
+  height: auto;
+}
+
+.cardDescription_fav_container {
+  position: relative;
+}
+
+.cardDescription_button_fav {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+
+.cardDescription_title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  width: 230px;
+}
+
+.cardDescription_article {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+.cardDescription_descriptionComposition {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cardDescription_price_container {
+  position: relative;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.cardDescription_button_buy {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+}
+
+.cardDescription_price {
+  font-weight: 600;
+}
+
+.cardDescription_inform {
+  margin-top: 15px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+
+@media screen and (min-width: 768px) {
+  .cardDescription_container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    padding: 20px 20px 70px 20px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+  }
+  .cardDescription_inform {
+    margin-top: 30px;
+  }
+  .cardDescription_price_container {
+    margin-top: 30px;
+  }
+  .cardDescription_button_fav {
+    top: -5px;
+  }
+  .cardDescription_title {
+    width: 300px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .cardDescription_price_container {
+    margin-top: 40px;
+  }
+  .cardDescription_title {
+    width: 100%;
+  }
+}

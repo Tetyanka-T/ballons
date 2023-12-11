@@ -1,0 +1,22 @@
+.categories_list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  color: #696969;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.02;
+}
+.categories_list li {
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categories_list li svg {
+  fill: #FFA500;
+}
+.categories_list li:last-child {
+  margin-right: 0;
+}
