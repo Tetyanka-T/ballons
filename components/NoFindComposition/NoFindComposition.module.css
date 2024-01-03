@@ -103,8 +103,8 @@
 }
 @media screen and (min-width: 1200px) {
   .find {
-    padding: 180px 20px 200px 75px;
-    background-size: cover;
+    /* padding: 180px 20px 200px 75px; */
+    /* background-size: cover; */
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../../public/background_desktop.jpg);
   }
   .find_text {
@@ -125,8 +125,8 @@
     margin-bottom: 25px;
   }
 }
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   .find {
     padding: 250px 20px 250px 75px;
   }
-}
+} */
