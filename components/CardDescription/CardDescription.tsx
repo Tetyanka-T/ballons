@@ -23,7 +23,7 @@ const CardDescription = ({ balloon }: {balloon: Balloon}) => {
 
           <div>
             <div className={s.cardDescription_fav_container}>
-              <h3 className={s.cardDescription_title}>{balloon.name}</h3>
+              <h1 className={s.cardDescription_title}>{balloon.name}</h1>
               <div className={s.cardDescription_button_fav}>
                 <FavoriteButton balloon={balloon} />
               </div>
