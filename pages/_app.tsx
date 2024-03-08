@@ -18,18 +18,17 @@ const inter = Inter({
 const App = ({ Component, pageProps }: AppProps) => {
  
   return (
-
- <div className={inter.className} lang='uk'>
-       <CartProvider>
-          <Header/>
-          <div className={common.container}>
-            <div className={common.section}>
-              <CategoriesListDesktop />
-            </div>
-          </div> 
-          <Component {...pageProps} />
-          <Footer/>
-      </CartProvider>
+    <div className={inter.className} lang='uk'>
+      <CartProvider>
+        <Header/>
+        <div className={common.container}>
+          <div className={common.section}>
+            <CategoriesListDesktop />
+          </div>
+        </div> 
+        <Component {...pageProps} />
+        <Footer/>
+      </CartProvider>    
     </div>
   )
 }

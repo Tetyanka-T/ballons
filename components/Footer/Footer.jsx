@@ -12,7 +12,7 @@ const Footer = () => {
       </div>
       <a
         className={s.made_by}
-        href="https://www.linkedin.com/in/tetiana-tupalo-86510b219"
+        href="https://tetyanka-t.github.io/portfolio/"
         target="_blanket"
       >
         Розробник
