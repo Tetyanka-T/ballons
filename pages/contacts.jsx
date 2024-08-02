@@ -7,7 +7,7 @@ import Novigation from "../components/Navigation/Novigation";
 
 export default function ContactsPage() {
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="keywords"
@@ -19,6 +19,11 @@ export default function ContactsPage() {
           content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <main className={common.container}>
@@ -69,6 +74,6 @@ export default function ContactsPage() {
           ></iframe>
         </div>
       </main>
-    </div>
+    </>
   );
 }

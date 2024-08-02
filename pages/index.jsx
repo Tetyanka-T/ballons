@@ -1,5 +1,4 @@
 import Head from "next/head";
-
 import CategoriesListDesktop from "../components/CategoriesListDesktop/CategoriesListDesktop";
 import CollageHomePage from "../components/CollageHomePage/CollageHomePage";
 import SliderHomePage from "../components/SliderHomePage/SliderHomePage";
@@ -7,7 +6,7 @@ import common from "../styles/common.module.scss";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="keywords"
@@ -19,12 +18,17 @@ export default function Home() {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <main className={common.container}>
         <SliderHomePage />
         <CollageHomePage />
       </main>
-    </div>
+    </>
   );
 }

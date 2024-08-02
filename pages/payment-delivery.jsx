@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function PaymentPage() {
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="keywords"
@@ -18,6 +18,11 @@ export default function PaymentPage() {
           content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <main className={common.container}>
@@ -76,6 +81,6 @@ export default function PaymentPage() {
           </p>
         </div>
       </main>
-    </div>
+    </>
   );
 }

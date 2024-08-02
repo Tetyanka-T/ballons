@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 const BirthDayBoy = ({ balloons }: {balloons: Balloon[]}) => {
 
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="keywords"
@@ -32,6 +32,11 @@ const BirthDayBoy = ({ balloons }: {balloons: Balloon[]}) => {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossOrigin="anonymous"
+        ></script>
       </Head>
 
       <main className={common.container}>
@@ -45,7 +50,7 @@ const BirthDayBoy = ({ balloons }: {balloons: Balloon[]}) => {
         <BalloonsListBirthDay balloons={balloons}/>
       </main>
       <NoFindComposition />
-    </div>
+    </>
   );
 };
 

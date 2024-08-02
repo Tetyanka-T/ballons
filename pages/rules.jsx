@@ -5,18 +5,23 @@ import s from "../styles/RulesPage.module.scss";
 
 export default function PaymentPage() {
   return (
-    <div>
+    <>
       <Head>
-      <meta
+        <meta
           name="keywords"
           content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, правила користування сайтом"
         ></meta>
-         <title>Весела витівка</title>
+        <title>Весела витівка</title>
         <meta
           name="description"
           content="Інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <main className={common.container}>
@@ -378,6 +383,6 @@ export default function PaymentPage() {
           </p>
         </div>
       </main>
-    </div>
+    </>
   );
 }

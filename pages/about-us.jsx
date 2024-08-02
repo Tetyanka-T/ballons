@@ -6,7 +6,7 @@ import Novigation from "../components/Navigation/Novigation";
 
 export default function AboutUs() {
   return (
-    <div>
+    <>
       <Head>
         <meta
           name="keywords"
@@ -18,6 +18,11 @@ export default function AboutUs() {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossorigin="anonymous"
+        ></script>
       </Head>
 
       <main className={style.container}>
@@ -144,6 +149,6 @@ export default function AboutUs() {
         </ul>
         <p className={s.about_text}>Нам довіряють ваші посмішки.</p>
       </main>
-    </div>
+    </>
   );
 }
