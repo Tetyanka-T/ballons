@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
-import CategoriesListDesktop from "../components/CategoriesListDesktop/CategoriesListDesktop";
+
 import CollageHomePage from "../components/CollageHomePage/CollageHomePage";
 import SliderHomePage from "../components/SliderHomePage/SliderHomePage";
 import common from "../styles/common.module.scss";
