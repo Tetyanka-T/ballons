@@ -5,6 +5,7 @@ import BalloonsListWithConsultation from "../../../components/BalloonsList/Ballo
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
 import common from "../../../styles/common.module.scss";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 
 export const getStaticProps = async () => {
@@ -30,6 +31,7 @@ const PhotoZone = ({ balloons }: {balloons: Balloon[]}) => {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <GoogleTagManager gtmId="G-GQGMTW2BMV" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"

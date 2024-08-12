@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GoogleTagManager } from '@next/third-parties/google'
 import Balloon from "../../../Interface/interface";
 import { getFasadBalloons } from "../../../lib/balloons";
 import BalloonsListWithConsultation from "../../../components/BalloonsList/BalloonsListWithConsultation";
@@ -30,11 +31,13 @@ const Design = ({ balloons }: {balloons: Balloon[]}) => {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <GoogleTagManager gtmId="G-GQGMTW2BMV" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
           crossOrigin="anonymous"
         ></script>
+        
       </Head>
 
       <main className={common.container}>

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 import CategoriesListDesktop from "../components/CategoriesListDesktop/CategoriesListDesktop";
 import CollageHomePage from "../components/CollageHomePage/CollageHomePage";
 import SliderHomePage from "../components/SliderHomePage/SliderHomePage";
@@ -18,6 +19,7 @@ export default function Home() {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <GoogleTagManager gtmId="G-GQGMTW2BMV" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"

@@ -4,6 +4,7 @@ import common from "../../../../styles/common.module.scss";
 import Novigation from "../../../../components/Navigation/Novigation";
 import { getAllBalloonsIds, getBalloonById } from "../../../../lib/balloons";
 import Balloon from "../../../../Interface/interface";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 type Params = {
 	params: {
@@ -47,6 +48,7 @@ const CardId = ({ balloon }: {balloon: Balloon}) => {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
+        <GoogleTagManager gtmId="G-GQGMTW2BMV" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
