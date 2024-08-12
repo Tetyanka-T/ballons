@@ -32,7 +32,7 @@ const BirthDayHe = ({ balloons }: {balloons: Balloon[]}) => {
           content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
         />
         <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-GQGMTW2BMV" />
+        <GoogleTagManager gtmId="G-H2DLND3W5M" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
