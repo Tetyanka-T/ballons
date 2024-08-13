@@ -1,8 +1,9 @@
 import Head from "next/head";
+import { GoogleTagManager } from "@next/third-parties/google";
 import Image from "next/image";
+import Novigation from "../components/Navigation/Novigation";
 import style from "../styles/common.module.scss";
 import s from "../styles/AboutUsPage.module.scss";
-import Novigation from "../components/Navigation/Novigation";
 
 export default function AboutUs() {
   return (
@@ -23,6 +24,7 @@ export default function AboutUs() {
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
           crossorigin="anonymous"
         ></script>
+        <GoogleTagManager gtmId="G-H2DLND3W5M" />
       </Head>
 
       <main className={style.container}>
