@@ -26,17 +26,6 @@ const GenderParty = ({ balloons }: {balloons: Balloon[]}) => {
           content="композиції із повітряних кульок, оформлення свята, доставка, Кривий Ріг, кульки, вечірка на визначення статі дитини, gender-party, хлопчик чи дівчинка, ідеї оформлення вечірки, майбутні батьки, гендер куля, вогнегасник, кольоровий дим, куля сюрприз, коробка з кульками, вагітність, емоції, в очікуванні дива, при надії, майбутня мама, вагітна фотосесія"
         ></meta>
         <title>Визначення статі малюка</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <main className={common.container}>
         <Novigation section="Визначення статі малюка" />

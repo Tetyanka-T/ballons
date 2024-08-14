@@ -1,12 +1,13 @@
-import '../styles/globals.css'
-import common from "../styles/common.module.scss"
-
+import Head from 'next/head'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import type { AppProps } from 'next/app'
+import { CartProvider } from '../context/CartContext'
 import { Inter } from 'next/font/google'
 import Header from '../components/Header/Header'
 import Footer from '../components/Footer/Footer'
 import CategoriesListDesktop from '../components/CategoriesListDesktop/CategoriesListDesktop'
-import { CartProvider } from '../context/CartContext'
+import '../styles/globals.css'
+import common from "../styles/common.module.scss"
 
 
 const inter = Inter({
@@ -18,7 +19,23 @@ const inter = Inter({
 const App = ({ Component, pageProps }: AppProps) => {
  
   return (
-    <div className={inter.className} lang='uk'>
+  <>
+    <Head>
+      <meta
+        name="description"
+        content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
+      />
+      <link rel="icon" href="/logo.png" />
+      
+      <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
+          crossOrigin="anonymous"
+      ></script>
+        
+    </Head>
+    <GoogleAnalytics gaId="G-H2DLND3W5M" />
+   <div className={inter.className} lang='uk'>
       <CartProvider>
         <Header/>
         <div className={common.container}>
@@ -30,6 +47,8 @@ const App = ({ Component, pageProps }: AppProps) => {
         <Footer/>
       </CartProvider>    
     </div>
+  </>
+   
   )
 }
 export default App;

@@ -4,7 +4,7 @@ import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
 import CardDescription from "../../../components/CardDescription/CardDescription";
 import Novigation from "../../../components/Navigation/Novigation";
 import common from "../../../styles/common.module.scss";
-import { GoogleTagManager } from "@next/third-parties/google";
+
 
 type Params = {
 	params: {
@@ -39,20 +39,10 @@ const CardId = ({ balloon }: {balloon: Balloon}) => {
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, Кривий Ріг, кульки для свята, вечірка на визначення статі дитини, gender-party, хлопчик чи дівчинка, ідеї оформлення вечірки, майбутні батьки, гендер куля, вогнегасник, кольоровий дим, куля сюрприз, коробка з кульками, вагітність, емоції, в очікуванні дива, при надії, майбутня мама, вагітна фотосесія"
+          content={balloon.description}
         ></meta>
         <title>{balloon.name}</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
+
       </Head>
       <main className={common.container}>
         <Novigation

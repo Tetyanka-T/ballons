@@ -5,7 +5,6 @@ import Balloon from "../../../Interface/interface";
 import NoFindComposition from "../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../components/Navigation/Novigation";
 import common from "../../../styles/common.module.scss";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 
 
@@ -28,17 +27,6 @@ const ExtractFromMaternityHospital = ({ balloons }: {balloons: Balloon[]}) => {
           name="keywords"
           content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, виписка з пологового будинку, для малюків, кульки на виписку, лелека, зустріч малюка, щасливий тато, сім'я, стати батьками"
         ></meta>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M"/>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
 
       <main className={common.container}>

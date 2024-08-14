@@ -4,7 +4,6 @@ import { getAllBalloonsIds, getBalloonById } from "../../../lib/balloons";
 import CardDescriptionWithConsultation from "../../../components/CardDescription/CardDescriptionWithConsultation";
 import Novigation from "../../../components/Navigation/Novigation";
 import common from "../../../styles/common.module.scss";
-import { GoogleTagManager } from "@next/third-parties/google";
 
 type Params = {
 	params: {
@@ -37,20 +36,9 @@ const CardId = ({ balloon }: {balloon: Balloon}) => {
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, фотозона, на день народження, для бізнесу, кругла фотозона, декорація, арка з кульок, гірлянда, каркас"
+          content={balloon.description}
         ></meta>
         <title>{balloon.name}</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M"/>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
       <main className={common.container}>
         <Novigation

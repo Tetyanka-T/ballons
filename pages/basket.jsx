@@ -7,10 +7,6 @@ const BasketPage = () => {
     <div>
       <Head>
         <title>Весела витівка</title>
-        <meta
-          name="description"
-          content="Інтернет-магазин композицій із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
         <link rel="icon" href="/basket.svg" />
       </Head>
 

@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { GoogleTagManager } from "@next/third-parties/google";
 import Image from "next/image";
 import Novigation from "../components/Navigation/Novigation";
 import style from "../styles/common.module.scss";
@@ -14,17 +13,6 @@ export default function AboutUs() {
           content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, історія створення, власники магазину"
         ></meta>
         <title>Засновники магазину Весела витівка у Кривому Розі</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossorigin="anonymous"
-        ></script>
-        <GoogleTagManager gtmId="G-H2DLND3W5M" />
       </Head>
 
       <main className={style.container}>

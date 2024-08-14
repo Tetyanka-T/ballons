@@ -5,8 +5,6 @@ import { getBirthDayBalloons } from "../../../../lib/balloons";
 import NoFindComposition from "../../../../components/NoFindComposition/NoFindComposition";
 import Novigation from "../../../../components/Navigation/Novigation";
 import common from "../../../../styles/common.module.scss";
-import { GoogleTagManager } from "@next/third-parties/google";
-
 
 
 export const getStaticProps = async () => {
@@ -29,17 +27,6 @@ const BirthDayGirls = ({ balloons }: {balloons: Balloon[]}) => {
           content="композиції із повітряних кульок, оформлення свят, доставка, Кривий Ріг, день народження, зв'язка для дівчинки, кольорова гама, річниця, індивідуальний напис, кульки з гелієм, трендові оформлення, незабутні враження"
         ></meta>
         <title>Кульки на День народження для дівчинки</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M" />
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
       </Head>
 
       <main className={common.container}>
