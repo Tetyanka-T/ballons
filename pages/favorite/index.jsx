@@ -8,12 +8,7 @@ const FavoritePage = () => {
   return (
     <div>
       <Head>
-        <title>Весела витівка</title>
-        <meta
-          name="description"
-          content="Інтернет магазин виробів із повітряних кульок, оформлення свят"
-        />
-        <link rel="icon" href="/logo.png" />
+        <title>Ваші улюблені композиції</title>
       </Head>
 
       <main className={common.container}>

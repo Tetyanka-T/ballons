@@ -7,17 +7,13 @@ export default function PaymentPage() {
   return (
     <>
       <Head>
-        <meta
-          name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, правила користування сайтом"
-        ></meta>
-        <title>Весела витівка</title>
+        <title>Правила користування сайтом</title>
       </Head>
 
       <main className={common.container}>
         <Novigation section="Правила користування сайтом" />
 
-        <h2 className={common.section_title}>Правила користування сайтом</h2>
+        <h1 className={common.section_title}>Правила користування сайтом</h1>
         <div className={s.rules_section}>
           <p>
             Якщо Ви вирішили користуватися Сайтом, то Ви даєте згоду на

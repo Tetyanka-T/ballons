@@ -8,17 +8,13 @@ export default function PaymentPage() {
   return (
     <>
       <Head>
-        <meta
-          name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, умови доставки, оплата"
-        ></meta>
-        <title>Весела витівка</title>
+        <title>Оплата і доставка</title>
       </Head>
 
       <main className={common.container}>
         <Novigation section="Оплата і доставка" />
 
-        <h2 className={common.section_title}>Оплата і доставка</h2>
+        <h1 className={common.section_title}>Оплата і доставка</h1>
         <div className={s.payment_section}>
           <div className={s.delivery_car}>
             <Image

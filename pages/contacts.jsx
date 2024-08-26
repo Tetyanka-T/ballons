@@ -9,17 +9,13 @@ export default function ContactsPage() {
   return (
     <>
       <Head>
-        <meta
-          name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, магазин, адреса"
-        ></meta>
-        <title>Весела витівка</title>
+        <title>Контакти</title>
       </Head>
 
       <main className={common.container}>
         <Novigation section="Контакти" />
 
-        <h2 className={common.section_title}>Контакти</h2>
+        <h1 className={common.section_title}>Контакти</h1>
         <div className={s.contacts_container}>
           <ul className={s.contacts_list}>
             <li className={s.contacts_list__item}>

@@ -8,16 +8,14 @@ export default function AboutUs() {
   return (
     <>
       <Head>
-        <meta
-          name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка Кривий Ріг, історія створення, власники магазину"
-        ></meta>
-        <title>Засновники магазину Весела витівка у Кривому Розі</title>
+        <title>Історія заснування магазину</title>
       </Head>
 
       <main className={style.container}>
         <Novigation section="Про нас" />
-        <h2 className={style.section_title}>Про нас</h2>
+        <h1 className={style.section_title}>
+          Весела витівка у Кривому Розі історія заснування магазину
+        </h1>
         <p className={s.about_text}>
           Ще до відкриття офлайн магазину у Кривому Розі, ми вивчали цю нішу. Чи
           є щось подібне у нас в місті? Наскільки користується попитом така

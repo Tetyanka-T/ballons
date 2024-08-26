@@ -27,20 +27,9 @@ const FirstBirthDay = ({ balloons }: {balloons: Balloon[]}) => {
       <Head>
         <meta
           name="keywords"
-          content="композиції із повітряних кульок, оформлення свята, доставка, Кривий Ріг, перший день народження, для хлопчика, для дівчинки, кульки з гелієм, річниця, індивідуальний напис"
+          content="кульки на перший день народження, композиції із повітряних кульок, оформлення свята, доставка кульок Кривий Ріг, для хлопчика, для дівчинки, кульки з гелієм, річниця, індивідуальний напис"
         ></meta>
-        <title>Кульки на Перший День народження</title>
-        <meta
-          name="description"
-          content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
-        />
-        <link rel="icon" href="/logo.png" />
-        <GoogleTagManager gtmId="G-H2DLND3W5M"/>
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1132411369382672"
-          crossOrigin="anonymous"
-        ></script>
+        <title>Перший День народження</title>
       </Head>
 
       <main className={common.container}>
