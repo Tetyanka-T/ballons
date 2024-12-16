@@ -21,6 +21,7 @@ const ExtractFromMaternityHospital = ({ balloons }: {balloons: Balloon[]}) => {
   return (
     <>
       <Head>
+        
         <title>Виписка з пологового будинку</title>
         <meta
           name="keywords"

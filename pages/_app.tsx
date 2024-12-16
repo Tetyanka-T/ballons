@@ -26,6 +26,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         content="Весела витівка - інтернет-магазин композицій (виробів) із повітряних кульок, оформлення свят у місті Кривий Ріг"
       />
       <link rel="icon" href="/logo.png" />
+      <meta name="google-site-verification" content="t_nqhlCazeK-duvSqjQNde6GPVCudSloO07f2uEiBrE" />
       
       <script
           async
